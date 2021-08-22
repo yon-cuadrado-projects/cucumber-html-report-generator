@@ -1,0 +1,16 @@
+.idea/
+.tmp/
+.tmp1/
+.tmp2/
+.tmp3/
+.tmp4
+.tmp5/
+coverage/
+dist/
+node_modules/
+reports/
+test/reportResult/
+cucumber_html_reports.zip
+cucumber_html_reporter.tar.gz
+.nyc_output/
+lcov.info

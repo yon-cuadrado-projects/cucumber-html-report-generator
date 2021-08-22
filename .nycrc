@@ -1,0 +1,32 @@
+{
+    "extends": "@istanbuljs/nyc-config-typescript",
+    "all": true,
+    "check-coverage": true,
+    "extension": [ ".js", ".ts" ],
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.js",
+        "src/*.ts",
+        "src/*.js"
+    ],
+    "require": [
+        "mocha"
+    ],
+    "reporter": [
+        "text",
+        "html",
+        "cobertura",
+        "lcov"
+    ],
+    "sourceMap": true,
+    "instrument": true,
+    "cache": true,
+    "exclude":[
+        "src/commandLineExecuter",
+        "src/lib/generate-report/helpers/html-charts-scripts-functions.ts",
+        "src/scripts/*.ts",
+        "src/lib/types/*.ts",
+        "src/lib/server/resources/**/*.js",
+        "src/resources/**/*.js"
+    ]
+}

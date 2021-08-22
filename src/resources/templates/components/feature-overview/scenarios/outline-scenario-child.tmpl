@@ -1,0 +1,30 @@
+<tr data-bs-toggle="collapse" data-bs-target="#demo1-<%= templates.scenarioIndex %>-<%= templates.scenarioIndex %>"
+    class="accordion-toggle" aria-expanded="true">
+    <td><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-eye-open"></span></button>
+    </td>
+    <% var cells = scenarioExamples[scenarioExamplesIndex]; %>
+    <% for( var k = 0; k < cells.length; k++ ) { %>
+    <td><%= cells[k] %></td>
+    <% } %>
+    <td>
+        <%= templates.results %>
+    </td>
+</tr>
+<tr style="border-spacing:0;">
+    <td colspan="30" class="hiddenRow collapsed page-background" style="line-height:0px;height:0px;margin:0;padding:0;">
+            <div class="accordian-body collapse hiddenRow" id="demo1-<%= templates.scenarioIndex %>-<%= templates.scenarioIndex %>"
+                style="line-height:0px;height:0px;margin:0;padding:0;">
+                <div class="x_panel mb-4 h-auto d-block">
+                    <div class="x_title m-4" data-bs-toggle="collapse" data-bs-target="#<%="so"+templates.scenarioId.replace(/;/g, '') + "-" + templates.scenarioIndex%>">
+                        <%=templates.nameAndResults%>
+                    </div>
+                    <div class="collapse borderless" id="<%="so"+templates.scenarioId.replace(/;/g, '') + "-" + templates.scenarioIndex%>">
+                        <%=templates.before%>
+                        <%=templates.steps%>
+                        <%=templates.after%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </td>
+</tr>

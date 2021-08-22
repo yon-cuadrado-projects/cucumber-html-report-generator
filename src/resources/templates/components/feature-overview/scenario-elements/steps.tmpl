@@ -1,0 +1,294 @@
+<% if(steps && Object.entries(steps).length > 0) { %>
+<div class="x_content_steps mb-2 mt-2">
+    <table class="ms-4 table-borderless" Style="table-layout:fixed;">
+        <% steps.forEach(function(step,stepIndex) { %>
+        <tr class="p-0">
+            <% if(config.showExecutionTime && !isFirstScenarioOutline){ %>
+            <td class="p-0 page-background">
+                <div class="me-2"><%=step.result.durationHHMMSS %> </div>
+            </td>
+            <% } %>
+
+            <% if(!isFirstScenarioOutline ) { %>
+            <td class="p-0 page-background">
+                <div class="label d-flex mb-1">
+                    <i class="<%=step.result.icon + step.result.color%>" data-bs-toggle="tooltip" data-placement="top"
+                        title="<%=step.result.title%>"></i>
+                </div>
+            </td>
+            <% } %>
+
+            <% if(step.keyword.trim() === 'Given' || step.keyword.trim() === 'Then' 
+                || step.keyword.trim() === 'And' || step.keyword.trim() === 'When') { %>
+            <td class="p-0 page-background">
+                <div class="d-flex flex-row ms-2">
+                    <span class="keyword highlight scenarioStepKeywordAnd"><%=step.keyword %></span>
+                </div>
+            </td>
+            <% } %>
+
+            <td class="p-0 page-background">
+                <div class="ms-2 me-2 text-nowrap">
+                    <span
+                        class="scenarioStepName"><%= typeof step.name == 'undefined' ? step.match.location : step.name %></span>
+                </div>
+            </td>
+
+            <td class="pb-auto pt-0 page-background">
+                <div class="me-auto text-nowrap">
+                    <% if(step.result.status === 'undefined') { %>
+                    <a class="skipped-color ms-2 me-2" href="#undefined<%= scenarioIndex %><%= stepIndex %>-undefined"
+                        data-bs-toggle="collapse"> +
+                        Show Implementation</a>
+                    <% } %>
+
+                    <% if (step.result.error_message) { %>
+                    <a class="skipped-color ms-2 me-2" href="#error<%= scenarioIndex %><%= stepIndex %>-error"
+                        data-bs-toggle="collapse"> + Show Error </a>
+                    <% } %>
+
+                    <% if (step.output.length) { %>
+                    <a class="skipped-color ms-2 me-2" href="#info-<%= scenarioIndex %>-<%= stepIndex %>-output"
+                        data-bs-toggle="collapse"> + Show Output </a>
+                    <% } %>
+
+                    <% if (step.json.length) { %>
+                    <span>[</span>
+                    <% step.json.forEach((jsonAttachment, attachmentIndex) => { %>
+                    <a href="#info-<%= scenarioIndex %>-<%= stepIndex %>-jsonAttachment-<%= attachmentIndex %>" data-bs-toggle="collapse">jsonAttachment</a>
+                    <% if ( attachmentIndex < ( step.json.length - 1 ) ) { %>
+                    <span> ,</span>
+                    <% } %>
+                    <% }); %>
+                    <span>]</span>
+                    <% } %>
+
+                    <% if (step.text) { %>
+                    <a class="skipped-color ms-2 me-2" href="#info-<%= scenarioIndex %><%= stepIndex %>-text"
+                        data-bs-toggle="collapse"> + Show Text </a>
+                    <% } %>
+
+                    <% if (step.image.length) { %>
+                    <span>[</span>
+                    <% step.image.forEach((imageAttachment, attachmentIndex) => { %>
+                    <a href="#info-<%= scenarioIndex %>-<%= stepIndex %>-imageAttachment-<%= attachmentIndex %>" data-bs-toggle="collapse">imageAttachment</a>
+                    <% if ( attachmentIndex < ( step.image.length - 1 ) ) { %>
+                    <span> ,</span>
+                    <% } %>
+                    <% }); %>
+                    <span>]</span>
+                    <% } %>
+
+                    <% if (step.html.length) { %>
+                    <a class="skipped-color ms-2 me-2" href="#info-<%= scenarioIndex %><%= stepIndex %>-html"
+                        data-bs-toggle="collapse"> + Show Info </a>
+                    <% } %>
+
+                    <% if (step.video.length) { %>
+                    <span>[</span>
+                    <%step.video.forEach((videoAtachment, attachmentIndex) => { %>
+                    <a href="#info<%= scenarioIndex %><%= stepIndex %>-videoAttachment<%= attachmentIndex %>"
+                        data-bs-toggle="collapse">videoAttachment</a>
+                    <% if ( attachmentIndex < ( step.video.length - 1 ) ) { %>
+                    <span> ,</span>
+                    <% } %>
+                    <% }); %>
+                    <span>]</span>
+                    <% } %>
+
+                    <% if (step.audio.length) { %>
+                    <span>[</span>
+                    <% step.audio.forEach((audioAtachment, attachmentIndex) =>{ %>
+                    <a href="#info<%= scenarioIndex %><%= stepIndex %>-audioAttachment<%= attachmentIndex %>" data-bs-toggle="collapse">audioAttachment</a>
+                    <% if ( attachmentIndex < ( step.audio.length - 1 ) ) { %>
+                    <span> ,</span>
+                    <% } %>
+                    <% }); %>
+                    <span>]</span>
+                    <% } %>
+
+                    <% if (step.attachments.length > 0) { %>
+                        <span>[</span>
+                        <% step.attachments.forEach((attachment, attachmentIndex) =>{ %>
+                        <a href="#info-<%= scenarioIndex %>-<%= stepIndex %>-attachment-<%= attachmentIndex %>"
+                            data-bs-toggle="collapse">Attachment</a>
+                        <% if ( attachmentIndex < ( step.attachments.length - 1 ) ) { %>
+                        <span> ,</span>
+                        <% } %>
+                        <% }); %>
+                        <span>]</span>
+                    <% } %>
+
+                    <% if (step.rowsCells) { %>
+                    <a class="skipped-color ms-2 me-2" href="#info-<%= scenarioIndex %><%= stepIndex %>-rows"
+                        data-bs-toggle="collapse"> + Rows </a>
+                    <% } %>
+
+                    <% if (step.argumentsCells) { %>
+                        <a class="skipped-color ms-2 me-2" href="#info-<%= scenarioIndex %><%= stepIndex %>-arguments"
+                            data-bs-toggle="collapse"> + Arguments </a>
+                        <% } %>
+                </div>
+            </td>
+            <td class="w-100 page-background"></td>
+        </tr>
+        <% if(step.result.status === 'undefined'){%>
+        <tr class="h-0 pt-0 pb-0">
+            <td colspan="5">
+                <div id="undefined<%= scenarioIndex %><%= stepIndex %>-undefined"
+                    class="scenario-step-collapse collapse border border-dark">
+                    <pre class="infoBlock ms-4 mt-2 mb-2">
+                // With Callbacks
+                this.Then(/^<%= step.name.replace(/"[^"]*"/g, '"\(\[\^\"\]\*\)"') %>$/, function(<% for (var i=1; i<(step.name.split('"').length / 2); i++) { %>arg<%= i %>, <% } %>callback) {
+                    // Write code here that turns the phrase above into concrete actions
+                    callback(null, 'pending');
+                });
+
+                // With Promises
+                this.Then(/^<%= step.name.replace(/"[^"]*"/g, '"\(\[\^\"\]\*\)"') %>$/, function(<% for (var i=1; i<(step.name.split('"').length / 2); i++) { %>arg<%= i %>, <% } %>) {
+                    // Write code here that turns the phrase above into concrete actions
+                    return Promise.resolve('pending');
+                });
+            </pre>
+                </div>
+            </td>
+        </tr>
+        <% } %>
+        <% if (step.result.error_message) { %>
+        <tr class="h-0 pt-0 pb-0">
+            <td class="h-0 pt-0 pb-0" colspan="6">
+                <div id="error<%= scenarioIndex %><%= stepIndex %>-error"
+                    class="scenario-step-collapse collapse border border-dark">
+                    <pre class="informationBlock" >
+                        <%= step.result.error_message.replace(/</g, '(').replace(/>/g, ')') %></pre>
+                </div>
+
+            </td>
+        </tr>
+        <% } %>
+
+        <% if (step.output.length) { %>
+        <tr class="h-0 pt-0 pb-0">
+            <td colspan="5" class="pt-0 pb-0">
+                <div id="info-<%= scenarioIndex %>-<%= stepIndex %>-output"
+                    class="scenario-step-collapse collapse border border-dark">
+                    <div class="infoBlock ms-4 mt-2 mb-2">
+                        <%=step.output %>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <% } %>
+
+        <% if (step.image.length) { %>
+        <% step.image.forEach((imageAttachment, imageAttachmentIndex) =>{ %>
+        <tr class="h-0 pt-0 pb-0">
+            <td colspan="5" class="pt-0 pb-0">
+                <div id="info-<%= scenarioIndex %>-<%= stepIndex %>-imageAttachment-<%= imageAttachmentIndex %>"
+                    class="scenario-step-collapse collapse border border-dark me-4 container-fluid">
+                        <img class="screenshot img-fluid" src="<%= imageAttachment %>" class="img-fluid" />
+                </div>
+            </td>
+        </tr>
+        <% }); %>
+        <% } %>
+
+        <% if (step.json) { %>
+        <% step.json.forEach((jsonAtachment, jsonAttachmentIndex) =>{ %>
+        <tr class="h-0 pt-0 pb-0">
+            <td colspan="5" class="pt-0 pb-0">
+                <div id="info-<%= scenarioIndex %>-<%= stepIndex %>-jsonAttachment-<%= jsonAttachmentIndex %>" class="collapse in border border-dark">
+                    <div class="informationBlock"><%= jsonAtachment %>
+                </div>
+            </td>
+        </tr>
+        <% }); %>
+        <% } %>
+
+        <% if (step.text) { %>
+        <tr class="h-0 pt-0 pb-0">
+            <td colspan="6" class="pt-0 pb-0">
+                <div id="info-<%= scenarioIndex %><%= stepIndex %>-text" class="informationBlock collapse in border border-dark">
+                    <%= step.text %>
+                </div>
+            </td>
+        </tr>
+        <% } %>
+
+        <% if (step.html.length) { %>
+        <tr class="h-0 pt-0 pb-0">
+            <td colspan="5" class="pt-0 pb-0">
+                <div id="info-<%= scenarioIndex %><%= stepIndex %>-html" class="informationBlock collapse in border border-dark">
+                    <div class="info"><%= step.html.join('<br/>') %></div>
+                </div>
+            </td>
+        </tr>
+        <% } %>
+
+        <% if (step.video.length) { %>
+        <% step.video.forEach((videoAtachment, videoAttachmentIndex) =>{ %>
+        <tr class="h-0 pt-0 pb-0">
+            <td colspan="5" class="pt-0 pb-0">
+                <div id="info<%= scenarioIndex %><%= stepIndex %>-videoAttachment<%= videoAttachmentIndex %>"
+                    class="scenario-step-collapse collapse">
+                    <video controls class="attachment-object" type="video/mpeg" src=<%= videoAtachment%>
+                        style="height=100%; width=100%;" id="my_video_attachments_<%= videoAttachmentIndex %>"> </video>
+                </div>
+            </td>
+        </tr>
+        <% }); %>
+        <% } %>
+
+        <% if (step.audio.length) { %>
+        <% step.audio.forEach((audioAtachment, audioAttachmentIndex) =>{ %>
+        <tr class="h-0 pt-0 pb-0">
+            <td colspan="5" class="pt-0 pb-0">
+                <div id="info<%= scenarioIndex %><%= stepIndex %>-audioAttachment<%= audioAttachmentIndex %>"
+                    class="scenario-step-collapse collapse">
+                    <audio controls class="attachment-object" type="audio/mpeg" src=<%= audioAtachment%>
+                        style="height=100%; width=100%;" id="my_audio_attachments_<%= audioAttachmentIndex %>"> </audio>
+                </div>
+            </td>
+        </tr>
+        <% }); %>
+        <% } %>
+
+        <% if (step.attachments.length) { %>
+        <% step.attachments.forEach((attachment, attachmentIndex) =>{ %>
+        <tr class="h-0 pt-0 pb-0">
+            <td colspan="5" class="pt-0 pb-0">
+                <div id="info-<%= scenarioIndex %>-<%= stepIndex %>-attachment-<%= attachmentIndex %>" class="collapse in border border-dark">
+                    <object class="attachment-object" type="<%= attachment.type %>"
+                        id="my_attachments_<%= attachmentIndex %>" data="<%= attachment.data %>"></object>
+                </div>
+            </td>
+        </tr>
+        <% }); %>
+        <% } %>
+
+        <% if (step.argumentsCells) { %>
+            <tr class="h-0 pt-0 pb-0">
+                <td colspan="6" class="pt-0 pb-0">
+                    <div id="info-<%= scenarioIndex %><%= stepIndex %>-arguments" class="collapse in border border-dark">
+                        <%= step.argumentsCells %>
+                    </div>
+                </td>
+            </tr>
+            <% } %>
+        
+
+        <% if (step.rowsCells) { %>
+        <tr class="h-0 pt-0 pb-0">
+            <td colspan="6" class="pt-0 pb-0">
+                <div id="info-<%= scenarioIndex %><%= stepIndex %>-rows" class="collapse in border border-dark">
+                    <%= step.rowsCells %>
+                </div>
+            </td>
+        </tr>
+        <% } %>
+
+
+        <% }); %>
+    </table>
+</div>
+<% } %>

@@ -1,0 +1,98 @@
+[
+  {
+    "description": "  The scenario has skipped steps\n  So the report should hold skipped steps",
+    "elements": [
+      {
+        "id": "skipped-scenarios-specified-v1;the-scenario-has-skipped-steps",
+        "keyword": "Scenario",
+        "line": 5,
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Before ",
+            "result": {
+              "status": "passed",
+              "duration": 670345300
+            },
+            "hidden": true,
+            "match": {
+              "location": "/Users/wswebcreation/deTesters/protractor-cucumber-typescript-boilerplate/node_modules/cucumber-tsflow/src/BindingDecorator.ts:83"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "Johnny visits the Angular homepage",
+            "result": {
+              "status": "skipped"
+            },
+            "line": 6,
+            "match": {
+              "location": "/Users/wswebcreation/deTesters/protractor-cucumber-typescript-boilerplate/node_modules/cucumber-tsflow/src/BindingDecorator.ts:157"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "he clicks on the first link",
+            "result": {
+              "status": "skipped"
+            },
+            "line": 7,
+            "match": {
+              "location": "/Users/wswebcreation/deTesters/protractor-cucumber-typescript-boilerplate/node_modules/cucumber-tsflow/src/BindingDecorator.ts:160"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "he expects that something happens",
+            "result": {
+              "status": "skipped"
+            },
+            "line": 8,
+            "match": {
+              "location": "/Users/wswebcreation/deTesters/protractor-cucumber-typescript-boilerplate/node_modules/cucumber-tsflow/src/BindingDecorator.ts:163"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After ",
+            "result": {
+              "status": "skipped",
+              "duration": 47922700
+            },
+            "hidden": true,
+            "match": {
+              "location": "/Users/wswebcreation/deTesters/protractor-cucumber-typescript-boilerplate/node_modules/cucumber-tsflow/src/BindingDecorator.ts:201"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After ",
+            "result": {
+              "status": "skipped",
+              "duration": 30569000
+            },
+            "hidden": true,
+            "match": {
+              "location": "/Users/wswebcreation/deTesters/protractor-cucumber-typescript-boilerplate/node_modules/cucumber-tsflow/src/BindingDecorator.ts:87"
+            }
+          }
+        ],
+        "tags": []
+      }
+    ],
+    "id": "05-feature in status skipped",
+    "keyword": "Feature",
+    "line": 1,
+    "name": "Feature with all scenarios in status skipped",
+    "tags": [],
+    "uri": "/Users/wswebcreation/deTesters/protractor-cucumber-typescript-boilerplate/e2e-tests/features/pending.feature",
+    "metadata":[
+      {"name":"browser", "value":"Chrome 56", "icon": "fab fa-chrome fa-1g"},
+      {"name":"device", "value":"Samsung S7", "icon": "fas fa-mobile-alt fa-lg"},
+      {"name":"platform", "value":"Android 7.1", "icon": "fab fa-android fa-1g"}
+    ]
+  }
+]

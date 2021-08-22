@@ -1,0 +1,17 @@
+[
+  {
+    "metadata": [
+      {"name":"browser", "value":"Firefox 53", "icon": "fab fa-firefox fa-lg"},
+      {"name":"device", "value":"Virtual Machine", "icon": "fas fa-desktop fa-lg"},
+      {"name":"platform", "value":"Ubuntu 16.04", "icon": "fab fa-ubuntu fa-lg"}
+    ],
+    "elements": null,
+    "description": "  No elements have been found\n  So the report should hold no scenarios and steps",
+    "id": "feature-with-elements-null",
+    "keyword": "Feature",
+    "line": 1,
+    "name": "Feature with elements null",
+    "tags": [],
+    "uri": "no_elements.1494777183356"
+  }
+]

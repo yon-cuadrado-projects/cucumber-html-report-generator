@@ -1,0 +1,17 @@
+<% if (typeof scenario !== 'undefined' && scenario.tags && Object.entries(scenario.tags).length > 0) { %>
+    <% var tags = scenario.tags.reduce((tags, tag) => tags + tag.name + '\n ', ''); %>
+    <div class="tags d-flex flex-column mb-1 me-2 ms-2 mt-2 mb-auto justify-content-left" data-bs-toggle="tooltip" data-bs-html="true" title="<%=tags.trim()%>">
+        <% var amount = scenario.tags.length; %>
+        <% if (amount > 0 ){ %>
+        <i class="fa fa-tag<% if(amount > 1 ) {%>s<% } %> fa-lg" data-bs-toggle="collapse" 
+        data-bs-target="#<%=scenario.id.toString().replace(/;/g, '')%>-tags"></i>
+        <div class="collapse" id="<%=scenario.id.toString().replace(/;/g, '')%>-tags">
+        <div class="d-flex flex-column">
+        <% scenario.tags.forEach((tag) => {%>
+            <span class="tag mt-1"><%= tag.name %></span>
+        <%}); %>
+        </div>
+        </div>
+        <% } %>
+    </div>
+<% } %>

@@ -1,0 +1,165 @@
+/* colors */
+.ambiguous-color {
+    color: #E74C3C !important;
+}
+
+.failed-color {
+    color: #E74C3C !important;
+}
+
+.undefined-color {
+    color: #F39C12 !important;
+}
+
+.passed-color {
+    color: #1ABB9C !important;
+}
+
+.pending-color {
+    color: #FFD119 !important;
+}
+
+.skipped-color {
+    color: #3498DB !important;
+    /* line-height: normal; */
+}
+
+.various-color {
+    color: #9b59b6 !important;
+}
+
+
+/* backgrounds */
+.ambiguous-background {
+    background: #b73122 !important;
+}
+
+.failed-background {
+    background: #E74C3C !important;
+}
+
+.undefined-background {
+    background: #F39C12 !important;
+}
+
+.passed-background {
+    background: #1ABB9C !important;
+}
+
+.pending-background {
+    background: #FFD119 !important;
+}
+
+.skipped-background {
+    background: #3498DB !important;
+}
+
+body {
+    color: #73879C;
+    font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.features-overview-report {
+    color: #73879C;
+    font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#navBar{
+    font-size: 0.5vw;
+}
+
+/* features table hide extra content in tags and result cells */
+i span {
+    display: none;
+}
+h1{
+    line-height: 0.40 !important;
+    font-size:2.5vw;
+}
+
+h2{
+    line-height: 1 !important;
+}
+
+h1 small{
+    font-size:1.7vw !important;
+}
+
+h6{
+    line-height: 1.7 !important;
+}
+
+.tags {
+    line-height: normal;
+    font-size: 0.8vw;
+}
+
+div.scenarioBlock > h2 {
+    color: #525D76;
+    line-height: 0.8;
+    font-size: 1.7vw;
+}
+
+div.scenarioBlock > h2 > small{
+    color: #525D76;
+    font-size: 1.1vw;
+}
+
+h2.scenarioTime{
+    color: white !important;
+    font-size: 1.5rem;
+}
+
+.scenarioResultsContainer{
+    min-width: 100px;
+}
+
+.dataTables_scrollHeadInner > table > thead > tr > th{
+    background-color: Blue;
+}
+
+#features-table > tbody > tr > td:first-child{
+    padding-left: 10px;
+}
+
+span.scenarioStepKeywordAnd,
+p2.scenarioStepName,
+span.scenarioStepName,
+span.scenarioStepKeyword{
+    color: #73879C;
+}
+
+.dataTables_scrollFootInner > table > tfoot > tr > td{
+    background-color: #ff9966;
+}
+
+span.scenarioOutlineCircle {
+    height: 27px;
+    width: 27px;    
+}
+
+.features-page-header{
+    table-layout: fixed;
+}
+
+.informationBlock{
+    white-space: pre;
+    line-height: normal;
+}
+
+.table-scrollable
+{
+    height: 130px;
+    overflow-y: auto;
+}
+
+.chart-container {
+    width: 150px;
+    height:150px
+}

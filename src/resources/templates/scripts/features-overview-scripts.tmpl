@@ -1,0 +1,64 @@
+<script type="text/javascript">
+$(document).ready(function () {    
+    $(".graph-title").on("click",function(){
+        $(".graph-title li a i").toggleClass("fa-chevron-down");
+        $(".graph-title li a i").toggleClass("fa-chevron-up");
+        if( $(".table-scrollable").is(':visible') ){
+            $(".table-scrollable").hide();
+        }else{
+            $(".table-scrollable").show();
+        }
+    });
+
+    $('#features-table').dataTable({
+        dom: "<'row'<'col-md-2'l><'col-md-1'B><'col-md-6'><'col-md-3'f>>" +
+        "<'row'<'col-lg-12't>><'row'<'col-lg-6'i><'col-lg-6'p>>",
+        buttons: ['colvis'],
+        order: [[0, "asc"]],
+        lengthMenu: [[50, 100, 150, -1], [50, 100, 150, "All"]],
+        deferRender: true,
+        scrollCollapse: true,
+        scrollY: '92px',
+        scrollX: 1000,
+        initComplete: function(settings, json) {
+            if(<%=config.showExecutionTime === false %>){
+                this.api().column( '.feature-time' ).visible( false );
+            }
+            if(<%=suite.results.scenarios.pending === 0 %>){
+                this.api().column( '.scenarios-pending' ).visible( false );
+            }
+            if(<%=Object.entries(suite.metadata).length === 0%>){
+                this.api().column( '.feature-metadata' ).visible( false );
+            }
+            if(<%=suite.results.scenarios.skipped === 0%>) {
+                this.api().column( '.scenarios-skipped' ).visible( false );
+            }
+            if(<%=suite.results.scenarios.undefined === 0%>) {
+                this.api().column( '.scenarios-undefined' ).visible( false );
+            }
+            if(<%=suite.results.scenarios.ambiguous === 0%>) {
+                 this.api().column( '.scenarios-ambiguous' ).visible( false );
+            }
+            
+            $('#features-table').DataTable().columns.adjust().draw();
+            $('#features-table > tbody > tr > td:first-child').removeClass("dtr-control");
+        }
+    }); 
+    
+    var dataFeatures = <%=JSON.stringify(chartsData.dataFeatures(suite))%>
+    var dataScenarios = <%=JSON.stringify(chartsData.dataScenarios(suite))%>
+    var dataSteps = <%=JSON.stringify(chartsData.dataSteps(suite))%>
+    var chartsFunctions = <%=JSON.stringify(scriptsFunctions)%>
+    var graphOptions =<%=scriptsFunctions.graphOptions.toString()
+    .replace( /chart_js_1./g, '' ).replace( /exports./g, '' ).replace(/chartjs_plugin_datalabels_1./g, '')%>
+    var writeValueInCenter =<%=scriptsFunctions.writeValueInCenter.toString()%>
+    var generateChart = <%=scriptsFunctions.generateChart.toString().replace( /chart_js_1./g, '' ).replace( /exports./g, '' ).replace(/this./g,'')
+    .replace(/chartjs_plugin_datalabels_1./g, '').replace(/default/g, 'ChartDataLabels')%>
+
+    const centerNumberFeatures = <%=suite.results.features.total%>;
+    const featuresChart = generateChart( 'features', dataFeatures, graphOptions(), centerNumberFeatures );
+    const centerNumberScenarios = <%=suite.results.scenarios.total%>;
+    const scenariosChart = generateChart( 'scenarios', dataScenarios, graphOptions(), centerNumberScenarios);
+});
+
+</script>

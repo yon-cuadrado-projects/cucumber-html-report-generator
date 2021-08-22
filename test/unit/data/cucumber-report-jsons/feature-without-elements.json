@@ -1,0 +1,14 @@
+{
+  "metadata": [
+    {"name":"browser", "value":"not known", "icon": "far fa-question-circle fa-1g"},
+    {"name":"device", "value":"not known", "icon": "far fa-question-circle fa-1g"},
+    {"name":"platform", "value":"not known", "icon": "far fa-question-circle fa-1g"}
+  ],
+  "description": "  No elements have been found\n  So the report should hold no scenarios and steps",
+  "id": "no_elements.1494777183356",
+  "keyword": "Feature",
+  "line": 1,
+  "name": "Feature with no elements",
+  "tags": [],
+  "uri": "no_elements.1494777183356"
+}

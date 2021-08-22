@@ -1,0 +1,115 @@
+<div class="x_panel mb-3 ps-2 pe-3 ms-3">
+    <table id="features-table" class="table-bordered display nowrap w-100" >
+        <thead>
+            <tr>
+                <th class="feature-name text-center">Feature Name</th>
+                <th class="feature-tags text-center"><i class="fa fa-tags text-center" title="Tags"></i></th>
+                <th class="text-center feature-status">Status</th>
+                <th class="feature-time text-center">Time</th>
+                <%if(suite.results.overview.metadata.length > 0){%>
+                    <% suite.results.overview.metadata.forEach(key =>{  %>
+                        <th class="feature-metadata text-center"><%=key.name%></th>
+                    <%});%>    
+                <%}%>
+                <th class="scenarios-total text-center">Total</th>
+                <th class="scenarios-passed text-center">Passed</th>
+                <th class="scenarios-failed text-center">Failed</th>
+                <th class="scenarios-pending text-center">Pending</th>
+                <th class="scenarios-skipped text-center">Skipped</th>
+                <th class="scenarios-ambiguous text-center">Ambiguous</th>
+                <th class="scenarios-undefined text-center">Undefined</th>
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr>
+                <td> <%=suite.features.length %> </td>
+                <td></td>
+                <td></td>
+                <td><%= suite.results.overview.durationHHMMSS %></td>
+                <%if(Object.entries(suite.results.overview.metadata).length > 0){%>
+                    <% Object.entries(suite.results.overview.metadata).forEach((key) =>{  %>
+                        <td></td>
+                    <%});%>    
+                <%}%>    
+                <td><%= suite.results.scenarios.total %></td>
+                <td><%= suite.results.scenarios.passed %></td>
+                <% if(suite.results.scenarios.failed > 0){ %>
+                    <td class="failed-background text-light"><%= suite.results.scenarios.failed %></td>
+                <%}else{%>
+                    <td><%= suite.results.scenarios.failed %></td>
+                <% } %>
+                <td class="pending-background text-light"><%= suite.results.scenarios.pending %></td>
+                <td class="skipped-background text-light"><%= suite.results.scenarios.skipped %></td>
+                <td class="ambiguous-background text-light"><%= suite.results.scenarios.ambiguous %></td>
+                <td class="undefined-background text-light"><%= suite.results.scenarios.undefined %></td>
+            </tr>
+        </tfoot>
+
+        <tbody>
+        <% suite.features.forEach((feature, featureIndex) => { %>
+            <tr>
+                <td class="">
+                    <a class="" href="features/<%= feature.id %>.html"><%= feature.name %></a>
+                </td>
+                <td class="text-center">
+                    <% if (feature.tags) { %>
+                    <% var amount = feature.tags.length; %>
+                    <% var tags = feature.tags.reduce((tags, tag) => tags + tag.name + '\n ', ''); %>
+                    <% if (amount > 0 ){ %>
+                        <i class="fa fa-tag<% if(amount > 1 ) {%>s<% } %>" data-bs-toggle="tooltip" data-placement="top"
+                        title="<%= tags.trim() %>">
+                            <span><%= tags.trim() %></span>
+                        </i>
+                    <% } %>
+                    <% } %>
+                </td>
+                <td class="text-center">
+                    <% feature.results.overview.result.forEach( (result, index) =>{  %>
+                    <i class="fa fa-<%= result.icon %>" data-bs-toggle="tooltip" data-placement="top" title="<%= result.status.toString() %>">
+                    </i>
+                    <%});%>
+                </td>
+                <td><%= feature.results.overview.durationHHMMSS %></td>
+                <% if(Object.entries(feature.metadata).length > 0){%>
+                    <% feature.metadata.forEach(metadataElement => { %>
+                        <td class="text-center">
+                            <i class="<%= metadataElement.icon%>" data-bs-toggle="tooltip" data-placement="top"
+                                title="<%= metadataElement.value %>">
+                            </i>
+                            <span><%= metadataElement.value %></span>
+                        </td>
+                    <%});%>
+                <% } %>         
+                <td><%= feature.results.scenarios.total %></td>
+                <td><%= feature.results.scenarios.passed %></td>
+                <% if(feature.results.scenarios.failed > 0){ %>
+                    <td class="failed-background text-light"><%= feature.results.scenarios.failed %></td>
+                <% }else{ %>
+                    <td><%= feature.results.scenarios.failed %></td>
+                <% } %>
+                <% if(feature.results.scenarios.pending > 0){ %>
+                    <td class="pending-background text-light"><%= feature.results.scenarios.pending %></td>
+                <% }else{ %>
+                    <td><%= feature.results.scenarios.pending %></td>
+                <% } %>
+                <% if(feature.results.scenarios.skipped > 0){ %>
+                    <td class="skipped-background text-light"><%= feature.results.scenarios.skipped %></td>
+                <% }else{ %>
+                    <td><%= feature.results.scenarios.skipped %></td>
+                <% } %>
+                <% if(feature.results.scenarios.ambiguous > 0){ %>
+                    <td class="ambiguous-background text-light"><%= feature.results.scenarios.ambiguous %></td>
+                <% }else{ %>
+                    <td><%= feature.results.scenarios.ambiguous %></td>
+                <% } %>
+                <% if(feature.results.scenarios.undefined > 0){ %>
+                    <td class="undefined-background text-light"><%= feature.results.scenarios.undefined %></td>
+                <% }else{ %>
+                    <td><%= feature.results.scenarios.undefined %></td>
+                <% } %>
+            </tr>                                                 
+            <% }); %>
+        </tbody>
+    </table>
+</div>

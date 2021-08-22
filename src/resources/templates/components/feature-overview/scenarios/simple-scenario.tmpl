@@ -1,0 +1,13 @@
+<div class="container-fluid ps-2 pe-2 pb-2">
+    <div class="x_panel border mt-2 pb-3">
+        <%=templates.tags%>
+        <div class="x_title m-2" data-bs-toggle="collapse" data-bs-target="#<%=templates.scenarioId.replace(/;/g, '') + "-" + templates.scenarioIndex%>">
+            <%=templates.nameAndResults%>
+        </div>
+        <div class="collapse" id="<%=templates.scenarioId.replace(/;/g, '') + "-" + templates.scenarioIndex%>">
+            <%=templates.before%>
+            <%=templates.steps%>
+            <%=templates.after%>
+        </div>
+    </div>
+</div>

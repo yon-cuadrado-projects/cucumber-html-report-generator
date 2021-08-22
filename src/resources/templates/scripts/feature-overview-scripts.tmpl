@@ -1,0 +1,62 @@
+<script type="text/javascript">
+$(document).ready(function () {
+    var dataScenarios = <%=JSON.stringify(chartsData.dataScenarios(feature))%>
+    var dataSteps = <%=JSON.stringify(chartsData.dataSteps(feature))%>
+    var graphOptions =<%=scriptsFunctions.graphOptions.toString()
+    .replace( /chart_js_1./g, '' ).replace( /exports./g, '' ).replace(/chartjs_plugin_datalabels_1./g, '')%>
+    var writeValueInCenter =<%=scriptsFunctions.writeValueInCenter.toString()%>
+    var generateChart = <%=scriptsFunctions.generateChart.toString().replace( /chart_js_1./g, '' ).replace( /exports./g, '' ).replace(/this./g,'')
+    .replace(/chartjs_plugin_datalabels_1./g, '').replace(/default/g, 'ChartDataLabels')%>
+
+    const centerNumberScenarios = <%=feature.results.scenarios.total%>;
+    const scenariosChart = generateChart( 'scenarios', dataScenarios, graphOptions(), centerNumberScenarios);
+    const centerNumberSteps = <%=feature.results.steps.total%>;
+    const stepsChart = generateChart( 'steps', dataSteps, graphOptions(), centerNumberSteps );    
+});
+</script>
+
+<script type="text/javascript">
+    window.addEventListener('resize', function(event){
+    var targetElement = document.getElementById("fluentContent");
+    var navBarElement = document.getElementById("navBar");
+    var newPaddingTop = parseInt(navBarElement.offsetHeight) + 10;
+    if(typeof targetElement != 'undefined'){
+        targetElement.setAttribute("style","padding-top:" + newPaddingTop + "px;");
+    }
+    });
+
+    $(".scenarioBlock").on("click",function(){
+        $(".scenarioBlock ul li a i").toggleClass("fa-chevron-down");
+        $(".scenarioBlock ul li a i").toggleClass("fa-chevron-up");
+    });
+
+    $(".graph-title").on("click",function(){
+        $(".graph-title li a i").toggleClass("fa-chevron-down");
+        $(".graph-title li a i").toggleClass("fa-chevron-up");
+        if( $(".table-scrollable").is(':visible') ){
+            $(".table-scrollable").hide();
+        }else{
+            $(".table-scrollable").show();
+        }
+    });
+
+    $(".before,.after").on("click",function(){
+        $(this).find("div a i").toggleClass("fa-chevron-down");
+        $(this).find("div a i").toggleClass("fa-chevron-up");
+    });
+
+    $(document).ready(function () {
+        var targetElement = document.getElementById("fluentContent");
+        var navBarElement = document.getElementById("navBar");
+        var newPaddingTop = parseInt(navBarElement.offsetHeight) + 10;
+        if(typeof targetElement != 'undefined'){
+            targetElement.setAttribute("style","padding-top:" + newPaddingTop + "px;");
+        }
+    });
+</script>
+
+<script type="text/javascript">
+    document.getElementById("backButton").onclick = function () {
+        location.href = '../index.html';
+};
+</script>
