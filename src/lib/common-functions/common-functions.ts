@@ -3,14 +3,16 @@ import * as Models from '../models/models';
 import * as jsonFuture from 'json-future';
 import * as path from 'path';
 import fs, { promises as fsp } from 'fs';
-import type { CucumberMessage } from 'cucumber-messages';
+import type { CucumberMessage } from '../types/cucumber-messages';
 import type { Readable } from 'stream';
 import type { Stats } from 'fs';
 import moment from 'moment';
 import os from 'os';
 
+
+
 export const streamToArrayAsync = async ( stream: Readable ): Promise<CucumberMessage[]> => new Promise( ( resolve, reject ) => {
-  const items: CucumberMessage[] = <CucumberMessage[]>[];
+  const items = <CucumberMessage[]>[];
   stream.on( 'data',  ( item: CucumberMessage ) =>{
     items.push( item ); 
   } );

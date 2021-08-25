@@ -31,16 +31,3 @@ declare global {
 
   }
 }
-
-declare module '@wdio/types'{
-  export namespace Capabilities {
-    interface DesiredCapabilities{
-      'goog:loggingPrefs'?:{
-        browser?: LoggingPreferenceType;
-        driver?: LoggingPreferenceType;
-        server?: LoggingPreferenceType;
-        client?: LoggingPreferenceType;
-      };
-    }
-  }
-}

@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import CucumberJsJsonReporter from 'wdio-cucumberjs-json-reporter';
+// import CucumberJsJsonReporter from 'wdio-cucumberjs-json-reporter';
 import { CustomCommands } from '../custom-commands/custom-commands';
 // import type { ResponseReceived } from '../types/Chrome-dev-tools';
 import { registerPagesInContainer } from '../container/container';
@@ -74,13 +74,6 @@ const config: WebdriverIO.Config = {
   connectionRetryCount: 3,
   framework: 'cucumber',
   reporters: [
-    [
-      'cucumberjs-json',
-      {
-        jsonFolder: '.tmp/cucumberjs-json/',
-        language: 'en',
-      },
-    ],
     'dot',
     'spec',
   ],
@@ -106,9 +99,9 @@ const config: WebdriverIO.Config = {
     await enableBrowserLogging();
   },
 
-  afterStep: async ( ): Promise<void> => {
-    CucumberJsJsonReporter.attach( await browser.takeScreenshot(), 'image/png' );
-  },
+  // afterStep: async ( ): Promise<void> => {
+  //   CucumberJsJsonReporter.attach( await browser.takeScreenshot(), 'image/png' );
+  // },
 
   services: [
     'devtools' ,
