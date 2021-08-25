@@ -27,6 +27,8 @@ export interface Scenario {
   results: ScenarioResults;
   isFirstScenarioOutline: boolean;
   examples?: string[][];
+  reportId?: mongoose.Types.ObjectId;
+  stepsId?: mongoose.Types.ObjectId;
 }
 
 export interface BeforeOrAfter {

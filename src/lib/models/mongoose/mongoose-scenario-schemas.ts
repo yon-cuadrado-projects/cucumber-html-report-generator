@@ -47,7 +47,6 @@ export const scenarioTag = new Schema( {
 export const scenarioSchema: Schema<MScenario, Model<MScenario>> = new Schema( {
   after: { required: false, type: beforeOrAfterSchema },
   before: { required: false, type: beforeOrAfterSchema },
-  description: { required: false, type: String },
   examples: [ [ { default: undefined, required: false, type: String } ] ],
   featureId: { ref: 'Features', type: Schema.Types.ObjectId },
   id: String,

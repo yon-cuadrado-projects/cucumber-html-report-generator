@@ -101,7 +101,6 @@ export const matchSchemaArguments = new Schema( {
 } );
 
 export const stepSchema: Schema<MSTep, Model<MSTep>> = new Schema( {
-  argument: argumentSchema,
   arguments: { required: false,type: [ argumentsRowsSchema ], _id: false, id: false },
   argumentsCells: { required: false, type: String },
   attachments: [ { required: false, type: sttachmentSchema } ],
@@ -112,7 +111,6 @@ export const stepSchema: Schema<MSTep, Model<MSTep>> = new Schema( {
   html: [ { required: true, type: String } ],
   id: { required: false, type: String },
   image: [ { required: true, type: String } ],
-  index: { required: false, type: Number },
   json: [ { required: false, type: String } ],
   keyword: { required: true, type: String },
   line: { required: false, type: Number },

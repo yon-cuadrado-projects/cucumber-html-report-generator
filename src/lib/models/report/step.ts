@@ -9,7 +9,7 @@ export interface Step {
   argumentsCells: string;
   result: StepResultsOverview;
   keyword: string;
-  Hidden: boolean;
+  hidden: boolean;
   match?: Match;
   text?: string[] | null;
   html: string[];
