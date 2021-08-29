@@ -163,12 +163,7 @@ export const arraymove = <T> ( arr: T[], fromIndex: number, toIndex: number ): T
 };
 
 export const exists = ( filePath: string ): boolean => {  
-  try {
-    fs.accessSync( filePath );
-    return true;
-  } catch {
-    return false;
-  }
+  return fs.existsSync( filePath );
 };
 
 export const initializePath =  ( reportPath?: string | undefined ): string  =>{

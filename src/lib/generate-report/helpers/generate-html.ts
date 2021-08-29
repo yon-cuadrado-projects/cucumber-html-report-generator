@@ -10,25 +10,25 @@ import { ChartsData } from './charts-data';
 import chalk from 'chalk';
 import open from 'open';
 
-const featureOverviewScriptsTemplate = 'resources/templates/scripts/feature-overview-scripts.tmpl';
-const featuresOverviewScriptsTemplate = 'resources/templates/scripts/features-overview-scripts.tmpl';
-const reportStylesheetDarkThemeTemplate = 'resources/templates/css/style-dark-theme.css';
-const reportStylesheetLightThemeTemplate = 'resources/templates/css/style-light-theme.css';
-const featuresOverviewIndexTemplate = 'resources/templates/components/features-overview/features-overview-index.tmpl';
-const featuresOverviewTableTemplate = 'resources/templates/components/features-overview/features-overview-table.tmpl';
-const featuresChartsTemplate = 'resources/templates/components/features-overview/features-charts.tmpl';
-const featureChartsTemplate = 'resources/templates/components/feature-overview/feature-charts.tmpl';
-const featureOverviewIndexTemplate = 'resources/templates/components/feature-overview/feature-overview-index.tmpl';
-const scenarioStepsTemplate = 'resources/templates/components/feature-overview/scenario-elements/steps.tmpl';
-const scenarioBeforeTemplate = 'resources/templates/components/feature-overview/scenario-elements/before.tmpl';
-const scenarioAfterTemplate = 'resources/templates/components/feature-overview/scenario-elements/after.tmpl';
-const tagsTemplate = 'resources/templates/components/feature-overview/scenario-elements/tags.tmpl';
-const scenarioNameAndResultsTemplate = 'resources/templates/components/feature-overview/scenario-elements/name-and-results.tmpl';
-const scenarioResultsTemplate = 'resources/templates/components/feature-overview/scenario-elements/results.tmpl';
-const simpleScenarioTemplate = 'resources/templates/components/feature-overview/scenarios/simple-scenario.tmpl';
-const outlineScenarioTemplate = 'resources/templates/components/feature-overview/scenarios/outline-scenario.tmpl';
-const outlineScenarioChildTemplate = 'resources/templates/components/feature-overview/scenarios/outline-scenario-child.tmpl';
-const resourcesFolder = 'src/resources/dependencies/';
+const featureOverviewScriptsTemplate = '/resources/templates/scripts/feature-overview-scripts.tmpl';
+const featuresOverviewScriptsTemplate = '/resources/templates/scripts/features-overview-scripts.tmpl';
+const reportStylesheetDarkThemeTemplate = '/resources/templates/css/style-dark-theme.css';
+const reportStylesheetLightThemeTemplate = '/resources/templates/css/style-light-theme.css';
+const featuresOverviewIndexTemplate = '/resources/templates/components/features-overview/features-overview-index.tmpl';
+const featuresOverviewTableTemplate = '/resources/templates/components/features-overview/features-overview-table.tmpl';
+const featuresChartsTemplate = '/resources/templates/components/features-overview/features-charts.tmpl';
+const featureChartsTemplate = '/resources/templates/components/feature-overview/feature-charts.tmpl';
+const featureOverviewIndexTemplate = '/resources/templates/components/feature-overview/feature-overview-index.tmpl';
+const scenarioStepsTemplate = '/resources/templates/components/feature-overview/scenario-elements/steps.tmpl';
+const scenarioBeforeTemplate = '/resources/templates/components/feature-overview/scenario-elements/before.tmpl';
+const scenarioAfterTemplate = '/resources/templates/components/feature-overview/scenario-elements/after.tmpl';
+const tagsTemplate = '/resources/templates/components/feature-overview/scenario-elements/tags.tmpl';
+const scenarioNameAndResultsTemplate = '/resources/templates/components/feature-overview/scenario-elements/name-and-results.tmpl';
+const scenarioResultsTemplate = '/resources/templates/components/feature-overview/scenario-elements/results.tmpl';
+const simpleScenarioTemplate = '/resources/templates/components/feature-overview/scenarios/simple-scenario.tmpl';
+const outlineScenarioTemplate = '/resources/templates/components/feature-overview/scenarios/outline-scenario.tmpl';
+const outlineScenarioChildTemplate = '/resources/templates/components/feature-overview/scenarios/outline-scenario-child.tmpl';
+const resourcesFolder = '/resources/dependencies/';
 
 export class GenerateHtml {
   private readonly suite: Models.ExtendedReport;
@@ -36,6 +36,7 @@ export class GenerateHtml {
   private readonly chartsData: ChartsData;
   private readonly reportConfiguration: Models.ReportDisplay;
   private readonly featuresOverviewIndex: string;
+  private readonly rootFolder: string;
 
   public constructor( suite: Models.ExtendedReport, reportConfiguration: Models.ReportDisplay ) {
     this.suite = suite;
@@ -43,6 +44,8 @@ export class GenerateHtml {
     this.reportConfiguration = reportConfiguration;
     this.scriptsFunctions = new scripts.HtmlScriptsFunctions( this.reportConfiguration.theme! );
     this.featuresOverviewIndex = path.join( this.reportConfiguration.reportPath!, 'index.html' );
+    const scriptName = path.basename( __filename );
+    this.rootFolder = path.join( path.dirname( require.resolve( `./${scriptName}` ) ), '../../..' );
   }
 
   public async createHtmlPages (): Promise<void> {
@@ -218,7 +221,7 @@ export class GenerateHtml {
   }
 
   private readTemplateFile ( fileName: string ): string {
-    return fs.readFileSync( CommonFunctions.exists( fileName ) ? fileName : path.join( __dirname, '../../../', fileName ), 'utf-8' );
+    return fs.readFileSync( CommonFunctions.exists( fileName ) ? fileName : path.join( this.rootFolder, fileName ), 'utf-8' );
   }
 
   private generateTemplate ( templateName: string, parameters?: Record<string, any> ): string {
@@ -227,6 +230,6 @@ export class GenerateHtml {
   }
 
   private async copyResourcesToTargetFolder (): Promise<void> {
-    await fse.copy( path.resolve( process.cwd(), resourcesFolder ), path.resolve( this.reportConfiguration.reportPath!, 'resources' ) );
+    await fse.copy( path.join( this.rootFolder, resourcesFolder ), path.resolve( this.reportConfiguration.reportPath!, 'resources' ) );
   }
 }
