@@ -31,7 +31,8 @@ export class FeaturesOverviewPage extends BasePage{
   }
 
   public async clickOnFeatureLink( featureName: string ): Promise<void>{
-    const link = await ( await this.getMainObject() )?.$( `.//*[@id='features-table']//td[contains(.,'${featureName}')]` );
-    link?.click();
+    const link = await ( await this.getMainObject() )?.$( `.//*[@id='features-table']//td[contains(.,'${featureName}')]//a` );
+    await link?.scrollIntoView();
+    await link?.click();
   }
 }

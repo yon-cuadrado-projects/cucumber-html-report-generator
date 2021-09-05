@@ -47,6 +47,6 @@ Then( /^The '(.*)' field value is '(.*)' in the features-overview page$/, async 
 } );
 
 
-When( /^The user opens the featurte '(.*)'$/, async ( featureName: string ) =>{
+When( /^The user opens the feature '(.*)'$/, async ( featureName: string ) =>{
   await featuresOverviewPage.clickOnFeatureLink( featureName );
 } );

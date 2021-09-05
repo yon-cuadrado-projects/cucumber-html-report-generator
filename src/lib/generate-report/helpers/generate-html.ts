@@ -226,6 +226,7 @@ export class GenerateHtml {
 
   private generateTemplate ( templateName: string, parameters?: Record<string, any> ): string {
     const compiledTemplate = lodash.template( this.readTemplateFile( templateName ) );
+    lodash.extend( 'scriptFunctions', this.scriptsFunctions );
     return compiledTemplate( parameters );
   }
 

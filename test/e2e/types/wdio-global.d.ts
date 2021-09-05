@@ -23,6 +23,8 @@ declare global {
       getCheckBox: ( label: string ) => Element;
       clickOnCheckbox: ( checkboxLabel: string, page: string ) => void;
       isElementDisplayed: () => Promise<boolean>;
+      getRow: ( rowNumber: number ) => Promise<Element | undefined>;
+      getCell: ( cellNumber: number ) => Promise<Element | undefined>;
     }
 
     interface Config {

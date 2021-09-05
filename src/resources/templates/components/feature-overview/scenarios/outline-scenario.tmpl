@@ -13,7 +13,7 @@
         <div class="collapse" id="<%=templates.scenarioId.replace(/;/g, '') + "-" + templates.scenarioIndex%>">
             <div class="scenario-step-container mb-auto ms-4 d-flex flex-row align-items-baseline">
                 <div class="tableContainer responsive mb-1 mb-1" style="display: inline-block;">
-                    <table class="table table-bordered table-dark" id="scenariosOutlineTable-<%=templates.scenarioIndex%>">
+                    <table class="table table-bordered table-dark" id="scenariosOutlineTable-<%=templates.scenarioIndex%>" test-id="scenario-outline.scenarios">
                         <tr>
                             <th class="info-color white-text"></th>
                             <% var cells = templates.scenario.examples[0]; %>

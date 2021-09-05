@@ -142,22 +142,22 @@
     {
         "name": "DataTables",
         "cdn": "datatables",
-        "version": "1.11.0",
+        "version": "1.11.1",
         "files": [
             {
                 "name": "dataTables.bootstrap5.min.js",
-                "url": "https://cdn.datatables.net/1.11.0/js/dataTables.bootstrap5.min.js",
-                "path": "resources/DataTables-1.11.0/dataTables.bootstrap5.min.js"
+                "url": "https://cdn.datatables.net/1.11.1/js/dataTables.bootstrap5.min.js",
+                "path": "resources/DataTables-1.11.1/dataTables.bootstrap5.min.js"
             },
             {
                 "name": "jquery.dataTables.min.js",
-                "url": "https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js",
-                "path": "resources/DataTables-1.11.0/jquery.dataTables.min.js"
+                "url": "https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js",
+                "path": "resources/DataTables-1.11.1/jquery.dataTables.min.js"
             },
             {
                 "name": "dataTables.bootstrap5.min.css",
-                "url": "https://cdn.datatables.net/1.11.0/css/dataTables.bootstrap5.min.css",
-                "path": "resources/DataTables-1.11.0/dataTables.bootstrap5.min.css"
+                "url": "https://cdn.datatables.net/1.11.1/css/dataTables.bootstrap5.min.css",
+                "path": "resources/DataTables-1.11.1/dataTables.bootstrap5.min.css"
             }
         ]
     },

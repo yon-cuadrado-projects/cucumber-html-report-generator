@@ -50,6 +50,14 @@ class CustomCommands {
       return await this?.isDisplayed() ?? false;
     },
     true );
+
+    browser.addCommand( 'getRow', async function( this: WebdriverIO.Element | undefined, rowNumber: number ): Promise<WebdriverIO.Element | undefined> {
+      return this?.$( `./tbody/tr[${rowNumber}]` );
+    }, true );
+
+    browser.addCommand( 'getCell', async function( this: WebdriverIO.Element | undefined, cellNumber: number ): Promise<WebdriverIO.Element | undefined> {
+      return this?.$( `.//td[${cellNumber}]` );
+    }, true );
   }
 }
 

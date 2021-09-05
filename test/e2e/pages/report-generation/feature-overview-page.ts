@@ -29,4 +29,34 @@ export class FeatureOverviewPage extends BasePage{
     const propertyCellText = await propertyCell?.getText();
     return propertyCellText;
   }
+
+  public async getScenarioTitle( titleText: string ): Promise<WebdriverIO.Element|undefined>{
+    const title = await ( await this.getMainObject() )?.$( `.//h2[@test-id='scenario.header' and contains(.,'${titleText}')]//*[not(ancestor::tr)]` );
+    return title;
+  }
+
+  public async clickOnScenarioTitle( titleText: string ): Promise<void>{
+    ( await this.getScenarioTitle( titleText ) )?.click();
+  }
+
+  public async clickOnScenarioOutlineTableCell( rowNumber: number, columnNumber: number, scenarioName: string ): Promise<void>{
+    const row = await ( await this.getScenarioOutlineTable( scenarioName ) )?.getRow( rowNumber );
+    await ( await row?.getCell( columnNumber ) )?.click();
+  }
+
+  public async clickOnScenarioTitleInScenariosOutlineTableRow( title: string, rowNumber: string ): Promise<void>{
+    const row = await ( await this.getScenarioOutlineTable( title ) )?.getRow( parseInt( rowNumber,10 ) + 1 );
+    const scenarioTitle = await row?.$( ".//h2[contains(.,'Scenario Outline')]" );
+    await scenarioTitle?.click();
+  }
+
+  public async getStepTextInScenarioOutline( testName: string, rowNumber: string, stepNumber: string ): Promise<string|undefined>{
+    const row = await ( await this.getScenarioOutlineTable( testName ) )?.getRow( parseInt( rowNumber,10 ) + 1 );
+    return ( await row?.$( `.//tr[${stepNumber}]//span[@class='scenarioStepName']` ) )?.getText();
+  }
+
+  private async getScenarioOutlineTable( scenarioName: string ): Promise<WebdriverIO.Element | undefined>{
+    const table = await ( await this.getMainObject() )?.$( `.//h2[@test-id='scenario.header' and contains(.,'${scenarioName}')]//ancestor::div[contains(@class,'x_panel')]//*[@test-id='scenario-outline.scenarios']` );
+    return table;
+  }
 }
