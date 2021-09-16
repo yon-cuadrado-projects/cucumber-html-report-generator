@@ -52,7 +52,15 @@ export class FeatureOverviewPage extends BasePage{
 
   public async getStepTextInScenarioOutline( testName: string, rowNumber: string, stepNumber: string ): Promise<string|undefined>{
     const row = await ( await this.getScenarioOutlineTable( testName ) )?.getRow( parseInt( rowNumber,10 ) + 1 );
-    return ( await row?.$( `.//tr[${stepNumber}]//span[@class='scenarioStepName']` ) )?.getText();
+    const titleElement = await row?.$( `.//tr[${stepNumber}]//span[@class='scenarioStepName']` );
+    await browser.waitUntil(
+      async () => await titleElement?.getSize( 'height' ) !== 0 && titleElement?.getSize( 'height' ) !== undefined,
+      {
+        timeout: 2000,
+        timeoutMsg: 'expected height to be different than 0'
+      }
+    );
+    return titleElement?.getText();
   }
 
   private async getScenarioOutlineTable( scenarioName: string ): Promise<WebdriverIO.Element | undefined>{

@@ -2,17 +2,17 @@
     {
         "name": "twitter-bootstrap",
         "cdn": "cdnjs",
-        "version": "5.1.0",
+        "version": "5.1.1",
         "files": [
             {
                 "name": "css/bootstrap.min.css",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css",
-                "path": "resources/twitter-bootstrap-5.1.0/css/bootstrap.min.css"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/css/bootstrap.min.css",
+                "path": "resources/twitter-bootstrap-5.1.1/css/bootstrap.min.css"
             },
             {
                 "name": "js/bootstrap.min.js",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js",
-                "path": "resources/twitter-bootstrap-5.1.0/js/bootstrap.min.js"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/js/bootstrap.min.js",
+                "path": "resources/twitter-bootstrap-5.1.1/js/bootstrap.min.js"
             }
         ]
     },
@@ -142,22 +142,22 @@
     {
         "name": "DataTables",
         "cdn": "datatables",
-        "version": "1.11.1",
+        "version": "1.11.2",
         "files": [
             {
                 "name": "dataTables.bootstrap5.min.js",
-                "url": "https://cdn.datatables.net/1.11.1/js/dataTables.bootstrap5.min.js",
-                "path": "resources/DataTables-1.11.1/dataTables.bootstrap5.min.js"
+                "url": "https://cdn.datatables.net/1.11.2/js/dataTables.bootstrap5.min.js",
+                "path": "resources/DataTables-1.11.2/dataTables.bootstrap5.min.js"
             },
             {
                 "name": "jquery.dataTables.min.js",
-                "url": "https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js",
-                "path": "resources/DataTables-1.11.1/jquery.dataTables.min.js"
+                "url": "https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js",
+                "path": "resources/DataTables-1.11.2/jquery.dataTables.min.js"
             },
             {
                 "name": "dataTables.bootstrap5.min.css",
-                "url": "https://cdn.datatables.net/1.11.1/css/dataTables.bootstrap5.min.css",
-                "path": "resources/DataTables-1.11.1/dataTables.bootstrap5.min.css"
+                "url": "https://cdn.datatables.net/1.11.2/css/dataTables.bootstrap5.min.css",
+                "path": "resources/DataTables-1.11.2/dataTables.bootstrap5.min.css"
             }
         ]
     },

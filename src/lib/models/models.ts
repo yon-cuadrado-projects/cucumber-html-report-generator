@@ -1,3 +1,4 @@
+
 export * from './common/application-properties';
 export * from './common/resouces-properties';
 export * from './mongoose/mongoose-common-schemas';
@@ -12,7 +13,6 @@ export * from './report/results';
 export * from './report/scenario';
 export * from './report/status';
 export * from './report/step';
-export * from './common/application-properties';
 export * from './report/scenario-templates';
 export * from './report/scenario-outline';
 export * from './mongoose/stats';
