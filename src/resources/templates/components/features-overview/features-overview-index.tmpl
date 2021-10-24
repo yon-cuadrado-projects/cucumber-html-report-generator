@@ -12,26 +12,26 @@
 
     <%if(config.useCDN){%>
         <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/css/bootstrap.min.css" integrity="sha512-6KY5s6UI5J7SVYuZB4S/CZMyPylqyyNZco376NM2Z8Sb8OxEdp02e1jkKk/wZxIEmjQ6DRCEBhni+gpr9c4tvA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
         <!-- DataTables -->
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/dataTables.bootstrap5.min.css" integrity="sha512-zW//JOkolxm+lhiyh4aXndyG6cY6i6QGwjN+vrDrBhY/5Haxa9oRqTMBXHkF6SL+t3ocOa3PbiZkwpDjlqCyfg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.0/css/buttons.bootstrap5.css" integrity="sha512-VYo/2MnjtFMNfZY0WPDypnu1ioS4j7LkhrqcnDr1vxzAPOt604nhcWogB50+m/n2k7a/lQYkN9oqAhof0iFmAg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css" integrity="sha512-zW//JOkolxm+lhiyh4aXndyG6cY6i6QGwjN+vrDrBhY/5Haxa9oRqTMBXHkF6SL+t3ocOa3PbiZkwpDjlqCyfg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.bootstrap5.css" integrity="sha512-lskw1/tQpm0fzvEAWzOraaU4KZE4/eoDrdFg6d23wQ9GNib0FRh1m0idcp31VG2lYVvWDKZNI7kW5brP+83hpA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.css" integrity="sha512-+uhWySFDYLamtR3Tj/XOQyn1aVNrfbVvx5LrzDEgZZpsv0sRf3sgqleirl4D6B53RM9ph7vtsAlmg22osG925g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/scroller/2.0.5/css/scroller.bootstrap5.css" integrity="sha512-KVh2x7z4SFDsUD4L5oDnhoUcEHjUgG9uqQUgkYjNR2SMKh9Vof+kOJ7nYSGOYbzeuHP3JxFUVOSrwJEWdOuT/Q==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <% }else{ %>
         <!-- Bootstrap -->  
-        <link rel="stylesheet" type="text/css" href="resources/twitter-bootstrap-5.1.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="resources/twitter-bootstrap-5.1.3/css/bootstrap.min.css" />
                 
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="resources/font-awesome-5.15.4/css/all.min.css"/>
+        <link rel="stylesheet" href="resources/font-awesome-6.0.0-beta2/css/all.min.css"/>
 
         <!-- DataTables -->        
-        <link rel="stylesheet" type="text/css" href="resources/DataTables-1.11.2/dataTables.bootstrap5.min.css"/>
-        <link rel="stylesheet" type="text/css" href="resources/Buttons-2.0.0/buttons.bootstrap5.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/DataTables-1.11.3/dataTables.bootstrap5.min.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/Buttons-2.0.1/buttons.bootstrap5.css"/>
         <link rel="stylesheet" type="text/css" href="resources/Responsive-2.2.9/responsive.bootstrap5.css"/>
         <link rel="stylesheet" type="text/css" href="resources/Scroller-2.0.5/scroller.bootstrap5.css"/>
     <%}%>
@@ -75,31 +75,31 @@
 
         <%if(config.useCDN){%>
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-            <script type="text/javascript" src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js" integrity="sha512-0xVPLSx3SIPQ4g+QrUn1WrHHSkO4H3dChNQxLeId5CKzFnnT8Z6fjzXmDctXp6Dzznnidzjx8dzFKKvjhwQ3OA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/js/bootstrap.min.js" integrity="sha512-ewfXo9Gq53e1q1+WDTjaHAGZ8UvCWq0eXONhwDuIoaH8xz2r96uoAYaQCm1oQhnBfRXrvJztNXFsTloJfgbL5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-            <script type="text/javascript" src="https://cdn.datatables.net/1.11.2/js/dataTables.bootstrap5.min.js" integrity="sha512-nfoMMJ2SPcUdaoGdaRVA1XZpBVyDGhKQ/DCedW2k93MTRphPVXgaDoYV1M/AJQLCiw/cl2Nbf9pbISGqIEQRmQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-            <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.0/js/dataTables.buttons.js" integrity="sha512-al91yQxMrpdLQxx3jVM4kVaJV7jemo1O/SabRfU+dvsej46/tjFgsoue93rnyDK6AmbIDdca6B7sDXUwg6znIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-            <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.colVis.js" integrity="sha512-JCBUKi/s1TyQ/2dylx75Z/NTSemc0jzPmRTdYBlRaotauy5Ykx+mOZm7hTHMbFlmFR3xtiWZaf8CAZ56usMteA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-            <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.bootstrap5.js" integrity="sha512-QVpyqmJjdzsOHx4hJFlqgxn38oeEuag8GAO96MJEzWejbnWAaMcQHAYHhlHj2vOvOHUM/X2dljsXWBATR7evTw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js" integrity="sha512-v06MTH6dVBNBxtfuoTGYC0/UegZpDD/yWP7qJTdO7ysX619MpBZl+2hxg3n6tWKqAlsoKlhxQlVL9furav17vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-OvBgP9A2JBgiRad/mM36mkzXSXaJE9BEIENnVEmeZdITvwT09xnxLtT4twkCa8m/loMbPHsvPl0T8lRGVBwjlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js" integrity="sha512-nfoMMJ2SPcUdaoGdaRVA1XZpBVyDGhKQ/DCedW2k93MTRphPVXgaDoYV1M/AJQLCiw/cl2Nbf9pbISGqIEQRmQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.js" integrity="sha512-45/xGzeU0BUbTPwmNnCavPYwWmpVHBjoqEWsTAzBdLoOH/4l0cmtj2UcU27hc+PAgSEnM9vsn6QXGSKInXVF8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.colVis.js" integrity="sha512-JCBUKi/s1TyQ/2dylx75Z/NTSemc0jzPmRTdYBlRaotauy5Ykx+mOZm7hTHMbFlmFR3xtiWZaf8CAZ56usMteA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.bootstrap5.js" integrity="sha512-QVpyqmJjdzsOHx4hJFlqgxn38oeEuag8GAO96MJEzWejbnWAaMcQHAYHhlHj2vOvOHUM/X2dljsXWBATR7evTw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.js" integrity="sha512-AUlHc4SqtBqYIkzU34yYReDQUnNikULI8PwC4/7ID5ShU2oaOjfyhs2I/K8i0eBLmsAedg8v5/VAeKYKHGgFEw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             <script type="text/javascript" src="https://cdn.datatables.net/scroller/2.0.5/js/dataTables.scroller.js" integrity="sha512-r1Ub1qr6/BXhDdiMyHLswlbhejphEcxL7rD/ZZ6n4Cmp4A+j55UKTSpZ9l76WEXv571VF3ns53bfMjdC9kQBgQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
             <!-- Chart.js -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js" integrity="sha512-Wt1bJGtlnMtGP0dqNFH1xlkLBNpEodaiQ8ZN5JLA5wpc1sUlk/O5uuOMNgvzddzkpvZ9GLyYNa8w2s7rqiTk5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js" integrity="sha512-R/QOHLpV1Ggq22vfDAWYOaMd5RopHrJNMxi8/lJu8Oihwi4Ho4BRFeiMiCefn9rasajKjnx9/fTQ/xkWnkDACg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <% }else{ %>
             <script type="text/javascript" src="resources/jquery-3.6.0/jquery.js"></script>
-            <script type="text/javascript" src="resources/twitter-bootstrap-5.1.1/js/bootstrap.min.js"></script>
-            <script type="text/javascript" src="resources/DataTables-1.11.2/jquery.dataTables.min.js"></script>
-            <script type="text/javascript" src="resources/DataTables-1.11.2/dataTables.bootstrap5.min.js"></script>
-            <script type="text/javascript" src="resources/Buttons-2.0.0/dataTables.buttons.js"></script>
-            <script type="text/javascript" src="resources/Buttons-2.0.0/buttons.bootstrap5.js"></script>
-            <script type="text/javascript" src="resources/Buttons-2.0.0/buttons.colVis.js"></script>
+            <script type="text/javascript" src="resources/twitter-bootstrap-5.1.3/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="resources/DataTables-1.11.3/jquery.dataTables.min.js"></script>
+            <script type="text/javascript" src="resources/DataTables-1.11.3/dataTables.bootstrap5.min.js"></script>
+            <script type="text/javascript" src="resources/Buttons-2.0.1/dataTables.buttons.js"></script>
+            <script type="text/javascript" src="resources/Buttons-2.0.1/buttons.bootstrap5.js"></script>
+            <script type="text/javascript" src="resources/Buttons-2.0.1/buttons.colVis.js"></script>
             <script type="text/javascript" src="resources/Responsive-2.2.9/dataTables.responsive.js"></script>
             <script type="text/javascript" src="resources/Scroller-2.0.5/dataTables.scroller.js"></script>
 
             <!-- Chart.js -->
-            <script src="resources/Chart.js-3.5.1/chart.min.js"></script>
+            <script src="resources/Chart.js-3.6.0/chart.min.js"></script>
             <script src="resources/chartjs-plugin-datalabels-2.0.0/chartjs-plugin-datalabels.min.js"></script>
         <%}%>     
         <!-- Custom -->

@@ -35,7 +35,6 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "autofix",
         "eslint-plugin-import",
         "eslint-plugin-jsdoc",
         "eslint-plugin-prefer-arrow",
@@ -160,7 +159,6 @@ module.exports = {
         "@typescript-eslint/require-array-sort-compare": ["warn", {ignoreStringArrays: true} ],
         "@typescript-eslint/no-misused-promises": ["error",{"checksVoidReturn": false}],
         "@typescript-eslint/restrict-template-expressions": ["error", {allowBoolean: true }],
-        "autofix/sort-imports": "error",
         "brace-style": ["error","1tbs"],
         "object-curly-spacing": ["warn", "always"],
         "array-bracket-spacing": ["warn", "always"],
