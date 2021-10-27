@@ -108,9 +108,9 @@ const config: WebdriverIO.Config = {
     [
       'selenium-standalone',
       {
-        logs: './.tmp/',        
+        logPath: './.tmp/',
         installArgs: {
-          version: '3.141.59',
+          version: '4.0.0',
           drivers: {
             chrome: {
               version: 'latest',
@@ -125,12 +125,12 @@ const config: WebdriverIO.Config = {
             chromiumedge: {
               version: 'latest',
               arch: process.arch,
-              baseURL: 'http://selenium-release.storage.googleapis.com/',
+              baseURL: 'https://msedgedriver.azureedge.net/',
             },
           },
         },
         args: {
-          version: '3.141.59',
+          version: '4.0.0',
           drivers: {
             chrome: {
               version: 'latest',
@@ -145,7 +145,7 @@ const config: WebdriverIO.Config = {
             chromiumedge: {
               version: 'latest',
               arch: process.arch,
-              baseURL: 'https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver',
+              baseURL: 'https://msedgedriver.azureedge.net/',
             },
           },
         },
