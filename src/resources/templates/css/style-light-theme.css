@@ -54,7 +54,12 @@
     background: #3498DB !important;
 }
 
+.page-background {
+    background-color: transparent !important;
+}
+
 body {
+    background: transparent;
     color: #73879C;
     font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
     font-size: 13px;
@@ -64,6 +69,7 @@ body {
 
 .features-overview-report {
     color: #73879C;
+    background: transparent;
     font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
     font-size: 13px;
     font-weight: 400;
