@@ -1,4 +1,5 @@
 <script type="text/javascript">
+test=1;
 $(document).ready(function () {    
     $(".graph-title").on("click",function(){
         $(".graph-title li a i").toggleClass("fa-chevron-down");
@@ -27,7 +28,7 @@ $(document).ready(function () {
             if(<%=suite.results.scenarios.pending === 0 %>){
                 this.api().column( '.scenarios-pending' ).visible( false );
             }
-            if(<%=suite.haveFeaturesMetadata === true%>){
+            if(<%=suite.haveFeaturesMetadata === false%>){
                 this.api().column( '.feature-metadata' ).visible( false );
             }
             if(<%=suite.results.scenarios.skipped === 0%>) {
