@@ -36,6 +36,10 @@ export class SuiteFactory {
     this.suite.results.overview.result = [ ...new Map( this.suite.results.overview.result.map( item => [ item.status, item ] ) ).values() ];
     this.suite.results.overview.resultStatusesJoined = this.suite.results.overview.result.map( ( value ) => value.status.toString() ).sort().join( ';' );
 
+    if( this.suite.features.some( feature => feature.metadata?.length ) ){
+      this.suite.haveFeaturesMetadata = true;
+    }
+
     if ( this.userProperties.saveEnrichedJSON ) {
       await this.saveEnrichedJson();
     }
@@ -83,6 +87,7 @@ export class SuiteFactory {
     suite.metadata = <Models.Metadata[]>[];
     suite.metadataTitle = this.userProperties.reportMetadataTitle;
     suite.reportTitle = this.userProperties.reportTitle;
+    suite.haveFeaturesMetadata = false;
     return suite;
   }
 

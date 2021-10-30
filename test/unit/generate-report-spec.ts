@@ -79,7 +79,7 @@ describe( 'GenerateReport.ts', () => {
         theme: 'Light',
         useCDN: true,
         saveEnrichedJSON: false,
-        jsonDir: `${path.resolve( './' )}/test/unit/data/cucumber-report-jsons`
+        jsonDir: `${path.resolve( './' )}/test/unit/data/no-metadata-jsons`
       };
 
       // When
@@ -102,7 +102,7 @@ describe( 'GenerateReport.ts', () => {
       const reportPath = await getReportPathInTempFolder();
       expect( ( path.join( reportPath, 'index.html' ) ) ).to.be.a.file();
     } );
-    it( 'should call to inserReport api', async () => {
+    it( 'should call to insertReport api', async () => {
       // Given
       const options: Models.ReportGeneration = {
         disableLog: true,

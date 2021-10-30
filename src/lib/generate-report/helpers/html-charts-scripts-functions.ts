@@ -33,7 +33,7 @@ export class HtmlScriptsFunctions{
       },
       datalabels: {      
         color: '#ffffff',
-        formatter: ( value: string ): string | null => value ? `${value  }` : ''
+        formatter: ( value: string ): string | null => value
       }
     },
   };

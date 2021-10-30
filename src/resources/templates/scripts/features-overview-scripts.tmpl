@@ -27,7 +27,7 @@ $(document).ready(function () {
             if(<%=suite.results.scenarios.pending === 0 %>){
                 this.api().column( '.scenarios-pending' ).visible( false );
             }
-            if(<%=Object.entries(suite.metadata).length === 0%>){
+            if(<%=suite.haveFeaturesMetadata === true%>){
                 this.api().column( '.feature-metadata' ).visible( false );
             }
             if(<%=suite.results.scenarios.skipped === 0%>) {

@@ -1,6 +1,6 @@
 {
   "name": "cucumber-html-report-generator",
-  "version": "0.0.9",
+  "version": "0.0.11",
   "description": "Generate beautifull cucumberjs reports for multiple instances (browsers / devices)",
   "keywords": [
     "cucumber",
@@ -61,7 +61,7 @@
     "@types/sinon": "10.0.6",
     "@types/sinon-chai": "3.2.5",
     "@types/ssri": "7.1.1",
-    "@types/yargs": "17.0.4",
+    "@types/yargs": "17.0.5",
     "@typescript-eslint/eslint-plugin": "5.2.0",
     "@typescript-eslint/eslint-plugin-tslint": "5.2.0",
     "@typescript-eslint/parser": "5.2.0",

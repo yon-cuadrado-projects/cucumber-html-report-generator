@@ -9,4 +9,5 @@ export interface ExtendedReport {
   metadata?: Metadata[];
   metadataTitle?: string;
   reportTitle?: string;
+  haveFeaturesMetadata: boolean;
 }
