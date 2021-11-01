@@ -1,6 +1,6 @@
 {
   "name": "cucumber-html-report-generator",
-  "version": "0.0.13",
+  "version": "0.0.15",
   "description": "Generate beautifull cucumberjs reports for multiple instances (browsers / devices)",
   "keywords": [
     "cucumber",
@@ -33,7 +33,7 @@
   },
   "author": "Yon Cuadrado",
   "dependencies": {
-    "@types/chartjs": "0.0.31",
+    "@types/chart.js": "^2.9.34",
     "axios": "0.24.0",
     "chart.js": "3.6.0",
     "chartjs-plugin-datalabels": "2.0.0",
