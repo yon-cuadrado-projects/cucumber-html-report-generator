@@ -8,6 +8,8 @@ This project is based in the project https://www.npmjs.com/package/multiple-cucu
 As with the original project html-cucumber-report-generator is a reporting module for Cucumber to parse the JSON output to a beautiful report. The differences between the previous project and this one are the following ones:
 - written with typescript
 - option to display Outline scenarios in a grouped way
+  
+ ![Outline Scenarios](./docs/gifs/scenarios-outline.gif)
 - Option to store the reports in a mongodb database and access them from a web page
 - Dark and light themes
 
