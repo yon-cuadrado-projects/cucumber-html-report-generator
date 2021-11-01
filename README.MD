@@ -2,7 +2,7 @@ html-cucumber-report-generator
 ===============================
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
-[![NPM](https://nodei.co/npm/html-cucumber-report-generator.png)](https://nodei.co/npm/html-cucumber-report-generator/)
+[![NPM](https://nodei.co/npm/cucumber-html-report-generator.png)](https://nodei.co/npm/cucumber-html-report-generator/)
 
 This project is based in the project https://www.npmjs.com/package/multiple-cucumber-html-reporter
 As with the original project html-cucumber-report-generator is a reporting module for Cucumber to parse the JSON output to a beautiful report. The differences between the previous project and this one are the following ones:

@@ -16,7 +16,7 @@ class ApplicationPropertiesValidation {
   public initializeReportGenerationParameters ( reportGenerationParameters: Models.ReportGeneration ): Models.ReportGeneration {
     reportGenerationParameters.mongooseServerUrl = reportGenerationParameters.mongooseServerUrl ?? 'http://localhost:3000';
     reportGenerationParameters.reportTitle = reportGenerationParameters.reportTitle ?? 'Cucumber HTML Report Generator';
-
+    reportGenerationParameters.reportPath = CommonFunctions.initializePath( reportGenerationParameters.reportPath );
     return reportGenerationParameters;
   }
 
