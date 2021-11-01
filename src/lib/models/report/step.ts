@@ -1,11 +1,11 @@
-import type * as mongoose from 'mongoose';
+import type { ObjectID } from 'bson';
 import type { StepResultsOverview } from './results';
 
 export interface Step {
   id: string | null;
   _id?: any;
   arguments?: Argument[] | Rows[];
-  scenarioId?: mongoose.Types.ObjectId;
+  scenarioId?: ObjectID;
   argumentsCells: string;
   result: StepResultsOverview;
   keyword: string;

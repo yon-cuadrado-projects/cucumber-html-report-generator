@@ -1,11 +1,10 @@
 import type { Scenario, Tag } from './scenario';
 import type { FeatureResults } from './results';
-import type Mongoose from 'mongoose';
-import type { ObjectId } from 'mongodb';
+import type { ObjectID } from 'bson';
 
 export interface Feature {
   _id: any;
-  ObjectId?: ObjectId;
+  ObjectId?: ObjectID;
   description?: string;
   id?: string;
   keyword: string;
@@ -13,7 +12,7 @@ export interface Feature {
   metadata?: Metadata[];
   metadataTitle?: string;
   name: string;
-  reportId?: Mongoose.Types.ObjectId;
+  reportId?: ObjectID;
   results: FeatureResults;
   tags: Tag[];
   uri: string;

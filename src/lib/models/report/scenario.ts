@@ -1,6 +1,6 @@
 import * as lodash from 'lodash';
-import type * as mongoose from 'mongoose';
 import type { BeforeOrAfterResults, ScenarioResults } from './results';
+import type { ObjectID } from 'bson';
 import type { Step } from './step';
 import { overviewInitializer } from './results';
 
@@ -15,7 +15,7 @@ export interface Tag {
 export interface Scenario {
   _id: any;
   id: string;
-  featureId?: mongoose.Types.ObjectId;
+  featureId?: ObjectID;
   keyword: string;
   line?: number;
   name: string;
@@ -27,8 +27,8 @@ export interface Scenario {
   results: ScenarioResults;
   isFirstScenarioOutline: boolean;
   examples?: string[][];
-  reportId?: mongoose.Types.ObjectId;
-  stepsId?: mongoose.Types.ObjectId;
+  reportId?: ObjectID;
+  stepsId?: ObjectID;
 }
 
 export interface BeforeOrAfter {
