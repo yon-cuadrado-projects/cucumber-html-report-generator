@@ -9,7 +9,6 @@
         // "noFallthroughCasesInSwitch": true,
         // "allowUnreachableCode": false,
         // "allowUnusedLabels": false,
-   
         // "forceConsistentCasingInFileNames": true,
         // "noUnusedLocals": true,        
         // "noImplicitAny" : true,
@@ -24,7 +23,6 @@
         "sourceMap": true,
         "target": "es2020",
         "module": "commonjs",
-        // "removeComments": true,
         "noImplicitAny": true,
         "strictPropertyInitialization": true,
         "strictNullChecks": true,

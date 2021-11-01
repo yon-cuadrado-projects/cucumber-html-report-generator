@@ -26,18 +26,18 @@ export const downloadFile = async ( url: string, filePath: string ): Promise<boo
     } );
   } );
 } ).catch( err => {
-    if((<Error>err ).message.includes("Download error!")){
-      console.log(`error downloading file ${url}`)
-    } else {
-      console.log( ( <Error>err ).message ); 
-    }
-    return false;
+  if( ( <Error>err ).message.includes( 'Download error!' ) ){
+    console.log( `error downloading file ${url}` );
+  } else {
+    console.log( ( <Error>err ).message ); 
+  }
+  return false;
 } );
   
 export const downloadResource = async ( destinationPath: string, url: string ): Promise<boolean> =>{
   if( ! fse.existsSync( destinationPath ) ){
     fse.mkdirSync( path.dirname( destinationPath ), { recursive: true } );  
-      const downloadResult = await downloadFile( url, destinationPath );
+    const downloadResult = await downloadFile( url, destinationPath );
     return downloadResult;
   }
   return false;
@@ -98,7 +98,7 @@ export const getDatatablesResourceInformation = async ( dependency: Models.Resou
         sriValue: fileDownloaded ? sri.fromData( fse.readFileSync( destinationPath ) ).toString() : '',
         url
       };
-      if(fileDownloaded){
+      if( fileDownloaded ){
         filePropertiesArray.push( fileProperties );
       }
     } ) );
@@ -112,7 +112,7 @@ export const getDatatablesResourceInformation = async ( dependency: Models.Resou
   };
 };
   
-export const  updateResourcesForOneDependency = async( resourceProperties: Models.ResourceProperties, resourcesFolder: string, templateFiles: string[] ): Promise<boolean> =>{
+export const updateResourcesForOneDependency = async( resourceProperties: Models.ResourceProperties, resourcesFolder: string, templateFiles: string[] ): Promise<boolean> =>{
   const resourceInformation = resourceProperties.cdn === 'cdnjs' ?
     await getCdnjsResourceInformation( resourceProperties, resourcesFolder ) : 
     await getDatatablesResourceInformation( resourceProperties, resourcesFolder );
