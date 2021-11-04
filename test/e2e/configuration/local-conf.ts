@@ -81,6 +81,7 @@ if ( typeof argv.generateSteps !== 'undefined' ) {
     snippets: false,
     ignoreUndefinedDefinitions: false,
     require: [ './test/e2e/step-definitions/*.ts' ], // <string[]> (file/dir) require files before executing features
+    retry: 0
   };
 }
 
