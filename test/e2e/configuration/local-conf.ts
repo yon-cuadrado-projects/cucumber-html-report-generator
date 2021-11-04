@@ -27,7 +27,8 @@ config.cucumberOpts = {
   tagsInTitle: true,
   timeout: 500000,
   ignoreUndefinedDefinitions: false,
-  failAmbiguousDefinitions: true
+  failAmbiguousDefinitions: true,
+  retry: 0
 };
 
 config.specs = [ 'test/e2e/features/*.feature' ];
