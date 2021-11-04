@@ -27,7 +27,7 @@ When( /^The user opens the report in the '(.*)' folder$/, async ( folder: string
 
 Then( /^The browser have the errors '(.*)' in the console$/, ( consoleErrors: string ) =>{
   const errors = commonPage.getConsoleErrors();
-  const expectedConsoleErrors = typeof consoleErrors === 'undefined' ? [] : consoleErrors.split( ';' );
+  const expectedConsoleErrors = consoleErrors === '' ? [] : consoleErrors.split( ';' );
   errors?.should.be.deep.equal( expectedConsoleErrors );
 } );
 
