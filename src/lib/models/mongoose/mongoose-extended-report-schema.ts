@@ -44,10 +44,10 @@ export const reportResultsSchema = new Schema( {
 
 export const reportsSchema: Schema<MExtendedReport, Model<MExtendedReport>> = new Schema( {
 
-  metadata: [ { required: true, type: CommonSchemas.metadataSchema } ],
-  metadataTitle: { required: true, type: String  } ,
-  reportTitle: { required: true, type: String  },
-  results: { required:true, type: reportResultsSchema },
+  metadata: [ { required: false, type: CommonSchemas.metadataSchema } ],
+  metadataTitle: { required: false, type: String  } ,
+  reportTitle: { required: false, type: String  },
+  results: { required: true, type: reportResultsSchema },
 }, {
   id: false,
   toJSON: {

@@ -110,7 +110,6 @@ describe( 'GenerateReport.ts', () => {
         openReportInBrowser: false,
         showExecutionTime: false,
         reportTitle: 'New report',
-        // overrideStyle: `${path.resolve( './' )}/src/resources/templates/css/style-light-theme.css`,
         theme: 'Light',
         useCDN: true,
         saveEnrichedJSON: false,
