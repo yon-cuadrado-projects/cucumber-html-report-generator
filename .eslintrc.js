@@ -197,6 +197,7 @@ module.exports = {
         "no-underscore-dangle": ["off", {"allow": ["_id", "_model"]}],
         "max-statements": ["error", 21],
         "camelcase": ["error", {allow: ["mime_type", "not_defined", "error_message"]}],
+        "@typescript-eslint/no-floating-promises": ["error", { "ignoreVoid": true }],
         "@typescript-eslint/no-non-null-assertion": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/strict-boolean-expressions": "off",
@@ -272,6 +273,12 @@ module.exports = {
                 "test/e2e/custom-commands/custom-commands.ts"
             ],
             "rules": { "id-length": ["off"]}
+        },
+        {
+            "files":[
+                "test/e2e/pages/**/*.ts"
+            ],
+            "rules": {"@typescript-eslint/no-floating-promises": ["off"]}
         }
     ]
 };

@@ -10,7 +10,6 @@ import moment from 'moment';
 import os from 'os';
 
 
-
 export const streamToArrayAsync = async ( stream: Readable ): Promise<CucumberMessage[]> => new Promise( ( resolve, reject ) => {
   const items = <CucumberMessage[]>[];
   stream.on( 'data',  ( item: CucumberMessage ) =>{

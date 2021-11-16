@@ -8,7 +8,7 @@ export interface Feature {
   description?: string;
   id?: string;
   keyword: string;
-  line: number;
+  line?: number;
   metadata?: Metadata[];
   metadataTitle?: string;
   name: string;

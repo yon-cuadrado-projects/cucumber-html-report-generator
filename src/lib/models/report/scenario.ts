@@ -19,6 +19,7 @@ export interface Scenario {
   keyword: string;
   line?: number;
   name: string;
+  description?: string;
   steps?: Step[] | null;
   before?: BeforeOrAfter;
   after?: BeforeOrAfter;

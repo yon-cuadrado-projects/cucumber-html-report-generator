@@ -54,6 +54,7 @@ export const scenarioSchema: Schema<MScenario, Model<MScenario>> = new Schema( {
   keyword: { required: false,type: String },
   line: { required: false, type: Number },
   name: { required: false,type: String },
+  description: { required: false,type: String },
   reportId: Schema.Types.ObjectId,
   results: scenarioResultsSchema,
   stepsId: Schema.Types.ObjectId,

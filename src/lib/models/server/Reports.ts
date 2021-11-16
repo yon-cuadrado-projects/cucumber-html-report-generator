@@ -6,4 +6,5 @@ export interface Reports{
   result: Models.Result[];
   executionDateTime: string;
   _id: ObjectID;
+  resultsJoined: string;
 }
