@@ -1,12 +1,6 @@
 
 export * from './common/application-properties';
 export * from './common/resouces-properties';
-export * from './mongoose/mongoose-common-schemas';
-export * from './mongoose/mongoose-extended-report-schema';
-export * from './mongoose/mongoose-feature-schemas';
-export * from './mongoose/mongoose-scenario-schemas';
-export * from './mongoose/mongoose-step-schemas';
-export * from './mongoose/mongoose-models';
 export * from './report/extended-report';
 export * from './report/feature';
 export * from './report/results';
@@ -15,6 +9,5 @@ export * from './report/status';
 export * from './report/step';
 export * from './report/scenario-templates';
 export * from './report/scenario-outline';
-export * from './mongoose/stats';
 export * from './server/response';
 export * from './server/Reports';
