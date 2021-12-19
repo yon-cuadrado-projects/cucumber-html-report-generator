@@ -19,12 +19,12 @@
     {
         "name": "Chart.js",
         "cdn": "cdnjs",
-        "version": "3.6.0",
+        "version": "3.6.2",
         "files": [
             {
                 "name": "chart.min.js",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js",
-                "path": "resources/Chart.js-3.6.0/chart.min.js"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.min.js",
+                "path": "resources/Chart.js-3.6.2/chart.min.js"
             }
         ]
     },
@@ -119,27 +119,27 @@
     {
         "name": "Buttons",
         "cdn": "datatables",
-        "version": "2.0.1",
+        "version": "2.1.1",
         "files": [
             {
                 "name": "dataTables.buttons.js",
-                "url": "https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.js",
-                "path": "resources/buttons-2.0.1/dataTables.buttons.js"
+                "url": "https://cdn.datatables.net/buttons/2.1.1/js/dataTables.buttons.js",
+                "path": "resources/buttons-2.1.1/dataTables.buttons.js"
             },
             {
                 "name": "buttons.bootstrap5.js",
-                "url": "https://cdn.datatables.net/buttons/2.0.1/js/buttons.bootstrap5.js",
-                "path": "resources/buttons-2.0.1/dataTables.bootstrap5.min.js"
+                "url": "https://cdn.datatables.net/buttons/2.1.1/js/buttons.bootstrap5.js",
+                "path": "resources/buttons-2.1.1/dataTables.bootstrap5.min.js"
             },
             {
                 "name": "buttons.colVis.js",
-                "url": "https://cdn.datatables.net/buttons/2.0.1/js/buttons.colVis.js",
-                "path": "resources/buttons-2.0.1/buttons.colVis.js"
+                "url": "https://cdn.datatables.net/buttons/2.1.1/js/buttons.colVis.js",
+                "path": "resources/buttons-2.1.1/buttons.colVis.js"
             },
             {
                 "name": "buttons.bootstrap5.css",
-                "url": "https://cdn.datatables.net/buttons/2.0.1/css/buttons.bootstrap5.css",
-                "path": "resources/buttons-2.0.1/buttons.bootstrap5.css"
+                "url": "https://cdn.datatables.net/buttons/2.1.1/css/buttons.bootstrap5.css",
+                "path": "resources/buttons-2.1.1/buttons.bootstrap5.css"
             }
         ]
     },
