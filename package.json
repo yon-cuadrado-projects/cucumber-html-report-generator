@@ -26,9 +26,11 @@
     "update-report-resources": "npx ts-node -r tsconfig-paths/register -r ts-node/register/transpile-only ./src/scripts/update-report-resources.ts",
     "update-app": "npm run-script update-package-json-dependencies && npm run-script update-report-resources",
     "e2e-tests": "wdio run ./test/e2e/configuration/local-conf.js --spec \"test/e2e/features/report-generation.feature\" --browser=chrome --maxInstances=1",
-    "release:major": "shelljs-release major",
-    "release:minor": "shelljs-release minor",
-    "release:patch": "shelljs-release patch"
+    "release": "release-it --github.release",
+    "release.ci": "npm run release -- --ci --npm.skipChecks --no-git.requireCleanWorkingDir",
+    "release.patch": "npm run release -- patch",
+    "release.minor": "npm run release -- minor",
+    "release.major": "npm run release -- major"
   },
   "repository": {
     "type": "git",
@@ -100,6 +102,7 @@
     "nyc": "15.1.0",
     "prettier": "2.5.1",
     "reflect-metadata": "0.1.13",
+    "release-it": "^14.11.8",
     "rimraf": "3.0.2",
     "semver": "7.3.5",
     "shelljs-release": "^0.5.0",
