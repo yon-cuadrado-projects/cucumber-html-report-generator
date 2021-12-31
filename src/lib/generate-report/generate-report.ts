@@ -13,7 +13,7 @@ export const generateHtmlReport = async ( reportConfiguration: Models.ReportDisp
 };
 
 // eslint-disable-next-line max-len
-export const insertReportIntoDatabase = async ( jsonReport: Models.ExtendedReport, userProperties: Models.ReportGeneration ): Promise<string | null> =>( ( await axios.post<Models.Response>( `${userProperties.mongooseServerUrl!}/insertReport`, jsonReport ) ) ).data.reportId;
+export const insertReportIntoDatabase = async ( jsonReport: Models.ExtendedReport, userProperties: Models.ReportGeneration ): Promise<string | null> =>( ( await axios.post<Models.Response>( `${userProperties.mongooseServerUrl!}/insertReport`, jsonReport,{ maxBodyLength: Infinity, maxContentLength: Infinity } ) ) ).data.reportId;
 
 export const generate = async ( userProperties: Models.ReportGeneration | null ): Promise<string | null> =>{
   const checkedUserProperties = userPropertiesValidation.checkReportGenerationParameters( userProperties );
