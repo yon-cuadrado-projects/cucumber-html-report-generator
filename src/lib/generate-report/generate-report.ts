@@ -1,4 +1,3 @@
-
 import type * as Models from '../models/models';
 import { CollectFeatureFiles } from '../feature-collector/feature-collector';
 import { CollectJsons } from '../collect-jsons/collect-jsons';
@@ -12,8 +11,23 @@ export const generateHtmlReport = async ( reportConfiguration: Models.ReportDisp
   await new GenerateHtml( jsonReport, reportConfigurationInitialized ).createHtmlPages();
 };
 
-// eslint-disable-next-line max-len
-export const insertReportIntoDatabase = async ( jsonReport: Models.ExtendedReport, userProperties: Models.ReportGeneration ): Promise<string | null> =>( ( await axios.post<Models.Response>( `${userProperties.mongooseServerUrl!}/insertReport`, jsonReport,{ maxBodyLength: Infinity, maxContentLength: Infinity } ) ) ).data.reportId;
+export const insertReportIntoDatabase = async ( jsonReport: Models.ExtendedReport, userProperties: Models.ReportGeneration ): Promise<string | null> =>{
+  return ( await axios.request<Models.Response>( {
+    transitional:{
+      silentJSONParsing: false
+    },
+    responseType: 'json',
+    method: 'POST',
+    url: `${userProperties.mongooseServerUrl!}/insertReport`,
+    data: jsonReport,
+    maxRedirects: 0,
+    maxBodyLength: Infinity, 
+    maxContentLength: Infinity,
+    headers:{
+      'content-type': 'application/json'
+    }
+  } ) ).data.reportId;
+};
 
 export const generate = async ( userProperties: Models.ReportGeneration | null ): Promise<string | null> =>{
   const checkedUserProperties = userPropertiesValidation.checkReportGenerationParameters( userProperties );
@@ -27,4 +41,3 @@ export const generate = async ( userProperties: Models.ReportGeneration | null )
   await generateHtmlReport( checkedUserProperties, jsonReport );
   return reportId;
 };
-

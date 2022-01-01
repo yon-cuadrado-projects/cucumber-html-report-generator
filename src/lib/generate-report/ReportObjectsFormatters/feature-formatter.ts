@@ -95,6 +95,7 @@ export class FeatureFormatter {
     this.jsonFeature.tags = typeof this.jsonFeature.tags === 'undefined' ? [] : this.jsonFeature.tags;
     this.jsonFeature.metadataTitle = this.jsonFeature.metadataTitle ?? 'Custom Data';
     this.jsonFeature.metadata = CommonFunctions.isMetadata( this.jsonFeature.metadata ) ? this.jsonFeature.metadata : [];
+    this.jsonFeature.line = this.jsonFeature.line ?? 0;
     this.joinOutlineScenarios();
   }
 
