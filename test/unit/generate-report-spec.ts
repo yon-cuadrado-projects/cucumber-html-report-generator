@@ -119,7 +119,7 @@ describe( 'GenerateReport.ts', () => {
       };
 
       // When
-      const spy = sinon.stub( axios, 'post' ).resolves( Promise.resolve( { data: { reportId: '609c40e971b5b53a1965cec1' } } ) );
+      const spy = sinon.stub( axios, 'request' ).resolves( Promise.resolve( { data: { reportId: '609c40e971b5b53a1965cec1' } } ) );
       await generateReport.generate( options );
 
       // Then
