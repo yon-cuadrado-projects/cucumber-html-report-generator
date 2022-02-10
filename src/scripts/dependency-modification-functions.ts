@@ -118,7 +118,7 @@ export const updateResourcesForOneDependency = async ( resourceProperties: Model
   const resourceInformation = resourceProperties.cdn === 'cdnjs' ?
     await getCdnjsResourceInformation( resourceProperties, resourcesFolder ) :
     await getDatatablesResourceInformation( resourceProperties, resourcesFolder );
-  if ( semver.gt( resourceInformation.version, resourceProperties.version ) ) {
+  if ( resourceInformation.version && semver.gt( resourceInformation.version, resourceProperties.version ) ) {
     await Promise.all( templateFiles.map( async templateFile => {
       let templateFileContent = await fse.readFile( templateFile, { encoding: 'utf8' } );
       if ( resourceInformation.files.length ) {

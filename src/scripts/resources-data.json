@@ -43,42 +43,42 @@
     {
         "name": "font-awesome",
         "cdn": "cdnjs",
-        "version": "6.0.0-beta3",
+        "version": "6.0.0",
         "files": [
             {
                 "name": "css/all.min.css",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css",
-                "path": "resources/font-awesome-6.0.0-beta3/css/all.min.css"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css",
+                "path": "resources/font-awesome-6.0.0/css/all.min.css"
             },
             {
                 "name": "webfonts/fa-brands-400.ttf",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-brands-400.ttf",
-                "path": "resources/font-awesome-6.0.0-beta3/css/webfonts/fa-brands-400.ttf"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.ttf",
+                "path": "resources/font-awesome-6.0.0/css/webfonts/fa-brands-400.ttf"
             },
             {
                 "name": "webfonts/fa-brands-400.woff2",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-brands-400.woff2",
-                "path": "resources/font-awesome-6.0.0-beta3/css/webfonts/fa-brands-400.woff2"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2",
+                "path": "resources/font-awesome-6.0.0/css/webfonts/fa-brands-400.woff2"
             },
             {
                 "name": "webfonts/fa-regular-400.ttf",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-regular-400.ttf",
-                "path": "resources/font-awesome-6.0.0-beta3/css/webfonts/fa-regular-400.ttf"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-regular-400.ttf",
+                "path": "resources/font-awesome-6.0.0/css/webfonts/fa-regular-400.ttf"
             },
             {
                 "name": "webfonts/fa-regular-400.woff2",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-regular-400.woff2",
-                "path": "resources/font-awesome-6.0.0-beta3/css/webfonts/fa-regular-400.woff2"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-regular-400.woff2",
+                "path": "resources/font-awesome-6.0.0/css/webfonts/fa-regular-400.woff2"
             },
             {
                 "name": "webfonts/fa-solid-900.ttf",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-solid-900.ttf",
-                "path": "resources/font-awesome-6.0.0-beta3/css/webfonts/fa-solid-900.ttf"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.ttf",
+                "path": "resources/font-awesome-6.0.0/css/webfonts/fa-solid-900.ttf"
             },
             {
                 "name": "webfonts/fa-solid-900.woff2",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-solid-900.woff2",
-                "path": "resources/font-awesome-6.0.0-beta3/css/webfonts/fa-solid-900.woff2"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2",
+                "path": "resources/font-awesome-6.0.0/css/webfonts/fa-solid-900.woff2"
             }
         ]
     },
