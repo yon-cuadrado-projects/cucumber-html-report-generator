@@ -28,9 +28,9 @@
     "e2e-tests": "wdio run ./test/e2e/configuration/local-conf.js --spec \"test/e2e/features/report-generation.feature\" --browser=chrome --maxInstances=1",
     "release": "release-it --github.release",
     "release.ci": "npm run release -- --ci --npm.skipChecks --no-git.requireCleanWorkingDir",
-    "release.patch": "npm run release -- patch",
-    "release.minor": "npm run release -- minor",
-    "release.major": "npm run release -- major",
+    "release.patch": "npm run release -- patch --ci",
+    "release.minor": "npm run release -- minor --ci",
+    "release.major": "npm run release -- major --ci",
     "prepare": "husky install"
   },
   "repository": {
