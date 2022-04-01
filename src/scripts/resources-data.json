@@ -43,42 +43,42 @@
     {
         "name": "font-awesome",
         "cdn": "cdnjs",
-        "version": "6.0.0",
+        "version": "6.1.1",
         "files": [
             {
                 "name": "css/all.min.css",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css",
-                "path": "resources/font-awesome-6.0.0/css/all.min.css"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css",
+                "path": "resources/font-awesome-6.1.1/css/all.min.css"
             },
             {
                 "name": "webfonts/fa-brands-400.ttf",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.ttf",
-                "path": "resources/font-awesome-6.0.0/css/webfonts/fa-brands-400.ttf"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/webfonts/fa-brands-400.ttf",
+                "path": "resources/font-awesome-6.1.1/css/webfonts/fa-brands-400.ttf"
             },
             {
                 "name": "webfonts/fa-brands-400.woff2",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2",
-                "path": "resources/font-awesome-6.0.0/css/webfonts/fa-brands-400.woff2"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/webfonts/fa-brands-400.woff2",
+                "path": "resources/font-awesome-6.1.1/css/webfonts/fa-brands-400.woff2"
             },
             {
                 "name": "webfonts/fa-regular-400.ttf",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-regular-400.ttf",
-                "path": "resources/font-awesome-6.0.0/css/webfonts/fa-regular-400.ttf"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/webfonts/fa-regular-400.ttf",
+                "path": "resources/font-awesome-6.1.1/css/webfonts/fa-regular-400.ttf"
             },
             {
                 "name": "webfonts/fa-regular-400.woff2",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-regular-400.woff2",
-                "path": "resources/font-awesome-6.0.0/css/webfonts/fa-regular-400.woff2"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/webfonts/fa-regular-400.woff2",
+                "path": "resources/font-awesome-6.1.1/css/webfonts/fa-regular-400.woff2"
             },
             {
                 "name": "webfonts/fa-solid-900.ttf",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.ttf",
-                "path": "resources/font-awesome-6.0.0/css/webfonts/fa-solid-900.ttf"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/webfonts/fa-solid-900.ttf",
+                "path": "resources/font-awesome-6.1.1/css/webfonts/fa-solid-900.ttf"
             },
             {
                 "name": "webfonts/fa-solid-900.woff2",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2",
-                "path": "resources/font-awesome-6.0.0/css/webfonts/fa-solid-900.woff2"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/webfonts/fa-solid-900.woff2",
+                "path": "resources/font-awesome-6.1.1/css/webfonts/fa-solid-900.woff2"
             }
         ]
     },
@@ -97,22 +97,22 @@
     {
         "name": "DataTables",
         "cdn": "datatables",
-        "version": "1.11.4",
+        "version": "1.11.5",
         "files": [
             {
                 "name": "dataTables.bootstrap5.min.js",
-                "url": "https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js",
-                "path": "resources/DataTables-1.11.4/dataTables.bootstrap5.min.js"
+                "url": "https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js",
+                "path": "resources/DataTables-1.11.5/dataTables.bootstrap5.min.js"
             },
             {
                 "name": "jquery.dataTables.min.js",
-                "url": "https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js",
-                "path": "resources/DataTables-1.11.4/jquery.dataTables.min.js"
+                "url": "https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js",
+                "path": "resources/DataTables-1.11.5/jquery.dataTables.min.js"
             },
             {
                 "name": "dataTables.bootstrap5.min.css",
-                "url": "https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css",
-                "path": "resources/DataTables-1.11.4/dataTables.bootstrap5.min.css"
+                "url": "https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css",
+                "path": "resources/DataTables-1.11.5/dataTables.bootstrap5.min.css"
             }
         ]
     },

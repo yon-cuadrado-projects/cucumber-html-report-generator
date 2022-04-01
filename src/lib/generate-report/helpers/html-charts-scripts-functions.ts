@@ -1,4 +1,4 @@
-import type { ChartData , ChartOptions , ChartTypeRegistry, Plugin } from 'chart.js';
+import type { ChartData , ChartOptions, Plugin } from 'chart.js';
 import { Chart } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
@@ -38,7 +38,7 @@ export class HtmlScriptsFunctions{
     },
   };
 
-  public writeValueInCenter = (): Plugin<keyof ChartTypeRegistry> => <Plugin<keyof ChartTypeRegistry>>{
+  public writeValueInCenter = (): Plugin => <Plugin>{
     id: 'paint_number_in_center',
     beforeDraw: ( chart: Chart ): void => {
       const { width } = chart;
