@@ -2,11 +2,11 @@ import * as Messages from '../helpers/console-messages';
 import * as Models from '../models/models';
 import * as jsonFuture from 'json-future';
 import * as path from 'path';
+import { format, intervalToDuration } from 'date-fns';
 import fs, { promises as fsp } from 'fs';
 import type { CucumberMessage } from '../types/cucumber-messages';
 import type { Readable } from 'stream';
 import type { Stats } from 'fs';
-import moment from 'moment';
 import os from 'os';
 
 
@@ -145,11 +145,15 @@ export const saveJsonFile = async<T> ( filePath: string | undefined, fileName: s
   return true;
 };
 
-export const getDateFormatted = ( date: Date ): string => moment( date ).format( 'YYYY-MM-DD HH:mm:ss' );
+export const getDateFormatted = ( date: Date ): string => format( date, 'yyyy-MM-dd HH:mm:ss' );
 
-export const convertTimeFromNanoSecondsToHHMMSS = ( time: number, ceilBy = 'millisecond' ): string => {
-  const value = moment.utc( time / 1000000 );
-  return value.subtract( 1, <moment.unitOfTime.DurationConstructor>'millisecond' ).add( 1, <moment.unitOfTime.DurationConstructor>ceilBy ).startOf( <moment.unitOfTime.DurationConstructor>ceilBy ).format( 'HH:mm:ss.SSS' );
+export const convertTimeFromNanoSecondsToHHMMSS = ( time: number ): string => {
+  const duration = intervalToDuration( { start: 0, end: time / 1000000 } );
+  const hours = ( `${  String( duration.hours )}` ).padStart( 2, '0' );
+  const minutes = ( `${  String( duration.minutes )}` ).padStart( 2, '0' );
+  const seconds = ( `${  String( duration.seconds )}` ).padStart( 2, '0' );
+
+  return `${hours }:${minutes }:${seconds}`;
 };
 
 export const arraymove = <T> ( arr: T[], fromIndex: number, toIndex: number ): T[] => {
@@ -170,7 +174,7 @@ export const initializePath =  ( reportPath?: string | undefined ): string  =>{
   const resultCheckReportCreationPath = checkFolder( reportPath );
 
   if ( !resultCheckReportCreationPath && typeof reportPath === 'undefined' ) {
-    const date = moment().format( 'YYYY-MM-DD__HH-mm-ss' );
+    const date = format( new Date(), 'yyyy-MM-dd__HH-mm-ss' );
     reportPathFixed = path.join( os.tmpdir(), 'cucumber-html-report-generator', date );
     fs.mkdirSync( reportPathFixed, { recursive: true } );
   }
