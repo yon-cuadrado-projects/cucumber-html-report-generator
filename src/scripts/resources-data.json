@@ -2,17 +2,17 @@
     {
         "name": "twitter-bootstrap",
         "cdn": "cdnjs",
-        "version": "5.1.3",
+        "version": "5.2.0-beta1",
         "files": [
             {
                 "name": "css/bootstrap.min.css",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css",
-                "path": "resources/twitter-bootstrap-5.1.3/css/bootstrap.min.css"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0-beta1/css/bootstrap.min.css",
+                "path": "resources/twitter-bootstrap-5.2.0-beta1/css/bootstrap.min.css"
             },
             {
                 "name": "js/bootstrap.min.js",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js",
-                "path": "resources/twitter-bootstrap-5.1.3/js/bootstrap.min.js"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0-beta1/js/bootstrap.min.js",
+                "path": "resources/twitter-bootstrap-5.2.0-beta1/js/bootstrap.min.js"
             }
         ]
     },
@@ -97,83 +97,83 @@
     {
         "name": "DataTables",
         "cdn": "datatables",
-        "version": "1.11.5",
+        "version": "1.12.0",
         "files": [
             {
                 "name": "dataTables.bootstrap5.min.js",
-                "url": "https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js",
-                "path": "resources/DataTables-1.11.5/dataTables.bootstrap5.min.js"
+                "url": "https://cdn.datatables.net/1.12.0/js/dataTables.bootstrap5.min.js",
+                "path": "resources/DataTables-1.12.0/dataTables.bootstrap5.min.js"
             },
             {
                 "name": "jquery.dataTables.min.js",
-                "url": "https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js",
-                "path": "resources/DataTables-1.11.5/jquery.dataTables.min.js"
+                "url": "https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js",
+                "path": "resources/DataTables-1.12.0/jquery.dataTables.min.js"
             },
             {
                 "name": "dataTables.bootstrap5.min.css",
-                "url": "https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css",
-                "path": "resources/DataTables-1.11.5/dataTables.bootstrap5.min.css"
+                "url": "https://cdn.datatables.net/1.12.0/css/dataTables.bootstrap5.min.css",
+                "path": "resources/DataTables-1.12.0/dataTables.bootstrap5.min.css"
             }
         ]
     },
     {
         "name": "Buttons",
         "cdn": "datatables",
-        "version": "2.2.2",
+        "version": "2.2.3",
         "files": [
             {
                 "name": "dataTables.buttons.js",
-                "url": "https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.js",
-                "path": "resources/buttons-2.2.2/dataTables.buttons.js"
+                "url": "https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.js",
+                "path": "resources/buttons-2.2.3/dataTables.buttons.js"
             },
             {
                 "name": "buttons.bootstrap5.js",
-                "url": "https://cdn.datatables.net/buttons/2.2.2/js/buttons.bootstrap5.js",
-                "path": "resources/buttons-2.2.2/dataTables.bootstrap5.min.js"
+                "url": "https://cdn.datatables.net/buttons/2.2.3/js/buttons.bootstrap5.js",
+                "path": "resources/buttons-2.2.3/dataTables.bootstrap5.min.js"
             },
             {
                 "name": "buttons.colVis.js",
-                "url": "https://cdn.datatables.net/buttons/2.2.2/js/buttons.colVis.js",
-                "path": "resources/buttons-2.2.2/buttons.colVis.js"
+                "url": "https://cdn.datatables.net/buttons/2.2.3/js/buttons.colVis.js",
+                "path": "resources/buttons-2.2.3/buttons.colVis.js"
             },
             {
                 "name": "buttons.bootstrap5.css",
-                "url": "https://cdn.datatables.net/buttons/2.2.2/css/buttons.bootstrap5.css",
-                "path": "resources/buttons-2.2.2/buttons.bootstrap5.css"
+                "url": "https://cdn.datatables.net/buttons/2.2.3/css/buttons.bootstrap5.css",
+                "path": "resources/buttons-2.2.3/buttons.bootstrap5.css"
             }
         ]
     },
     {
         "name": "Responsive",
         "cdn": "datatables",
-        "version": "2.2.9",
+        "version": "2.3.0",
         "files": [
             {
                 "name": "dataTables.responsive.js",
-                "url": "https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.js",
-                "path": "resources/Responsive-2.2.9/dataTables.responsive.js"
+                "url": "https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.js",
+                "path": "resources/Responsive-2.3.0/dataTables.responsive.js"
             },
             {
                 "name": "responsive.bootstrap5.css",
-                "url": "https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.css",
-                "path": "resources/Responsive-2.2.9/responsive.bootstrap5.css"
+                "url": "https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap5.css",
+                "path": "resources/Responsive-2.3.0/responsive.bootstrap5.css"
             }
         ]
     },
     {
         "name": "Scroller",
         "cdn": "datatables",
-        "version": "2.0.5",
+        "version": "2.0.6",
         "files": [
             {
                 "name": "dataTables.scroller.js",
-                "url": "https://cdn.datatables.net/scroller/2.0.5/js/dataTables.scroller.js",
-                "path": "resources/scroller-2.0.5/dataTables.scroller.js"
+                "url": "https://cdn.datatables.net/scroller/2.0.6/js/dataTables.scroller.js",
+                "path": "resources/scroller-2.0.6/dataTables.scroller.js"
             },
             {
                 "name": "scroller.bootstrap5.css",
-                "url": "https://cdn.datatables.net/scroller/2.0.5/css/scroller.bootstrap5.css",
-                "path": "resources/scroller-2.0.5/scroller.bootstrap5.css"
+                "url": "https://cdn.datatables.net/scroller/2.0.6/css/scroller.bootstrap5.css",
+                "path": "resources/scroller-2.0.6/scroller.bootstrap5.css"
             }
         ]
     }
