@@ -1,0 +1,51 @@
+{
+  "extends": "./tsconfig.json",
+  "ts-node": {
+    "files": true
+},
+"compilerOptions": {
+    "alwaysStrict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": true,        
+    "noImplicitAny" : true,
+    "preserveSymlinks": true,
+    "allowJs": true,
+    // "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "inlineSources": true,
+    // "rootDir": "./",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "target": "es2020",
+    "module": "commonjs",
+    "strictPropertyInitialization": true,
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": true,
+    "typeRoots": ["./node_modules/@types","./src/lib/types", "./test/e2e/types"],
+    "types": ["node","long" ],
+    "paths": {
+        "@models": ["src/lib/models/models.ts"],
+        "@common-functions": ["src/lib/common-functions/common-functions.ts"]
+    }
+},
+"include": [
+    "src/lib/**/**/**/*.ts",
+    "index.ts",
+    "src/lib/types/*.d.ts"
+],
+"exclude": [
+    "node_modules",
+    ".npm"
+]
+}
