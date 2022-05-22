@@ -1,4 +1,4 @@
-html-cucumber-report-generator
+cucumber-html-report-generator
 ===============================
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
