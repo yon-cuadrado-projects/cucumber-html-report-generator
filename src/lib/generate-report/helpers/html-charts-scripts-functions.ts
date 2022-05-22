@@ -55,8 +55,7 @@ export class HtmlScriptsFunctions {
     }
   };
 
-  public generateChart = ( chartName: string, chartData: ChartData, graphOptions: ChartOptions,
-    chartCenterValue: string ): Chart => {
+  public generateChart = ( chartName: string, chartData: ChartData, graphOptions: ChartOptions, chartCenterValue: string ): Chart => {
     const canvas = <HTMLCanvasElement>document.getElementById( chartName );
     const ctx = canvas.getContext( '2d' )!;
     ( graphOptions.elements! ).text = chartCenterValue;
