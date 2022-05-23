@@ -17,11 +17,11 @@ As with the original project html-cucumber-report-generator is a reporting modul
 ![Snapshot - Features overview](./docs/images/features-with-dark-theme-and-report-metadata.jpeg "Snapshot - Browsers features overview")
 ![Snapshot - Features overview](./docs/images/features-with-light-theme-and-report-metadata.jpeg "Snapshot - Browsers features overview")
 
-A sample with dark theme and report metadata can be found [here](./docs/report-with-dark-theme/report-with-dark-theme-and-report-metadata/index.html)
-and a sample with light theme and report metadata can be found [here](./docs/report-with-dark-theme/report-with-light-theme-and-report-metadata/index.html)
+A sample with dark theme and report metadata can be found [here](./docs/report-with-dark-theme-and-report-metadata/index.html)
+and a sample with light theme and report metadata can be found [here](./docs/report-with-light-theme-and-report-metadata/index.html)
 
-And a sample with dark theme without report metadata can be found [here](./docs/report-with-dark-theme/report-with-dark-theme-without-report-metadata/index.html)
-and a sample with light theme without report metadata can be found [here](./docs/report-with-dark-theme/report-with-light-theme-without-report-metadata/index.html)
+And a sample with dark theme without report metadata can be found [here](./docs/report-with-dark-theme-without-report-metadata/index.html)
+and a sample with light theme without report metadata can be found [here](./docs/report-with-light-theme-and-without-report-metadata/index.html)
 
 
 ## Install
