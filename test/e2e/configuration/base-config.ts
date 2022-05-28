@@ -4,7 +4,7 @@ import { CustomCommands } from '../custom-commands/custom-commands';
 // import type { ResponseReceived } from '../types/Chrome-dev-tools';
 import { registerPagesInContainer } from '../container/container';
 
-const enableBrowserLogging = async (): Promise<void> =>{
+const enableBrowserLogging = async (): Promise<void> => {
   await browser.cdp( 'Runtime', 'enable' );
   // await browser.cdp( 'Network', 'enable' );
   await browser.cdp( 'Page', 'enable' );
@@ -104,7 +104,7 @@ const config: WebdriverIO.Config = {
   // },
 
   services: [
-    'devtools' ,
+    'devtools',
     [
       'selenium-standalone',
       {
@@ -129,7 +129,6 @@ const config: WebdriverIO.Config = {
           },
         },
         args: {
-          version: '4.0.0',
           drivers: {
             chrome: {
               version: 'latest',
