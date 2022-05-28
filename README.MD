@@ -39,7 +39,7 @@ npm install cucumber-html-report-generator --save-dev
 ```
 
 ## Compatibility
-Multiple Cucumber HTML Reporter **has been tested with the latest version of webdriverio 7.10 and it should work with the latest versions of cucumber.** 
+Multiple Cucumber HTML Reporter **has been tested with the latest version of webdriverio 7.10 and it should work with the latest versions of cucumber.**. To use with webdriverwio there is a reporter: [wdio-cucumber-html-reporter](https://www.npmjs.com/package/wdio-cucumber-html-reporter) 
 
 > **IMPORTANT:**
 
