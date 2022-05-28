@@ -110,6 +110,7 @@ const config: WebdriverIO.Config = {
       {
         logPath: './.tmp/',
         installArgs: {
+          version: '4.2.0',
           drivers: {
             chrome: {
               version: 'latest',
@@ -129,6 +130,7 @@ const config: WebdriverIO.Config = {
           },
         },
         args: {
+          version: '4.2.0',
           drivers: {
             chrome: {
               version: 'latest',
