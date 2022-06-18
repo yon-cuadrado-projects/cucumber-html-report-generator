@@ -163,17 +163,17 @@
     {
         "name": "Scroller",
         "cdn": "datatables",
-        "version": "2.0.6",
+        "version": "2.0.7",
         "files": [
             {
                 "name": "dataTables.scroller.js",
-                "url": "https://cdn.datatables.net/scroller/2.0.6/js/dataTables.scroller.js",
-                "path": "resources/scroller-2.0.6/dataTables.scroller.js"
+                "url": "https://cdn.datatables.net/scroller/2.0.7/js/dataTables.scroller.js",
+                "path": "resources/scroller-2.0.7/dataTables.scroller.js"
             },
             {
                 "name": "scroller.bootstrap5.css",
-                "url": "https://cdn.datatables.net/scroller/2.0.6/css/scroller.bootstrap5.css",
-                "path": "resources/scroller-2.0.6/scroller.bootstrap5.css"
+                "url": "https://cdn.datatables.net/scroller/2.0.7/css/scroller.bootstrap5.css",
+                "path": "resources/scroller-2.0.7/scroller.bootstrap5.css"
             }
         ]
     }
