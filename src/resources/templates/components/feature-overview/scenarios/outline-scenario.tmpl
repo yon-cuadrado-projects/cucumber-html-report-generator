@@ -1,32 +1,32 @@
 <%if(typeof templates.scenario !== 'undefined' && templates.scenario.isFirstScenarioOutline){%>
-<div class="container-fluid ps-2 pe-2 ">
-    <div class="x_panel border mt-2 mb-2 pb-3">
-        <%=templates.tags%>
-        <div class="x_title m-2" data-bs-toggle="collapse" data-bs-target="#<%=templates.scenarioId.replace(/;/g, '') + "-" + templates.scenarioIndex%>">
-            <%=templates.nameAndResults%>
-        </div>
-        <div class="collapse" id="<%=templates.scenarioId.replace(/;/g, '') + "-" + templates.scenarioIndex%>">
-            <%=templates.before%>
-            <%=templates.steps%>
-            <%=templates.after%>
-        </div>
-        <div class="collapse" id="<%=templates.scenarioId.replace(/;/g, '') + "-" + templates.scenarioIndex%>">
-            <div class="scenario-step-container mb-auto ms-4 d-flex flex-row align-items-baseline">
-                <div class="tableContainer responsive mb-1 mb-1" style="display: inline-block;">
-                    <table class="table table-bordered table-dark" id="scenariosOutlineTable-<%=templates.scenarioIndex%>" test-id="scenario-outline.scenarios">
-                        <tr>
-                            <th class="info-color white-text"></th>
-                            <% var cells = templates.scenario.examples[0]; %>
-                            <% for( var k = 0; k < cells.length; k++ ) { %>
-                            <th class="info-color white-text"><%= cells[k] %></th>
-                            <% } %>
-                            <th></th>
-                        </tr>
-                        <%=scenarioOutlineChilds%>
-                    </table>
+    <div class="container-fluid ps-2 pe-2 ">
+        <div class="x_panel border mt-2 mb-2 pb-3">
+            <%=templates.tags%>
+            <div class="x_title m-2" data-bs-toggle="collapse" data-bs-target="#<%=templates.scenarioId.replace(/;/g, '') + "-" + templates.scenarioIndex%>">
+                <%=templates.nameAndResults%>
+            </div>
+            <div class="collapse" id="<%=templates.scenarioId.replace(/;/g, '') + "-" + templates.scenarioIndex%>">
+                <%=templates.before%>
+                <%=templates.steps%>
+                <%=templates.after%>
+            </div>
+            <div class="collapse" id="<%=templates.scenarioId.replace(/;/g, '') + "-" + templates.scenarioIndex%>">
+                <div class="scenario-step-container mb-auto ms-4 d-flex flex-row align-items-baseline">
+                    <div class="tableContainer responsive mb-1 mb-1" style="display: inline-block;">
+                        <table class="table table-bordered table-dark" id="scenariosOutlineTable-<%=templates.scenarioIndex%>" test-id="scenario-outline.scenarios">
+                            <tr>
+                                <th class="info-color white-text"></th>
+                                <% var cells = templates.scenario.examples[0]; %>
+                                <% for( var k = 0; k < cells.length; k++ ) { %>
+                                    <th class="info-color white-text"><%= cells[k] %></th>
+                                <% } %>
+                                <th></th>
+                            </tr>
+                            <%=scenarioOutlineChilds%>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 <%}%>
