@@ -1,50 +1,51 @@
 <div style="display:flex;flex-direction: row;"> 
-        <% if (scenario.results.steps.ambiguous > 0) { %>
-            <li style="display:flex; text-align: center;">
-                <span class="step ambiguous-background scenarioOutlineCircle text-dark d-flex rounded-circle justify-content-center align-items-center" data-bs-toggle="tooltip" data-placement="top"
-                        title="Scenario has double step implementation and failed because of that.">
-                    <p class="m-0"><%= scenario.results.steps.ambiguous %> </p>
-                </span>
-            </li>
-        <% } %>
+    <% if (scenario.results.steps.ambiguous > 0) { %>
+        <li style="display:flex; text-align: center;">
+            <span class="step ambiguous-background scenarioOutlineCircle text-dark d-flex rounded-circle justify-content-center align-items-center"
+             data-bs-toggle="tooltip" data-placement="top"
+                    title="Scenario has double step implementation and failed because of that.">
+                <p class="m-0"><%= scenario.results.steps.ambiguous %> </p>
+            </span>
+        </li>
+    <% } %>
 
-        <% if (scenario.results.steps.pending > 0) { %>
-            <li class="d-flex align-items-center">
-                <span class="pending-background scenarioOutlineCircle text-dark d-flex rounded-circle justify-content-center align-items-center" data-bs-toggle="tooltip" title="Scenario is pending">
-                    <p class="m-0"> <%= scenario.results.steps.pending %> </p>
-                </span>
-            </li>
-        <% } %>
+    <% if (scenario.results.steps.pending > 0) { %>
+        <li class="d-flex align-items-center">
+            <span class="pending-background scenarioOutlineCircle text-dark d-flex rounded-circle justify-content-center align-items-center" data-bs-toggle="tooltip" title="Scenario is pending">
+                <p class="m-0"> <%= scenario.results.steps.pending %> </p>
+            </span>
+        </li>
+    <% } %>
 
-        <% if (scenario.results.steps.skipped > 0) { %>
-            <li class="d-flex align-items-center">
-                <span class="skipped-background scenarioOutlineCircle text-dark d-flex rounded-circle justify-content-center align-items-center" data-bs-toggle="tooltip" title="Scenario is skipped">
-                    <p class="m-0"><%= scenario.results.steps.skipped %> </p>
-                </span>
-            </li>
-        <% } %>
-        
-        <% if (scenario.results.steps.failed > 0) { %>
-            <li class="d-flex align-items-center">
-                <span class="failed-background scenarioOutlineCircle text-dark d-flex rounded-circle justify-content-center align-items-center" data-bs-toggle="tooltip" title="Scenario failed">
-                    <p class="m-0"><%= scenario.results.steps.failed %> </p>
-                </span>
-            </li>
-        <% } %>
+    <% if (scenario.results.steps.skipped > 0) { %>
+        <li class="d-flex align-items-center">
+            <span class="skipped-background scenarioOutlineCircle text-dark d-flex rounded-circle justify-content-center align-items-center" data-bs-toggle="tooltip" title="Scenario is skipped">
+                <p class="m-0"><%= scenario.results.steps.skipped %> </p>
+            </span>
+        </li>
+    <% } %>
+    
+    <% if (scenario.results.steps.failed > 0) { %>
+        <li class="d-flex align-items-center">
+            <span class="failed-background scenarioOutlineCircle text-dark d-flex rounded-circle justify-content-center align-items-center" data-bs-toggle="tooltip" title="Scenario failed">
+                <p class="m-0"><%= scenario.results.steps.failed %> </p>
+            </span>
+        </li>
+    <% } %>
 
-        <% if (scenario.results.steps.passed > 0) { %>
-                <li class="d-flex align-items-center">
-                    <span class="passed-background scenarioOutlineCircle text-dark d-flex rounded-circle justify-content-center align-items-center" data-bs-toggle="tooltip" title="Scenario passed">
-                    <p class="m-0"><%= scenario.results.steps.passed %> </p>                    
-                    </span>
-                </li>
-        <% } %>
-
-        <% if (scenario.results.steps.undefined > 0) { %>
+    <% if (scenario.results.steps.passed > 0) { %>
             <li class="d-flex align-items-center">
-                <span class="not-defined-background scenarioOutlineCircle text-dark d-flex rounded-circle justify-content-center align-items-center" data-bs-toggle="tooltip" title="Scenario has nop step implementation.">
-                    <p class="m-0"><%= scenario.results.steps.undefined %> </p>
+                <span class="passed-background scenarioOutlineCircle text-dark d-flex rounded-circle justify-content-center align-items-center" data-bs-toggle="tooltip" title="Scenario passed">
+                <p class="m-0"><%= scenario.results.steps.passed %> </p>                    
                 </span>
             </li>
-        <% } %>
-    </div>   
+    <% } %>
+
+    <% if (scenario.results.steps.undefined > 0) { %>
+        <li class="d-flex align-items-center">
+            <span class="not-defined-background scenarioOutlineCircle text-dark d-flex rounded-circle justify-content-center align-items-center" data-bs-toggle="tooltip" title="Scenario has nop step implementation.">
+                <p class="m-0"><%= scenario.results.steps.undefined %> </p>
+            </span>
+        </li>
+    <% } %>
+</div>
