@@ -54,7 +54,7 @@ export const getCdnjsResourceInformation = async ( dependency: Models.ResourcePr
   }
 
   const filePropertiesArray = <Models.FileProperties[]>[];
-  if( semver.gt( response.version, dependency.version ) ){ 
+  if ( semver.gt( response.version, dependency.version ) ) {
     try {
       await Promise.all( dependency.files.map( async file => {
         const destinationPath = path.join( resourcesFolder, `${dependency.name}-${response.version}`, file.name );
@@ -63,7 +63,7 @@ export const getCdnjsResourceInformation = async ( dependency: Models.ResourcePr
         const fileProperties = <Models.FileProperties>{
           name: file.name,
           path: destinationPath,
-          sriValue: response.assets[response.assets.length - 1].sri[file.name],
+          sriValue: response.assets[ response.assets.length - 1 ].sri[ file.name ],
           url
         };
         filePropertiesArray.push( fileProperties );
@@ -91,8 +91,8 @@ export const getDatatablesResourceInformation = async ( dependency: Models.Resou
 
   try {
     await Promise.all( dependency.files.map( async file => {
-      const destinationPath = path.join( resourcesFolder, `${dependency.name}-${response[dependency.name].release.version}`, file.name );
-      const url = file.url?.replace( dependency.version, response[dependency.name].release.version );
+      const destinationPath = path.join( resourcesFolder, `${dependency.name}-${response[ dependency.name ].release.version}`, file.name );
+      const url = file.url?.replace( dependency.version, response[ dependency.name ].release.version );
       const fileDownloaded = await downloadResource( destinationPath, url! );
       const fileProperties = <Models.FileProperties>{
         name: file.name,
@@ -110,7 +110,7 @@ export const getDatatablesResourceInformation = async ( dependency: Models.Resou
   return <Models.ResourceProperties>{
     name: dependency.name,
     files: filePropertiesArray,
-    version: response[dependency.name].release.version
+    version: response[ dependency.name ].release.version
   };
 };
 
@@ -124,7 +124,7 @@ export const updateResourcesForOneDependency = async ( resourceProperties: Model
       if ( resourceInformation.files.length ) {
         resourceInformation.files.forEach( resourceFile => {
           let regex = RegExp( `href.*${resourceFile.name}" integrity="[^"]+"`, 'u' );
-          const newFile = resourceInformation.files.filter( file => file.name === resourceFile.name )[0];
+          const newFile = resourceInformation.files.filter( file => file.name === resourceFile.name )[ 0 ];
           let newUrl = `href="${newFile.url!}" integrity="${newFile.sriValue}"`;
           templateFileContent = templateFileContent.replace( regex, newUrl );
 
@@ -150,6 +150,7 @@ export const updateResourcesForOneDependency = async ( resourceProperties: Model
         file.path = file.path.replace( resourceProperties.version, resourceInformation.version );
         return file;
       } );
+
       resourceProperties.version = resourceInformation.version;
       return true;
     }
@@ -157,4 +158,10 @@ export const updateResourcesForOneDependency = async ( resourceProperties: Model
     console.log( ( <Error>err ).message );
   }
   return false;
+};
+
+export const deleteOldDependencies = async ( resourceProperties: Models.ResourceProperties, resourcesFolder: string ): Promise<void> => {
+  await Promise.all( resourceProperties.files.map( async file => {
+    await fse.remove( `${resourcesFolder}/${file.path}/${file.name}` );
+  } ) );
 };
