@@ -114,6 +114,12 @@ export const getDatatablesResourceInformation = async ( dependency: Models.Resou
   };
 };
 
+const deleteOldDependencies = async ( resourceProperties: Models.ResourceProperties, resourcesFolder: string ): Promise<void> => {
+  await Promise.all( resourceProperties.files.map( async file => {
+    await fse.remove( `${resourcesFolder}/${file.path}/${file.name}` );
+  } ) );
+};
+
 export const updateResourcesForOneDependency = async ( resourceProperties: Models.ResourceProperties, resourcesFolder: string, templateFiles: string[] ): Promise<boolean> => {
   const resourceInformation = resourceProperties.cdn === 'cdnjs' ?
     await getCdnjsResourceInformation( resourceProperties, resourcesFolder ) :
@@ -141,6 +147,7 @@ export const updateResourcesForOneDependency = async ( resourceProperties: Model
         } );
       }
     } ) );
+    await deleteOldDependencies( resourceProperties, resourcesFolder );
   }
   try {
     if ( resourceProperties.version !== resourceInformation.version && resourceInformation.files.length ) {
@@ -158,10 +165,4 @@ export const updateResourcesForOneDependency = async ( resourceProperties: Model
     console.log( ( <Error>err ).message );
   }
   return false;
-};
-
-export const deleteOldDependencies = async ( resourceProperties: Models.ResourceProperties, resourcesFolder: string ): Promise<void> => {
-  await Promise.all( resourceProperties.files.map( async file => {
-    await fse.remove( `${resourcesFolder}/${file.path}/${file.name}` );
-  } ) );
 };
