@@ -116,11 +116,11 @@ export const getDatatablesResourceInformation = async ( dependency: Models.Resou
 
 const deleteOldDependencies = async ( resourceProperties: Models.ResourceProperties, resourcesFolder: string ): Promise<void> => {
   await Promise.all( resourceProperties.files.map( async file => {
-    await fse.remove( `${resourcesFolder}/${file.path.replace( 'resources/', '' )}` );
-    console.log( `file: ${resourcesFolder}/${file.path.replace( 'resources/', '' )}, removed` );
+    await fse.remove( `${resourcesFolder}/${resourceProperties.name}-${resourceProperties.version}/${file.name}` );
+    console.log( `file: ${resourcesFolder}/${resourceProperties.name}-${resourceProperties.version}/${file.name}, removed` );
   } ) );
-  await fse.remove( path.dirname( `${resourcesFolder}/${resourceProperties.files[ 0 ].path.replace( 'resources/', '' )}` ) );
-  console.log( `folder: ${path.dirname( `${resourcesFolder}/${resourceProperties.files[ 0 ].path.replace( 'resources/', '' )}` )}, removed` );
+  await fse.remove( path.dirname( `${resourcesFolder}/${resourceProperties.name}-${resourceProperties.version}` ) );
+  console.log( `folder: ${path.dirname( `${resourcesFolder}/${resourceProperties.name}-${resourceProperties.version}` )}, removed` );
 };
 
 export const updateResourcesForOneDependency = async ( resourceProperties: Models.ResourceProperties, resourcesFolder: string, templateFiles: string[] ): Promise<boolean> => {
