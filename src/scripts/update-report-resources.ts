@@ -8,7 +8,7 @@ const featuresIndex = path.join( __dirname, '../resources/templates/components/f
 const featureIndex = path.join( __dirname, '../resources/templates/components/feature-overview/feature-overview-index.tmpl' );
 
 const updateResourcesPropertiesInConfigurationFiles = async ( configurationData: Models.ResourceProperties[] ): Promise<boolean> => {
-  const resourcesModification = configurationData.map( async dependency => dependencyModifycationFunctions.updateResourcesForOneDependency( dependency, resourcesFolder, [ indexEjsFile ] ) );
+  const resourcesModification = configurationData.map( async dependency => dependencyModifycationFunctions.updateResourcesForOneDependency( dependency, resourcesFolder, [ featuresIndex, featureIndex ] ) );
 
   return ( await Promise.all( resourcesModification ) ).filter( modification => modification ).length > 0;
 };
