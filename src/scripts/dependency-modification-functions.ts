@@ -119,8 +119,8 @@ const deleteOldDependencies = async ( resourceProperties: Models.ResourcePropert
     await fse.remove( `${resourcesFolder}/${resourceProperties.name}-${resourceProperties.version}/${file.name}` );
     console.log( `file: ${resourcesFolder}/${resourceProperties.name}-${resourceProperties.version}/${file.name}, removed` );
   } ) );
-  await fse.remove( path.dirname( `${resourcesFolder}/${resourceProperties.name}-${resourceProperties.version}` ) );
-  console.log( `folder: ${path.dirname( `${resourcesFolder}/${resourceProperties.name}-${resourceProperties.version}` )}, removed` );
+  await fse.remove( `${resourcesFolder}/${resourceProperties.name}-${resourceProperties.version}` );
+  console.log( `folder: ${resourcesFolder}/${resourceProperties.name}-${resourceProperties.version}, removed` );
 };
 
 export const updateResourcesForOneDependency = async ( resourceProperties: Models.ResourceProperties, resourcesFolder: string, templateFiles: string[] ): Promise<boolean> => {
