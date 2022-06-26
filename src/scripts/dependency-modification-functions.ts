@@ -176,8 +176,8 @@ export const updateResources = async ( configurationData: Models.ResourcePropert
       await deleteOldDependencies( localResourceConf, resourcesFolder );
       console.log( `Resource ${localResourceConf.name} updated to version ${remoteResourceConf.version}` );
       localResourceConf.files.map( file => {
-        file.url = file.url?.replace( remoteResourceConf.version, remoteResourceConf.version );
-        file.path = file.path.replace( remoteResourceConf.version, remoteResourceConf.version );
+        file.url = file.url?.replace( localResourceConf.version, remoteResourceConf.version );
+        file.path = file.path.replace( localResourceConf.version, remoteResourceConf.version );
         return file;
       } );
       await updateResourcesPropertiesConfigurationJson( configurationData, configurationFile );

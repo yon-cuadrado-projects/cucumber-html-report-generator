@@ -19,6 +19,14 @@ describe( 'update-report-resources-spec', () => {
       await dependencyModifycationFunctions.updateResources( configurationData!, resourcesDataFile, resourcesFolder, [ featureIsndex, featureIndex ] );
 
       // Then
+      await dependencyModifycationFunctions.deleteOldDependencies( configurationData?.[ 0 ]!, resourcesFolder );
+      await dependencyModifycationFunctions.deleteOldDependencies( configurationData?.[ 1 ]!, resourcesFolder );
+      // const resource1Files = configurationData?.[ 0 ].files ?? [];
+      // await Promise.all( resource1Files.map( async file => {
+      //   await fse.remove( path.resolve( process.cwd(), 'test/unit/data/update-report-resources', file.path ) );
+      // } ) );
+      // configurationData?.[ 1 ].files.forEach( async file => fse.remove( path.resolve( process.cwd(), 'test/unit/data/update-report-resources', file.path ) ) );
+
       const updatedFiles = [
         'test/unit/data/update-report-resources/resources/Chart.js-3.7.1/chart.min.js',
         'test/unit/data/update-report-resources/resources/twitter-bootstrap-5.1.3/css/bootstrap.min.css',
@@ -27,6 +35,7 @@ describe( 'update-report-resources-spec', () => {
         'test/unit/data/update-report-resources/templates/features-overview-index.tmpl'
       ];
       updatedFiles.forEach( file => simpleGit().checkout( file ) );
+
       // check updated configurationData
       // check downloaded files
       // check that old files are deleted
