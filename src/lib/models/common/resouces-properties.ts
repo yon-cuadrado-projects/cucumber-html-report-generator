@@ -1,59 +1,59 @@
-export interface ResourceProperties{
+export interface ResourceProperties {
   name: string;
   version: string;
   cdn: string;
   files: FileProperties[];
 }
 
-export interface FileProperties{
+export interface FileProperties {
   name: string;
   path: string;
   sriValue: string;
   url?: string;
 }
 
-export interface CollectionElement{
-  [name: string]: string;
+export interface CollectionElement {
+  [ name: string ]: string;
 }
 
-export interface Asset{
+export interface Asset {
   version: string;
   files: CollectionElement;
   rawFiles: CollectionElement;
   sri: CollectionElement;
 }
 
-export interface ResourcesCdnjsApiProperties{
+export interface ResourcesCdnjsApiProperties {
   name: string;
   version: string;
-  assets:Asset[];
+  assets: Asset[];
   latest: string;
   filename: string;
 }
 
-export interface DatatablesFilesElement{
-  'debug':{
+export interface DatatablesFilesElement {
+  'debug': {
     'md5': string;
     'path': string;
   };
-  'min':{
+  'min': {
     'md5': string;
     'path': string;
   };
-  'css':{
+  'css': {
     'md5': string;
     'path': string;
   };
-  'cssMin':{
+  'cssMin': {
     'md5': string;
     'path': string;
   };
 }
 
-export interface DatatablesElement{
+export interface DatatablesElement {
   version: string;
   date: number;
-  files:DatatablesFilesElement;
+  files: DatatablesFilesElement;
 }
 
 enum versions {
@@ -62,7 +62,7 @@ enum versions {
 }
 
 export interface ResourcesCdnDatatablesApiProperties {
-  [name: string]:{
-    [key in versions]: DatatablesElement;
+  [ name: string ]: {
+    [ key in versions ]: DatatablesElement;
   };
 };

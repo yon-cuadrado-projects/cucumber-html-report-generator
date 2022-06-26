@@ -1,0 +1,180 @@
+[
+    {
+        "name": "twitter-bootstrap",
+        "cdn": "cdnjs",
+        "version": "5.1.3",
+        "files": [
+            {
+                "name": "css/bootstrap.min.css",
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css",
+                "path": "resources/twitter-bootstrap-5.1.3/css/bootstrap.min.css"
+            },
+            {
+                "name": "js/bootstrap.min.js",
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js",
+                "path": "resources/twitter-bootstrap-5.1.3/js/bootstrap.min.js"
+            }
+        ]
+    },
+    {
+        "name": "Chart.js",
+        "cdn": "cdnjs",
+        "version": "3.7.1",
+        "files": [
+            {
+                "name": "chart.min.js",
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js",
+                "path": "resources/Chart.js-3.7.1/chart.min.js"
+            }
+        ]
+    },
+    {
+        "name": "chartjs-plugin-datalabels",
+        "cdn": "cdnjs",
+        "version": "2.0.0",
+        "files": [
+            {
+                "name": "chartjs-plugin-datalabels.min.js",
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js",
+                "path": "resources/chartjs-plugin-datalabels-2.0.0/chartjs-plugin-datalabels.min.js"
+            }
+        ]
+    },
+    {
+        "name": "font-awesome",
+        "cdn": "cdnjs",
+        "version": "6.1.1",
+        "files": [
+            {
+                "name": "css/all.min.css",
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css",
+                "path": "resources/font-awesome-6.1.1/css/all.min.css"
+            },
+            {
+                "name": "webfonts/fa-brands-400.ttf",
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/webfonts/fa-brands-400.ttf",
+                "path": "resources/font-awesome-6.1.1/css/webfonts/fa-brands-400.ttf"
+            },
+            {
+                "name": "webfonts/fa-brands-400.woff2",
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/webfonts/fa-brands-400.woff2",
+                "path": "resources/font-awesome-6.1.1/css/webfonts/fa-brands-400.woff2"
+            },
+            {
+                "name": "webfonts/fa-regular-400.ttf",
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/webfonts/fa-regular-400.ttf",
+                "path": "resources/font-awesome-6.1.1/css/webfonts/fa-regular-400.ttf"
+            },
+            {
+                "name": "webfonts/fa-regular-400.woff2",
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/webfonts/fa-regular-400.woff2",
+                "path": "resources/font-awesome-6.1.1/css/webfonts/fa-regular-400.woff2"
+            },
+            {
+                "name": "webfonts/fa-solid-900.ttf",
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/webfonts/fa-solid-900.ttf",
+                "path": "resources/font-awesome-6.1.1/css/webfonts/fa-solid-900.ttf"
+            },
+            {
+                "name": "webfonts/fa-solid-900.woff2",
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/webfonts/fa-solid-900.woff2",
+                "path": "resources/font-awesome-6.1.1/css/webfonts/fa-solid-900.woff2"
+            }
+        ]
+    },
+    {
+        "name": "jquery",
+        "cdn": "cdnjs",
+        "version": "3.6.0",
+        "files": [
+            {
+                "name": "jquery.js",
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js",
+                "path": "resources/jquery-3.6.0/jquery.js"
+            }
+        ]
+    },
+    {
+        "name": "DataTables",
+        "cdn": "datatables",
+        "version": "1.12.1",
+        "files": [
+            {
+                "name": "dataTables.bootstrap5.min.js",
+                "url": "https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js",
+                "path": "resources/DataTables-1.12.1/dataTables.bootstrap5.min.js"
+            },
+            {
+                "name": "jquery.dataTables.min.js",
+                "url": "https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js",
+                "path": "resources/DataTables-1.12.1/jquery.dataTables.min.js"
+            },
+            {
+                "name": "dataTables.bootstrap5.min.css",
+                "url": "https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css",
+                "path": "resources/DataTables-1.12.1/dataTables.bootstrap5.min.css"
+            }
+        ]
+    },
+    {
+        "name": "Buttons",
+        "cdn": "datatables",
+        "version": "2.2.3",
+        "files": [
+            {
+                "name": "dataTables.buttons.js",
+                "url": "https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.js",
+                "path": "resources/buttons-2.2.3/dataTables.buttons.js"
+            },
+            {
+                "name": "buttons.bootstrap5.js",
+                "url": "https://cdn.datatables.net/buttons/2.2.3/js/buttons.bootstrap5.js",
+                "path": "resources/buttons-2.2.3/dataTables.bootstrap5.min.js"
+            },
+            {
+                "name": "buttons.colVis.js",
+                "url": "https://cdn.datatables.net/buttons/2.2.3/js/buttons.colVis.js",
+                "path": "resources/buttons-2.2.3/buttons.colVis.js"
+            },
+            {
+                "name": "buttons.bootstrap5.css",
+                "url": "https://cdn.datatables.net/buttons/2.2.3/css/buttons.bootstrap5.css",
+                "path": "resources/buttons-2.2.3/buttons.bootstrap5.css"
+            }
+        ]
+    },
+    {
+        "name": "Responsive",
+        "cdn": "datatables",
+        "version": "2.3.0",
+        "files": [
+            {
+                "name": "dataTables.responsive.js",
+                "url": "https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.js",
+                "path": "resources/Responsive-2.3.0/dataTables.responsive.js"
+            },
+            {
+                "name": "responsive.bootstrap5.css",
+                "url": "https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap5.css",
+                "path": "resources/Responsive-2.3.0/responsive.bootstrap5.css"
+            }
+        ]
+    },
+    {
+        "name": "Scroller",
+        "cdn": "datatables",
+        "version": "2.0.7",
+        "files": [
+            {
+                "name": "dataTables.scroller.js",
+                "url": "https://cdn.datatables.net/scroller/2.0.7/js/dataTables.scroller.js",
+                "path": "resources/scroller-2.0.7/dataTables.scroller.js"
+            },
+            {
+                "name": "scroller.bootstrap5.css",
+                "url": "https://cdn.datatables.net/scroller/2.0.7/css/scroller.bootstrap5.css",
+                "path": "resources/scroller-2.0.7/scroller.bootstrap5.css"
+            }
+        ]
+    }
+]

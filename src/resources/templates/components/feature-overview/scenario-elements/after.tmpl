@@ -3,7 +3,7 @@
         data-bs-target="#after-<%=scenarioIndex %>">
 
         <% if(config.showExecutionTime && !scenario.isFirstScenarioOutline){ %>
-            <div class=me-2><%=scenario.results.after.durationHHMMSS %> </div>
+            <div class="me-2"><%=scenario.results.after.durationHHMMSS %> </div>
         <% } %>
 
         <div>
@@ -13,8 +13,7 @@
             </a>
         </div>
     </div>
-    <div class="collapse  mb-2 mt-2 ms-4" id="after-<%=scenarioIndex %>">
+    <div class="collapse mb-2 mt-2 ms-4" id="after-<%=scenarioIndex %>">
         <%=steps%>
     </div>
-
 <% } %>
