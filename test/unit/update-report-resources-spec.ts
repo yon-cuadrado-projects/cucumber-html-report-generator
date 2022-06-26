@@ -19,8 +19,9 @@ describe( 'update-report-resources-spec', () => {
       await dependencyModifycationFunctions.updateResources( configurationData!, resourcesDataFile, resourcesFolder, [ featureIsndex, featureIndex ] );
 
       // Then
-      await dependencyModifycationFunctions.deleteOldDependencies( configurationData?.[ 0 ]!, resourcesFolder );
-      await dependencyModifycationFunctions.deleteOldDependencies( configurationData?.[ 1 ]!, resourcesFolder );
+      const updatedConfigurationData = await CommonFunctions.readJsonFile<Models.ResourceProperties[]>( resourcesDataFile );
+      await dependencyModifycationFunctions.deleteOldDependencies( updatedConfigurationData?.[ 0 ]!, resourcesFolder );
+      await dependencyModifycationFunctions.deleteOldDependencies( updatedConfigurationData?.[ 1 ]!, resourcesFolder );
       // const resource1Files = configurationData?.[ 0 ].files ?? [];
       // await Promise.all( resource1Files.map( async file => {
       //   await fse.remove( path.resolve( process.cwd(), 'test/unit/data/update-report-resources', file.path ) );
@@ -32,7 +33,8 @@ describe( 'update-report-resources-spec', () => {
         'test/unit/data/update-report-resources/resources/twitter-bootstrap-5.1.3/css/bootstrap.min.css',
         'test/unit/data/update-report-resources/resources/twitter-bootstrap-5.1.3/js/bootstrap.min.js',
         'test/unit/data/update-report-resources/templates/feature-overview-index.tmpl',
-        'test/unit/data/update-report-resources/templates/features-overview-index.tmpl'
+        'test/unit/data/update-report-resources/templates/features-overview-index.tmpl',
+        'test/unit/data/update-report-resources/resources-data.json'
       ];
       updatedFiles.forEach( file => simpleGit().checkout( file ) );
 

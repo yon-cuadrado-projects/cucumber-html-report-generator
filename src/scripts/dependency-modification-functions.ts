@@ -180,6 +180,7 @@ export const updateResources = async ( configurationData: Models.ResourcePropert
         file.path = file.path.replace( localResourceConf.version, remoteResourceConf.version );
         return file;
       } );
+      localResourceConf.version = remoteResourceConf.version;
       await updateResourcesPropertiesConfigurationJson( configurationData, configurationFile );
     }
   } ) );
