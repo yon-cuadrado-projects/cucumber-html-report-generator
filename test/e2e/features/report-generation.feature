@@ -7,8 +7,8 @@ Feature: Report generation
             And The user generates a report with 'dark' theme in the folder '.tmp/report'
             When The user opens the report in the '.tmp/report' folder
             Then The browser have the errors '' in the console
-            And The 'features' graph is 'displayed' in the features-overview page
-            And The 'scenarios' graph is 'displayed' in the features-overview page
+            And The 'Features' graph is 'displayed' in the features-overview page
+            And The 'Scenarios' graph is 'displayed' in the features-overview page
             And The additional data header title is 'Additional Data' in the features-overview page
             And The 'Project' field value is 'custom project' in the features-overview page
             And The 'Release' field value is '1.2.3' in the features-overview page
@@ -22,8 +22,8 @@ Feature: Report generation
             When The user opens the report in the '.tmp/report' folder
             And The user opens the feature 'Feature with all scenarios in status passed'
             Then The browser have the errors '' in the console
-            And The 'scenarios' graph is 'displayed' in the feature-overview page
-            And The 'steps' graph is 'displayed' in the feature-overview page
+            And The 'Scenarios' graph is 'displayed' in the feature-overview page
+            And The 'Steps' graph is 'displayed' in the feature-overview page
             And The additional data header title is 'Custom Data' in the feature-overview page
             And The 'browser' field value is 'Firefox 53' in the feature-overview page
             And The 'device' field value is 'Virtual Machine' in the feature-overview page

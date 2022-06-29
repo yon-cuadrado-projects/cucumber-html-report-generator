@@ -9,9 +9,9 @@ $(document).ready(function () {
     .replace(/chartjs_plugin_datalabels_1./g, '').replace(/default/g, 'ChartDataLabels')%>
 
     const centerNumberScenarios = <%=feature.results.scenarios.total%>;
-    const scenariosChart = generateChart( 'scenarios', dataScenarios, graphOptions(), centerNumberScenarios);
+    const scenariosChart = generateChart( 'Scenarios', dataScenarios, graphOptions(), centerNumberScenarios);
     const centerNumberSteps = <%=feature.results.steps.total%>;
-    const stepsChart = generateChart( 'steps', dataSteps, graphOptions(), centerNumberSteps );    
+    const stepsChart = generateChart( 'Steps', dataSteps, graphOptions(), centerNumberSteps );    
 });
 </script>
 

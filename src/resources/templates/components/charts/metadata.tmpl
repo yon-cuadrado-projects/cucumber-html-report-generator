@@ -1,0 +1,34 @@
+<%if(Object.entries(metadata).length > 0){%>
+    <div class="flex flex-grow-1 border p-2 col-sm m-2">
+        <div class="d-flex flex-column">
+            <div class="graph-title d-inline-flex border-bottom mb-3" data-bs-toggle="collapse" data-bs-target="<%=dataBsTarget %>">
+                <h2 class="d-flex align-text-bottom" test-id="additional-data.title"> <%=metadataTitle%></h2>
+                <li class="d-flex align-items-center ms-auto">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                </li>
+            </div>
+            <div id="metadata-properties" class="collapse show">
+                <div class="d-flex flex-column">
+                    <div class="d-flex flex-column">
+                        <table class="d-flex flex-column w-100 table-scrollable" test-id="additional-data.table" >
+                            <tbody  class="d-flex flex-column">
+                                <% metadata.forEach( metadataValue =>{  %>                                       
+                                    <tr class="d-flex mb-2">
+                                        <td class="d-flex flex-grow-1 border-bottom fw-bold text-break w-25">
+                                            <%= metadataValue.name %>
+                                        </td>
+                                        <td class="d-flex flex-grow-1 border-bottom me-2 text-break w-50">
+                                            <%= metadataValue.value %>
+                                        </td>
+                                    </tr>                                            
+                                <%});%>
+                            </tbody>
+                        </table>                                        
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>   
+<%}%>

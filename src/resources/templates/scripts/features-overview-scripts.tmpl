@@ -57,9 +57,9 @@ $(document).ready(function () {
     .replace(/chartjs_plugin_datalabels_1./g, '').replace(/default/g, 'ChartDataLabels')%>
 
     const centerNumberFeatures = <%=suite.results.features.total%>;
-    const featuresChart = generateChart( 'features', dataFeatures, graphOptions(), centerNumberFeatures );
+    const featuresChart = generateChart( 'Features', dataFeatures, graphOptions(), centerNumberFeatures );
     const centerNumberScenarios = <%=suite.results.scenarios.total%>;
-    const scenariosChart = generateChart( 'scenarios', dataScenarios, graphOptions(), centerNumberScenarios);
+    const scenariosChart = generateChart( 'Scenarios', dataScenarios, graphOptions(), centerNumberScenarios);
 });
 
 </script>

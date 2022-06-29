@@ -1,0 +1,115 @@
+<div class="flex flex-grow-1 border p-2 col-sm m-2">
+    <div class="d-flex flex-column">
+        <div class="graph-title d-inline-flex border-bottom" data-bs-toggle="collapse" data-bs-target="<%=dataBsTarget %>">
+            <h2 class="d-flex align-text-bottom"> <%=chartData%> </h2>
+            <li class="d-flex align-items-center ms-auto">
+                <a class="collapse-link">
+                    <i class="fa fa-chevron-up"></i>
+                </a>
+            </li>
+        </div>
+        <div id="<%=chartData%>-charts" class="collapse show">
+            <div class="x_content container-fluid">
+                <table class="w-100 d-flex flex-column">
+                    <tr class="d-flex flex-row justify-content-center">
+                        <td class="me-3">
+                            <div class="chart-container">
+                                <canvas id="<%=chartData%>"></canvas>
+                            </div>
+                        </td>
+                        <td class="align-top">
+                            <table class="w-100">
+                                <tr>
+                                    <th class="pe-2">
+                                        <div>
+                                            <p class="text-center">Status</p>
+                                        </div>   
+                                    </th> 
+                                    <th class="me-2">                                              
+                                        <div>
+                                            <p class="text-center">Progress</p>
+                                        </div>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td class="pe-2">
+                                        <p class="mb-0" data-toggle="tooltip" data-placement="left" title="<%=chartData%> passed">
+                                            <i class="fa fa-check-circle passed-color me-2"></i>
+                                            Passed
+                                        </p>
+                                    </td>
+                                    <td class="text-end"><%= results.passedPercentage %> %</td>
+                                </tr>
+                                <tr>
+                                    <td class="pe-2">
+                                        <p class="mb-0" data-toggle="tooltip" data-placement="left" title="<%=chartData%> failed">
+                                            <i class="fa fa-exclamation-circle failed-color me-2"></i>
+                                            Failed
+                                        </p>
+                                    </td>
+                                    <td class="text-end"><%= results.failedPercentage %> %</td>
+                                    <% if (results.ambiguous) { %>
+                                        <tr>
+                                            <td class="pe-2">
+                                                <p class="mb-0" data-toggle="tooltip" data-placement="left"
+                                                title="<%=chartData%> has double step implementation and failed because of that.">
+                                                    <i class="fa fa-bolt ambiguous-color me-2 ms-1"></i>
+                                                    Ambiguous
+                                                </p>
+                                            </td>
+                                            <td class="text-end"><%= results.ambiguousPercentage %> %</td>
+                                        </tr>
+                                    <% } %>
+                                    <% if (results.undefined) { %>
+                                        <tr>
+                                            <td class="pe-2">
+                                                <p class="mb-0" data-toggle="tooltip" data-placement="left" title="<%=chartData%> has no step implmentation.">
+                                                    <i class="fa fa-question-circle undefined-color me-2"></i>
+                                                    Not defined
+                                                </p>
+                                            </td>
+                                            <td class="text-end"><%= results.undefinedPercentage %> %</td>
+                                        </tr>
+                                    <% } %>
+                                </tr>
+                                <% if (results.pending) { %>
+                                    <tr>
+                                        <td class="pe-2">
+                                            <p class="mb-0" data-toggle="tooltip" data-placement="left" title="<%=chartData%> is pending">
+                                                <i class="fa fa-minus-circle pending-color me-2"></i>
+                                                Pending
+                                            </p>
+                                        </td>
+                                        <td class="text-end"><%= results.pendingPercentage %> %</td>
+                                    </tr>
+                                <% } %>
+                                <% if (results.skipped) { %>
+                                    <tr>
+                                        <td class="pe-2">
+                                            <p class="mb-0" data-toggle="tooltip" data-placement="left" title="<%=chartData%> is skipped">
+                                                <i class="fa fa-arrow-circle-right skipped-color me-2"></i>
+                                                Skipped
+                                            </p>
+                                        </td>
+                                        <td class="text-end"><%= results.skippedPercentage %> %</td>
+                                    </tr>
+                                <% } %>
+                                <% if (results.various) { %>
+                                    <tr>
+                                        <td class="pe-2">
+                                            <p class="mb-0" data-toggle="tooltip" data-placement="left" title="<%=chartData%> have multiple results">
+                                                <i class=" fas fa-blender various-color me-2"></i>
+                                                Various
+                                            </p>
+                                        </td>
+                                        <td class="text-end"><%= results.variousPercentage %> %</td>
+                                    </tr>
+                                <% } %>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

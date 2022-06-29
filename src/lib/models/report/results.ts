@@ -22,17 +22,17 @@ export interface ModuleResults {
   timeInNanoSeconds: number;
 }
 
-export interface FeatureModuleResults extends ModuleResults{
+export interface FeatureModuleResults extends ModuleResults {
   various: number;
   variousPercentage: string;
 }
 
-export interface OverviewResults{
+export interface OverviewResults {
   duration: number;
   durationHHMMSS: string;
 }
 
-export interface ReportResultsOverview extends OverviewResults{
+export interface ReportResultsOverview extends OverviewResults {
   _id?: any;
   result: Result[];
   duration: number;
@@ -42,11 +42,11 @@ export interface ReportResultsOverview extends OverviewResults{
   resultStatusesJoined: string;
 }
 
-export interface FeatureResultsOverview extends OverviewResults{
+export interface FeatureResultsOverview extends OverviewResults {
   result: Result[];
 }
 
-export interface ScenarioResultsOverview extends OverviewResults{
+export interface ScenarioResultsOverview extends OverviewResults {
   status: Status;
   isFirstScenarioOutline?: boolean;
 }
@@ -79,11 +79,11 @@ export interface ReportResults {
   steps: ModuleResults;
 }
 
-export interface BeforeOrAfterOverviewResults extends OverviewResults{
+export interface BeforeOrAfterOverviewResults extends OverviewResults {
   status: Status;
 }
 
-export interface BeforeOrAfterResults{
+export interface BeforeOrAfterResults {
   overview: BeforeOrAfterOverviewResults;
 }
 
@@ -138,7 +138,6 @@ export const overviewInitializer = (): ScenarioResultsOverview => lodash.cloneDe
   status: Status.passed
 } );
 
-
 export const scenarioResultsInitializer = (): ScenarioResults => lodash.cloneDeep( {
   after: beforeOrAfterOverviewInitializer(),
   before: beforeOrAfterOverviewInitializer(),
@@ -171,7 +170,7 @@ export const reportResultsInitializer = (): ReportResults => lodash.cloneDeep( {
   steps: moduleResultsInitializer()
 } );
 
-export interface Result{
+export interface Result {
   status: Status;
   icon: string;
 }

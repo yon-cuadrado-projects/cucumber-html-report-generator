@@ -16,8 +16,8 @@ const reportStylesheetDarkThemeTemplate = '/resources/templates/css/style-dark-t
 const reportStylesheetLightThemeTemplate = '/resources/templates/css/style-light-theme.css';
 const featuresOverviewIndexTemplate = '/resources/templates/components/features-overview/features-overview-index.tmpl';
 const featuresOverviewTableTemplate = '/resources/templates/components/features-overview/features-overview-table.tmpl';
-const featuresChartsTemplate = '/resources/templates/components/features-overview/features-charts.tmpl';
-const featureChartsTemplate = '/resources/templates/components/feature-overview/feature-charts.tmpl';
+const pieChartTemplate = '/resources/templates/components/charts/pie-chart.tmpl';
+const metadataTemplate = '/resources/templates/components/charts/metadata.tmpl';
 const featureOverviewIndexTemplate = '/resources/templates/components/feature-overview/feature-overview-index.tmpl';
 const scenarioStepsTemplate = '/resources/templates/components/feature-overview/scenario-elements/steps.tmpl';
 const scenarioBeforeTemplate = '/resources/templates/components/feature-overview/scenario-elements/before.tmpl';
@@ -51,7 +51,7 @@ export class GenerateHtml {
   public async createHtmlPages (): Promise<void> {
     this.createFeaturesOverviewIndexPage();
     await this.createFeatureIndexPages();
-    if ( ! this.reportConfiguration.useCDN ) {
+    if ( !this.reportConfiguration.useCDN ) {
       await this.copyResourcesToTargetFolder();
     }
     await this.openReportInBrowser();
@@ -70,7 +70,7 @@ export class GenerateHtml {
 
       /* istanbul ignore next */
       if ( files.length === 1 && this.reportConfiguration.navigateToFeatureIfThereIsOnlyOne ) {
-        await open( path.join( dir, files[0] ) );
+        await open( path.join( dir, files[ 0 ] ) );
       } else {
         const result = await open( this.featuresOverviewIndex );
         console.log( result );
@@ -85,16 +85,29 @@ export class GenerateHtml {
         featuresOverview: this.generateTemplate( featuresOverviewTableTemplate, {
           suite: this.suite
         } ),
-        config: this.reportConfiguration,
-        featuresOverviewChart: this.generateTemplate( featuresChartsTemplate, {
-          suite: this.suite
+        featuresChart: this.generateTemplate( pieChartTemplate, {
+          results: this.suite.results.features,
+          dataBsTarget: '#Features-Charts, #Scenarios-Charts,#Metadata-Properties',
+          chartData: 'Features'
         } ),
+        scenariosChart: this.generateTemplate( pieChartTemplate, {
+          results: this.suite.results.features,
+          dataBsTarget: '#Features-Charts, #Scenarios-Charts,#Metadata-Properties',
+          chartData: 'Scenarios'
+        } ),
+        metadata: this.generateTemplate( metadataTemplate, {
+          dataBsTarget: '#Features-Charts, #Scenarios-Charts,#Metadata-Properties',
+          metadata: this.suite.metadata,
+          metadataTitle: this.suite.metadataTitle
+        } ),
+
         featuresOverviewScripts: this.generateTemplate( featuresOverviewScriptsTemplate, {
           config: this.reportConfiguration,
           chartsData: this.chartsData,
           scriptsFunctions: this.scriptsFunctions,
           suite: this.suite
         } ),
+        config: this.reportConfiguration,
         projectName: this.suite.reportTitle,
         styles: this.generateTemplate( this.reportConfiguration.overrideStyle ?? ( this.reportConfiguration.theme === 'Dark' ? reportStylesheetDarkThemeTemplate : reportStylesheetLightThemeTemplate ) ),
         customStyle: this.reportConfiguration.customStyle ? this.generateTemplate( this.reportConfiguration.customStyle ) : '',
@@ -105,7 +118,7 @@ export class GenerateHtml {
 
   private async createFeatureIndexPages (): Promise<void> {
     const featuresPath = path.resolve( this.reportConfiguration.reportPath!, 'features/' );
-    if ( ! CommonFunctions.exists( featuresPath ) ) {
+    if ( !CommonFunctions.exists( featuresPath ) ) {
       fs.mkdirSync( featuresPath );
     }
 
@@ -122,8 +135,20 @@ export class GenerateHtml {
             suite: this.suite
           } ),
           config: this.reportConfiguration,
-          featureScenariosOverviewChart: this.generateTemplate( featureChartsTemplate, {
-            feature
+          scenariosChart: this.generateTemplate( pieChartTemplate, {
+            results: this.suite.results.features,
+            dataBsTarget: '#scenarios-charts,#steps-charts,#metadata-properties',
+            chartData: 'Scenarios'
+          } ),
+          stepsChart: this.generateTemplate( pieChartTemplate, {
+            results: this.suite.results.features,
+            dataBsTarget: '#scenarios-charts,#steps-charts,#metadata-properties',
+            chartData: 'Steps'
+          } ),
+          metadata: this.generateTemplate( metadataTemplate, {
+            dataBsTarget: '#scenarios-charts,#steps-charts,#metadata-properties',
+            metadata: feature.metadata,
+            metadataTitle: feature.metadataTitle
           } ),
           scenarioOutlineTemplate: this.generateScenariosTemplate( feature ),
           styles: this.generateTemplate( this.reportConfiguration.theme === 'Dark' || this.reportConfiguration.theme !== 'Light' ? reportStylesheetDarkThemeTemplate : reportStylesheetLightThemeTemplate ),
@@ -142,17 +167,17 @@ export class GenerateHtml {
   private generateScenariosTemplate ( feature: Models.Feature ): string {
     let scenariosTemplates = '';
     for ( let scenarioIndex = 0; scenarioIndex < feature.elements!.length; scenarioIndex++ ) {
-      const scenario = ( feature.elements! )[scenarioIndex];
+      const scenario = ( feature.elements! )[ scenarioIndex ];
       const templates = this.getScenarioElementsTemplates( scenario, scenarioIndex );
 
       if ( scenario.isFirstScenarioOutline && scenario.examples?.length ) {
         let scenarioOutlineChildsTemplates = '';
         for ( let scenarioExamplesIndex = 1; scenarioExamplesIndex < scenario.examples.length; scenarioExamplesIndex++ ) {
-          const scenarioTemplates = this.getScenarioElementsTemplates( ( feature.elements! )[scenarioIndex + scenarioExamplesIndex], scenarioIndex + scenarioExamplesIndex );
+          const scenarioTemplates = this.getScenarioElementsTemplates( ( feature.elements! )[ scenarioIndex + scenarioExamplesIndex ], scenarioIndex + scenarioExamplesIndex );
           scenarioOutlineChildsTemplates += this.generateTemplate( outlineScenarioChildTemplate, {
             templates: scenarioTemplates,
             scenarioExamplesIndex,
-            scenarioExamples: ( feature.elements! )[scenarioIndex].examples
+            scenarioExamples: ( feature.elements! )[ scenarioIndex ].examples
           } );
         }
 
