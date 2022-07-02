@@ -3,19 +3,19 @@
         data-bs-toggle="collapse" data-bs-target="#before-<%=scenarioIndex %>">
 
         <% if(config.showExecutionTime && !scenario.isFirstScenarioOutline){ %>
-            <div class=me-2>
+            <div class="me-2">
                 <%=scenario.results.before.durationHHMMSS %>
             </div>
-            <% } %>
+        <% } %>
 
-                <div>
-                    <span>
-                        <%= "Before:" %>
-                    </span>
-                    <a class="collapse-link">
-                        <i class="fa fa-chevron-down pt-2 ps-1 pe-1"></i>
-                    </a>
-                </div>
+        <div>
+            <span>
+                <%= "Before:" %>
+            </span>
+            <a class="collapse-link">
+                <i class="fa fa-chevron-down pt-2 ps-1 pe-1"></i>
+            </a>
+        </div>
     </div>
     <div class="collapse mb-2 mt-2 ms-4" id="before-<%=scenarioIndex %>">
         <%=steps%>

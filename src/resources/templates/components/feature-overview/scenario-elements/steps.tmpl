@@ -5,7 +5,7 @@
                 <tr class="p-0">
                     <% if(config.showExecutionTime && !isFirstScenarioOutline){ %>
                         <td class="p-0 page-background">
-                            <div class="me-2"><%=step.result.durationHHMMSS %> </div>
+                            <div class="me-2"><%=step.result.durationHHMMSS %></div>
                         </td>
                     <% } %>
 
@@ -140,6 +140,7 @@
                     </td>
                     <td class="w-100 page-background"></td>
                 </tr>
+                
                 <% if(step.result.status === 'undefined'){%>
                     <tr class="h-0 pt-0 pb-0">
                         <td colspan="5">
@@ -162,6 +163,7 @@
                         </td>
                     </tr>
                 <% } %>
+
                 <% if (step.result.error_message) { %>
                     <tr class="h-0 pt-0 pb-0">
                         <td class="h-0 pt-0 pb-0" colspan="6">

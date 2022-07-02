@@ -150,7 +150,7 @@ export class GenerateHtml {
             metadata: feature.metadata,
             metadataTitle: feature.metadataTitle
           } ),
-          scenarioOutlineTemplate: this.generateScenariosTemplate( feature ),
+          scenariosTemplate: this.generateScenariosTemplate( feature ),
           styles: this.generateTemplate( this.reportConfiguration.theme === 'Dark' || this.reportConfiguration.theme !== 'Light' ? reportStylesheetDarkThemeTemplate : reportStylesheetLightThemeTemplate ),
           customStyle: this.reportConfiguration.customStyle ? this.generateTemplate( this.reportConfiguration.customStyle ) : '',
           suite: this.suite,
