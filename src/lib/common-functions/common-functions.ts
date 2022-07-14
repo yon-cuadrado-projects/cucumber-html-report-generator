@@ -19,6 +19,7 @@ export const streamToArray = async ( readableStream: Readable ): Promise<message
       readableStream.on( 'data', ( item: messages.Envelope ) => {
         items.push( item );
       } );
+      /* istanbul ignore next */
       readableStream.on( 'error', ( err: Error ) => {
         reject( err );
       } );
