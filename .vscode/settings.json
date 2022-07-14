@@ -18,16 +18,16 @@
     "editor.formatOnSave": true
   },
   "[typescript]": {
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
   },
   "[typescriptreact]": {
     "editor.formatOnSave": true
   },
-  "editor.codeActionsOnSave": {
-    "editor.formatOnSave": true,
-    "source.fixAll.eslint": true,
+  // "editor.codeActionsOnSave": {
+    // "editor.formatOnSave": true,
+    // "source.fixAll.eslint": true,
     // "source.sortImports": true
-  },
+  // },
   "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
   "mochaExplorer.files": "test/unit/**/*.ts",
   "mochaExplorer.require": [

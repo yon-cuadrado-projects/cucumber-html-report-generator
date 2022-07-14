@@ -1,25 +1,33 @@
 import * as Messages from '../helpers/console-messages';
 import * as Models from '../models/models';
 import * as jsonFuture from 'json-future';
+import type * as messages from '@cucumber/messages';
 import * as path from 'path';
 import { format, intervalToDuration } from 'date-fns';
 import fs, { promises as fsp } from 'fs';
-import type { CucumberMessage } from '../types/cucumber-messages';
 import type { Readable } from 'stream';
 import type { Stats } from 'fs';
 import os from 'os';
 
-
-export const streamToArrayAsync = async ( stream: Readable ): Promise<CucumberMessage[]> => new Promise( ( resolve, reject ) => {
-  const items = <CucumberMessage[]>[];
-  stream.on( 'data',  ( item: CucumberMessage ) =>{
-    items.push( item ); 
-  } );
-  stream.on( 'error', reject );
-  stream.on( 'end', () => {
-    resolve( items );
-  } );
-} );
+export const streamToArray = async ( readableStream: Readable ): Promise<messages.Envelope[]> => {
+  return new Promise<messages.Envelope[]>(
+    (
+      resolve: ( wrappers: messages.Envelope[] ) => void,
+      reject: ( err: Error ) => void
+    ) => {
+      const items: messages.Envelope[] = [];
+      readableStream.on( 'data', ( item: messages.Envelope ) => {
+        items.push( item );
+      } );
+      readableStream.on( 'error', ( err: Error ) => {
+        reject( err );
+      } );
+      readableStream.on( 'end', () => {
+        resolve( items );
+      } );
+    }
+  );
+};
 
 export const updatePercentages = ( results: Models.FeatureModuleResults | Models.ModuleResults ): Models.FeatureModuleResults | Models.ModuleResults => {
   results.ambiguousPercentage = ( results.ambiguous ? results.ambiguous / results.total * 100 : 0 ).toFixed( 2 );
@@ -104,7 +112,7 @@ export const getFilesAsync = async ( dir: string ): Promise<string[]> => {
   const getFiles = async ( folder: string ): Promise<string[]> => {
     files = await fsp.readdir( folder );
     const result: Promise<string[]>[] = files.map( async ( file ) => {
-      const fileNameAndPath = path.join( folder, file );      
+      const fileNameAndPath = path.join( folder, file );
       return fsp.stat( fileNameAndPath ).then( ( stat ) => ( stat.isDirectory() ? getFiles( fileNameAndPath ) : [ fileNameAndPath ] ) );
     } );
     return <string[]>Array.prototype.concat( ...( await Promise.all( result ) ) );
@@ -130,17 +138,17 @@ export const checkFolder = ( file: string | undefined ): boolean => {
 export const readJsonFile = async <T> ( file: string, encoding: BufferEncoding = 'utf8' ): Promise<T | null> => {
   const report = await fsp.readFile( file, { encoding } );
 
-  try{
+  try {
     return <T>jsonFuture.parse( report );
-  }catch( error: unknown ){
-    console.log( ( Messages.invalidJsonProvided( file, ( <Error>error ).message ) )  );
+  } catch ( error: unknown ) {
+    console.log( ( Messages.invalidJsonProvided( file, ( <Error>error ).message ) ) );
   }
   return null;
 };
 
 export const saveJsonFile = async<T> ( filePath: string | undefined, fileName: string, json: T ): Promise<boolean> => {
   const fileNameAndPath = path.join( filePath!, fileName );
-  const jsonString = await jsonFuture.stringifyAsync( { data: json, replacer: null, space: 4 } );  
+  const jsonString = await jsonFuture.stringifyAsync( { data: json, replacer: null, space: 4 } );
   await fsp.writeFile( fileNameAndPath, jsonString, { encoding: 'utf8' } );
   return true;
 };
@@ -149,15 +157,15 @@ export const getDateFormatted = ( date: Date ): string => format( date, 'yyyy-MM
 
 export const convertTimeFromNanoSecondsToHHMMSS = ( time: number ): string => {
   const duration = intervalToDuration( { start: 0, end: time / 1000000 } );
-  const hours = ( `${  String( duration.hours )}` ).padStart( 2, '0' );
-  const minutes = ( `${  String( duration.minutes )}` ).padStart( 2, '0' );
-  const seconds = ( `${  String( duration.seconds )}` ).padStart( 2, '0' );
+  const hours = ( `${String( duration.hours )}` ).padStart( 2, '0' );
+  const minutes = ( `${String( duration.minutes )}` ).padStart( 2, '0' );
+  const seconds = ( `${String( duration.seconds )}` ).padStart( 2, '0' );
 
-  return `${hours }:${minutes }:${seconds}`;
+  return `${hours}:${minutes}:${seconds}`;
 };
 
 export const arraymove = <T> ( arr: T[], fromIndex: number, toIndex: number ): T[] => {
-  const element = arr[fromIndex];
+  const element = arr[ fromIndex ];
   const deleteCountOne = 1;
   arr.splice( fromIndex, deleteCountOne );
   const deleteCountZero = 0;
@@ -165,11 +173,11 @@ export const arraymove = <T> ( arr: T[], fromIndex: number, toIndex: number ): T
   return arr;
 };
 
-export const exists = ( filePath: string ): boolean => {  
+export const exists = ( filePath: string ): boolean => {
   return fs.existsSync( filePath );
 };
 
-export const initializePath =  ( reportPath?: string | undefined ): string  =>{
+export const initializePath = ( reportPath?: string | undefined ): string => {
   let reportPathFixed = reportPath;
   const resultCheckReportCreationPath = checkFolder( reportPath );
 
@@ -178,7 +186,7 @@ export const initializePath =  ( reportPath?: string | undefined ): string  =>{
     reportPathFixed = path.join( os.tmpdir(), 'cucumber-html-report-generator', date );
     fs.mkdirSync( reportPathFixed, { recursive: true } );
   }
-  
+
   return reportPathFixed!;
 };
 
@@ -193,7 +201,7 @@ export const pathExists = async ( folderPath: string ): Promise<boolean> => {
 export const emptyFolder = async ( folderPath: string ): Promise<void> => {
   /* istanbul ignore next */
   if ( await pathExists( folderPath ) ) {
-    await fsp.rm( folderPath,{ recursive: true }  );
+    await fsp.rm( folderPath, { recursive: true } );
   }
-  await fsp.mkdir( folderPath,{ recursive: true } );
+  await fsp.mkdir( folderPath, { recursive: true } );
 };
