@@ -45,8 +45,8 @@ describe( 'update-report-resources-spec', () => {
 
       const updatedFiles = [
         'test/unit/data/update-report-resources/resources/Chart.js-3.7.1/chart.min.js',
-        'test/unit/data/update-report-resources/resources/twitter-bootstrap-5.1.3/css/bootstrap.min.css',
-        'test/unit/data/update-report-resources/resources/twitter-bootstrap-5.1.3/js/bootstrap.min.js',
+        'test/unit/data/update-report-resources/resources/twitter-bootstrap-5.1.2/css/bootstrap.min.css',
+        'test/unit/data/update-report-resources/resources/twitter-bootstrap-5.1.2/js/bootstrap.min.js',
         'test/unit/data/update-report-resources/templates/feature-overview-index.tmpl',
         'test/unit/data/update-report-resources/templates/features-overview-index.tmpl',
         'test/unit/data/update-report-resources/resources-data.json'
