@@ -2,17 +2,17 @@
     {
         "name": "twitter-bootstrap",
         "cdn": "cdnjs",
-        "version": "5.2.0-beta1",
+        "version": "5.2.0",
         "files": [
             {
                 "name": "css/bootstrap.min.css",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0-beta1/css/bootstrap.min.css",
-                "path": "resources/twitter-bootstrap-5.2.0-beta1/css/bootstrap.min.css"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css",
+                "path": "resources/twitter-bootstrap-5.2.0/css/bootstrap.min.css"
             },
             {
                 "name": "js/bootstrap.min.js",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0-beta1/js/bootstrap.min.js",
-                "path": "resources/twitter-bootstrap-5.2.0-beta1/js/bootstrap.min.js"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/js/bootstrap.min.js",
+                "path": "resources/twitter-bootstrap-5.2.0/js/bootstrap.min.js"
             }
         ]
     },

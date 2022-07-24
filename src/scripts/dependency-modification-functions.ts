@@ -174,12 +174,14 @@ export const updateResources = async ( configurationData: Models.ResourcePropert
         return file;
       } );
       localResourceConf.version = remoteResourceConf.version;
-      await updateResourcesPropertiesConfigurationJson( configurationData, configurationFile );
       return true;
     }
     return false;
   } ) );
+
   if ( updateResult.every( result => !result ) ) {
     console.log( 'All the resources are in the latest version' );
+  }else{    
+    await updateResourcesPropertiesConfigurationJson( configurationData, configurationFile );
   }
 };
