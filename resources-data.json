@@ -19,12 +19,12 @@
     {
         "name": "Chart.js",
         "cdn": "cdnjs",
-        "version": "3.8.0",
+        "version": "3.8.2",
         "files": [
             {
                 "name": "chart.min.js",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js",
-                "path": "resources/Chart.js-3.8.0/chart.min.js"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.2/chart.min.js",
+                "path": "resources/Chart.js-3.8.2/chart.min.js"
             }
         ]
     },
