@@ -5,11 +5,11 @@ import * as path from 'path';
 
 
 const updateResourcesProperties = async (): Promise<void> => {
-  const resourcesData = './resources-data.json';
+  const resourcesData = path.join( __dirname,'./resources-data.json');
   const resourcesFolder = path.join( __dirname, '../resources/dependencies' );
   const featuresIndex = path.join( __dirname, '../resources/templates/components/features-overview/features-overview-index.tmpl' );
   const featureIndex = path.join( __dirname, '../resources/templates/components/feature-overview/feature-overview-index.tmpl' );
-  const configurationData = await CommonFunctions.readJsonFile<Models.ResourceProperties[]>( path.join( __dirname, resourcesData ) );
+  const configurationData = await CommonFunctions.readJsonFile<Models.ResourceProperties[]>( resourcesData );
   if ( configurationData ) {
     await dependencyModifycationFunctions.updateResources( configurationData, resourcesData, resourcesFolder, [ featureIndex, featuresIndex ] )
   }

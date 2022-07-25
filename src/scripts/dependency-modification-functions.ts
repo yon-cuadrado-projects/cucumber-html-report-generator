@@ -161,7 +161,7 @@ const updateResourcesPropertiesConfigurationJson = async ( configurationData: Mo
 };
 
 export const updateResources = async ( configurationData: Models.ResourceProperties[], configurationFile: string, resourcesFolder: string, templates: string[] ): Promise<void> => {
-  const updateResult = await Promise.all( configurationData.map( async localResourceConf => {
+  const updatedJson = await Promise.all( configurationData.map( async localResourceConf => {
     const remoteResourceConf = await getResourceInformation( localResourceConf, resourcesFolder );
     if ( remoteResourceConf.version && remoteResourceConf.files.length && semver.gt( remoteResourceConf.version, localResourceConf.version ) ) {
       await downloadResources( remoteResourceConf );
@@ -174,14 +174,13 @@ export const updateResources = async ( configurationData: Models.ResourcePropert
         return file;
       } );
       localResourceConf.version = remoteResourceConf.version;
-      return true;
     }
-    return false;
+    return localResourceConf;
   } ) );
 
-  if ( updateResult.every( result => !result ) ) {
+  if ( updatedJson === configurationData ) {
     console.log( 'All the resources are in the latest version' );
   }else{    
-    await updateResourcesPropertiesConfigurationJson( configurationData, configurationFile );
+    await updateResourcesPropertiesConfigurationJson( updatedJson, configurationFile );
   }
 };
