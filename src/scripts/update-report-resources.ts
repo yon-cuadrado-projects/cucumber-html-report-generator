@@ -11,7 +11,7 @@ const updateResourcesProperties = async (): Promise<void> => {
   const featureIndex = path.join( __dirname, '../resources/templates/components/feature-overview/feature-overview-index.tmpl' );
   const configurationData = await CommonFunctions.readJsonFile<Models.ResourceProperties[]>( resourcesData );
   if ( configurationData ) {
-    await dependencyModifycationFunctions.updateResources( configurationData, resourcesData, resourcesFolder, [ featureIndex, featuresIndex ] )
+    await dependencyModifycationFunctions.updateResources( resourcesData, resourcesFolder, [ featureIndex, featuresIndex ] )
   }
 };
 

@@ -21,7 +21,7 @@ describe( 'update-report-resources-spec', () => {
       const featureIsndex = path.resolve( process.cwd(), './test/unit/data/update-report-resources/templates/features-overview-index.tmpl' );
 
       // When
-      await dependencyModifycationFunctions.updateResources( configurationData!, resourcesDataFile, resourcesFolder, [ featureIsndex, featureIndex ] );
+      await dependencyModifycationFunctions.updateResources( resourcesDataFile, resourcesFolder, [ featureIsndex, featureIndex ] );
 
       // Then
       const updatedConfigurationData = await CommonFunctions.readJsonFile<Models.ResourceProperties[]>( resourcesDataFile );

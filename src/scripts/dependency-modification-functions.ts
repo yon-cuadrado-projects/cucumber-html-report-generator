@@ -160,8 +160,10 @@ const updateResourcesPropertiesConfigurationJson = async ( configurationData: Mo
   await CommonFunctions.saveJsonFile<Models.ResourceProperties[]>( path.dirname( configurationFile ), path.basename( configurationFile ), configurationData );
 };
 
-export const updateResources = async ( configurationData: Models.ResourceProperties[], configurationFile: string, resourcesFolder: string, templates: string[] ): Promise<void> => {
-  const updatedJson = await Promise.all( configurationData.map( async localResourceConf => {
+export const updateResources = async ( configurationFile: string, resourcesFolder: string, templates: string[] ): Promise<void> => {
+  const originalConfigurationData = ( await CommonFunctions.readJsonFile<Models.ResourceProperties[]>( configurationFile ) )!;
+  const newConfigurationData = ( await CommonFunctions.readJsonFile<Models.ResourceProperties[]>( configurationFile ) )!;
+  await Promise.all( newConfigurationData.map( async localResourceConf => {
     const remoteResourceConf = await getResourceInformation( localResourceConf, resourcesFolder );
     if ( remoteResourceConf.version && remoteResourceConf.files.length && semver.gt( remoteResourceConf.version, localResourceConf.version ) ) {
       await downloadResources( remoteResourceConf );
@@ -178,9 +180,9 @@ export const updateResources = async ( configurationData: Models.ResourcePropert
     return localResourceConf;
   } ) );
 
-  if ( updatedJson === configurationData ) {
+  if ( JSON.stringify( originalConfigurationData ) === JSON.stringify( newConfigurationData ) ) {
     console.log( 'All the resources are in the latest version' );
   }else{    
-    await updateResourcesPropertiesConfigurationJson( updatedJson, configurationFile );
+    await updateResourcesPropertiesConfigurationJson( newConfigurationData, configurationFile );
   }
 };
