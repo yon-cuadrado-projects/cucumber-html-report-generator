@@ -1,6 +1,6 @@
 {
   "name": "cucumber-html-report-generator",
-  "version": "1.0.31",
+  "version": "1.0.32",
   "description": "Generate beautifull cucumberjs html reports for multiple instances (browsers / devices)",
   "keywords": [
     "cucumber",
