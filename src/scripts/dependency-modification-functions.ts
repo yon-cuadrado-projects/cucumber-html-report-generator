@@ -1,8 +1,8 @@
+import * as  CommonFunctions from '../lib/common-functions/common-functions';
 import type * as Models from '../lib/models/models';
 import * as fse from 'fs-extra';
 import * as https from 'https';
 import * as path from 'path';
-import { CommonFunctions } from 'index';
 import axios from 'axios';
 import semver from 'semver';
 import sri from 'ssri';
