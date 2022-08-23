@@ -165,7 +165,7 @@ export const convertTimeFromNanoSecondsToHHMMSS = ( time: number ): string => {
   return `${hours}:${minutes}:${seconds}`;
 };
 
-export const arraymove = <T> ( arr: T[], fromIndex: number, toIndex: number ): T[] => {
+export const moveArray = <T> ( arr: T[], fromIndex: number, toIndex: number ): T[] => {
   const element = arr[ fromIndex ];
   const deleteCountOne = 1;
   arr.splice( fromIndex, deleteCountOne );

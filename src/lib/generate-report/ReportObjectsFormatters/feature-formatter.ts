@@ -6,26 +6,26 @@ import { ScenarioFormatter } from './scenario-formatter';
 export class FeatureFormatter {
   private readonly gherkinFeature: messages.Feature | null | undefined;
   private jsonFeature: Models.Feature;
-  private readonly scenarioFormater: ScenarioFormatter;
+  private readonly scenarioFormatter: ScenarioFormatter;
   private readonly scenarioOutlines: Models.ScenarioOutline[];
 
   public constructor( gherkinFeature: messages.Feature | null | undefined, jsonFeature: Models.Feature ) {
     this.gherkinFeature = gherkinFeature;
     this.jsonFeature = jsonFeature;
-    this.scenarioFormater = new ScenarioFormatter( this.gherkinFeature );
+    this.scenarioFormatter = new ScenarioFormatter( this.gherkinFeature );
     this.scenarioOutlines = this.getOutlineScenarios();
   }
 
   public parseFeature (): Models.Feature {
-    this.initalizeFeature();
+    this.initializeFeature();
 
     if ( this.jsonFeature.elements?.length ) {
       this.joinOutlineScenarios();
       for ( let index = 0; index < this.jsonFeature.elements.length; index++ ) {
-        const jsonScenario = this.scenarioFormater.parseScenario( this.jsonFeature.elements[ index ], this.jsonFeature.name );
+        const jsonScenario = this.scenarioFormatter.parseScenario( this.jsonFeature.elements[ index ], this.jsonFeature.name );
         if ( jsonScenario !== null && typeof jsonScenario !== 'undefined' ) {
           this.jsonFeature.elements[ index ] = jsonScenario;
-          this.updateFeatureStadistics( this.jsonFeature.elements[ index ]?.results );
+          this.updateFeatureStatistics( this.jsonFeature.elements[ index ]?.results );
           const gherkinScenario = this.gherkinFeature?.children.filter(
             scenario => scenario.scenario?.name === jsonScenario.name )[ 0 ]?.scenario;
           if ( this.isLastScenarioOutlineWithFeature( jsonScenario, index ) && gherkinScenario ) {
@@ -47,13 +47,13 @@ export class FeatureFormatter {
   private addFirstScenarioOutline ( scenarios: Models.Scenario[], jsonScenario: Models.Scenario, index: number, gherkinScenario: messages.Scenario ): Models.Scenario[] {
     const scenarioName = jsonScenario.name;
     const scenarioOutlineLengthWithoutHeaders = this.scenarioOutlines.filter( scenario => scenario.name === scenarioName ).length - 1;
-    const scenarioOutline = this.scenarioFormater.createNewFirstScenarioOutline( jsonScenario, gherkinScenario, scenarios, index - scenarioOutlineLengthWithoutHeaders );
+    const scenarioOutline = this.scenarioFormatter.createNewFirstScenarioOutline( jsonScenario, gherkinScenario, scenarios, index - scenarioOutlineLengthWithoutHeaders );
     scenarios.splice( index - scenarioOutlineLengthWithoutHeaders, 0, scenarioOutline );
 
     return scenarios;
   }
 
-  private updateFeatureStadistics ( scenarioResults: Models.ScenarioResults ): void {
+  private updateFeatureStatistics ( scenarioResults: Models.ScenarioResults ): void {
     this.jsonFeature.results.scenarios.undefined += scenarioResults.steps.undefined ? 1 : 0;
     this.jsonFeature.results.scenarios.failed += !scenarioResults.steps.undefined && scenarioResults.steps.failed ? 1 : 0;
     this.jsonFeature.results.scenarios.ambiguous += scenarioResults.steps.ambiguous &&
@@ -88,7 +88,7 @@ export class FeatureFormatter {
     this.jsonFeature.results.overview.duration += scenarioResults.overview.duration;
   }
 
-  private initalizeFeature (): void {
+  private initializeFeature (): void {
     this.jsonFeature.description = typeof this.jsonFeature.description === 'undefined' ? '' : this.jsonFeature.description;
     this.jsonFeature.elements = this.jsonFeature.elements === null || typeof this.jsonFeature.elements === 'undefined' ? [] : this.jsonFeature.elements;
     this.jsonFeature.results = Models.featureResultsInitializer();
@@ -105,7 +105,7 @@ export class FeatureFormatter {
       name: string;
     }[] = [];
     this.jsonFeature.elements?.forEach( scenario => {
-      if ( this.scenarioFormater.isOutlineScenario( scenario ) ) {
+      if ( this.scenarioFormatter.isOutlineScenario( scenario ) ) {
         scenarioOutlines.push( {
           index: parseInt( `${( this.jsonFeature.elements! ).indexOf( scenario )}`, 10 ),
           name: `${scenario.name}`
@@ -117,14 +117,14 @@ export class FeatureFormatter {
       const scenarioOutlineElements = scenarioOutlines.filter( scenario => scenario.name === name );
       const firstScenarioIndex = scenarioOutlineElements[ 0 ].index;
       scenarioOutlineElements.forEach( ( scenarioOutlineElement, index ) => {
-        CommonFunctions.arraymove( this.jsonFeature.elements!, scenarioOutlineElement.index, firstScenarioIndex + index );
+        CommonFunctions.moveArray( this.jsonFeature.elements!, scenarioOutlineElement.index, firstScenarioIndex + index );
       } );
     } );
   }
 
   private isLastScenarioOutlineWithFeature ( scenario: Models.Scenario, index: number  ): boolean {
-    const ocurrences = this.scenarioOutlines.filter( scenarioElement => scenarioElement.name === scenario.name );
-    if ( ocurrences[ ocurrences.length - 1 ]?.index === index ) {
+    const occurrences = this.scenarioOutlines.filter( scenarioElement => scenarioElement.name === scenario.name );
+    if ( occurrences[ occurrences.length - 1 ]?.index === index ) {
       return true;
     }
     return false;
@@ -133,7 +133,7 @@ export class FeatureFormatter {
   private getOutlineScenarios (): Models.ScenarioOutline[] {
     const scenarioOutlines: Models.ScenarioOutline[] = [];
     this.jsonFeature.elements?.forEach( scenario => {
-      if ( this.scenarioFormater.isOutlineScenario( scenario ) ) {
+      if ( this.scenarioFormatter.isOutlineScenario( scenario ) ) {
         scenarioOutlines.push( {
           index: parseInt( `${( this.jsonFeature.elements! ).indexOf( scenario )}`, 10 ),
           name: `${scenario.name}`
