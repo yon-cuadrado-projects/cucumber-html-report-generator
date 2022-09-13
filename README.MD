@@ -47,6 +47,9 @@ Multiple Cucumber HTML Reporter **has been tested with the latest version of web
 
 > **Advice** is to use for example the name of the feature, the name of the browser / device it is running on AND a unix timestamp with for example this `(new Date).getTime();`. This will result in something like this `name_of_feature.chrome.1495298685509.json`
 
+## Example project
+[webdriverio-cucumber-typescript](https://github.com/yon-cuadrado-projects/webdriverio-cucumber-typescript)
+
 ## Options
 ```
   showExecutionTime?: boolean;

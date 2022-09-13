@@ -48,7 +48,7 @@
     "bson": "4.7.0",
     "chart.js": "3.9.1",
     "chartjs-plugin-datalabels": "2.1.0",
-    "date-fns": "2.29.2",
+    "date-fns": "2.29.3",
     "fs-extra": "10.1.0",
     "json-future": "2.2.18",
     "lodash": "4.17.21",
