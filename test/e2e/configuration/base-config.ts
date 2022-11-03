@@ -127,7 +127,7 @@ const config: WebdriverIO.Config = {
           },
         },
         args: {
-          version: '4.4.0',
+          version: '4.5.0',
           drivers: {
             chrome: {
               version: 'latest',
