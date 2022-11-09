@@ -97,66 +97,66 @@
     {
         "name": "DataTables",
         "cdn": "datatables",
-        "version": "1.12.1",
+        "version": "1.13.1",
         "files": [
             {
                 "name": "dataTables.bootstrap5.min.js",
-                "url": "https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js",
-                "path": "resources/DataTables-1.12.1/dataTables.bootstrap5.min.js"
+                "url": "https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js",
+                "path": "resources/DataTables-1.13.1/dataTables.bootstrap5.min.js"
             },
             {
                 "name": "jquery.dataTables.min.js",
-                "url": "https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js",
-                "path": "resources/DataTables-1.12.1/jquery.dataTables.min.js"
+                "url": "https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js",
+                "path": "resources/DataTables-1.13.1/jquery.dataTables.min.js"
             },
             {
                 "name": "dataTables.bootstrap5.min.css",
-                "url": "https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css",
-                "path": "resources/DataTables-1.12.1/dataTables.bootstrap5.min.css"
+                "url": "https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css",
+                "path": "resources/DataTables-1.13.1/dataTables.bootstrap5.min.css"
             }
         ]
     },
     {
         "name": "Buttons",
         "cdn": "datatables",
-        "version": "2.2.3",
+        "version": "2.3.2",
         "files": [
             {
                 "name": "dataTables.buttons.js",
-                "url": "https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.js",
-                "path": "resources/buttons-2.2.3/dataTables.buttons.js"
+                "url": "https://cdn.datatables.net/buttons/2.3.2/js/dataTables.buttons.js",
+                "path": "resources/buttons-2.3.2/dataTables.buttons.js"
             },
             {
                 "name": "buttons.bootstrap5.js",
-                "url": "https://cdn.datatables.net/buttons/2.2.3/js/buttons.bootstrap5.js",
-                "path": "resources/buttons-2.2.3/dataTables.bootstrap5.min.js"
+                "url": "https://cdn.datatables.net/buttons/2.3.2/js/buttons.bootstrap5.js",
+                "path": "resources/buttons-2.3.2/dataTables.bootstrap5.min.js"
             },
             {
                 "name": "buttons.colVis.js",
-                "url": "https://cdn.datatables.net/buttons/2.2.3/js/buttons.colVis.js",
-                "path": "resources/buttons-2.2.3/buttons.colVis.js"
+                "url": "https://cdn.datatables.net/buttons/2.3.2/js/buttons.colVis.js",
+                "path": "resources/buttons-2.3.2/buttons.colVis.js"
             },
             {
                 "name": "buttons.bootstrap5.css",
-                "url": "https://cdn.datatables.net/buttons/2.2.3/css/buttons.bootstrap5.css",
-                "path": "resources/buttons-2.2.3/buttons.bootstrap5.css"
+                "url": "https://cdn.datatables.net/buttons/2.3.2/css/buttons.bootstrap5.css",
+                "path": "resources/buttons-2.3.2/buttons.bootstrap5.css"
             }
         ]
     },
     {
         "name": "Responsive",
         "cdn": "datatables",
-        "version": "2.3.0",
+        "version": "2.4.0",
         "files": [
             {
                 "name": "dataTables.responsive.js",
-                "url": "https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.js",
-                "path": "resources/Responsive-2.3.0/dataTables.responsive.js"
+                "url": "https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.js",
+                "path": "resources/Responsive-2.4.0/dataTables.responsive.js"
             },
             {
                 "name": "responsive.bootstrap5.css",
-                "url": "https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap5.css",
-                "path": "resources/Responsive-2.3.0/responsive.bootstrap5.css"
+                "url": "https://cdn.datatables.net/responsive/2.4.0/css/responsive.bootstrap5.css",
+                "path": "resources/Responsive-2.4.0/responsive.bootstrap5.css"
             }
         ]
     },
