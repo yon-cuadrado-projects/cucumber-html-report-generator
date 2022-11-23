@@ -3,6 +3,7 @@ import type * as Models from '../lib/models/models';
 import * as fse from 'fs-extra';
 import * as https from 'https';
 import * as path from 'path';
+import type { AxiosRequestConfig } from 'axios';
 import axios from 'axios';
 import semver from 'semver';
 import sri from 'ssri';
@@ -57,9 +58,15 @@ export const downloadResources = async ( dependency: Models.ResourceProperties )
 
 export const getCdnjsResourceInformation = async ( dependency: Models.ResourceProperties, resourcesFolder: string ): Promise<Models.ResourceProperties> => {
   const resourceUrl = `https://api.cdnjs.com/libraries/${dependency.name}?fields=name,version,repository,assets,latest,name,filename`;
+  const config: AxiosRequestConfig={
+    headers:{
+      'accept-encoding': '*'
+    }
+  };
+  
   let response = <Models.ResourcesCdnjsApiProperties>{};
   try {
-    response = ( await axios.get<Models.ResourcesCdnjsApiProperties>( resourceUrl ) ).data;
+    response = ( await axios.get<Models.ResourcesCdnjsApiProperties>( resourceUrl,config ) ).data;
   } catch ( error: unknown ) {
     console.log( `error ${( <Error>error ).message} in function getCdnjsResourceInformation with dependency ${dependency.name}` );
   }
