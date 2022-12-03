@@ -5,7 +5,7 @@ import { ScenarioFormatter } from './scenario-formatter';
 
 export class FeatureFormatter {
   private readonly gherkinFeature: messages.Feature | null | undefined;
-  private jsonFeature: Models.Feature;
+  private readonly jsonFeature: Models.Feature;
   private readonly scenarioFormatter: ScenarioFormatter;
   private readonly scenarioOutlines: Models.ScenarioOutline[];
 

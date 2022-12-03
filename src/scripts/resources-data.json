@@ -2,24 +2,24 @@
     {
         "name": "twitter-bootstrap",
         "cdn": "cdnjs",
-        "version": "5.2.2",
+        "version": "5.2.3",
         "files": [
             {
                 "name": "css/bootstrap.min.css",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.2/css/bootstrap.min.css",
-                "path": "resources/twitter-bootstrap-5.2.2/css/bootstrap.min.css"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css",
+                "path": "resources/twitter-bootstrap-5.2.3/css/bootstrap.min.css"
             },
             {
                 "name": "js/bootstrap.min.js",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.2/js/bootstrap.min.js",
-                "path": "resources/twitter-bootstrap-5.2.2/js/bootstrap.min.js"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.min.js",
+                "path": "resources/twitter-bootstrap-5.2.3/js/bootstrap.min.js"
             }
         ]
     },
     {
         "name": "Chart.js",
         "cdn": "cdnjs",
-        "version": "3.9.1",
+        "version": "4.0.1",
         "files": [
             {
                 "name": "chart.min.js",
@@ -43,42 +43,42 @@
     {
         "name": "font-awesome",
         "cdn": "cdnjs",
-        "version": "6.2.0",
+        "version": "6.2.1",
         "files": [
             {
                 "name": "css/all.min.css",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css",
-                "path": "resources/font-awesome-6.2.0/css/all.min.css"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css",
+                "path": "resources/font-awesome-6.2.1/css/all.min.css"
             },
             {
                 "name": "webfonts/fa-brands-400.ttf",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/webfonts/fa-brands-400.ttf",
-                "path": "resources/font-awesome-6.2.0/css/webfonts/fa-brands-400.ttf"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/webfonts/fa-brands-400.ttf",
+                "path": "resources/font-awesome-6.2.1/css/webfonts/fa-brands-400.ttf"
             },
             {
                 "name": "webfonts/fa-brands-400.woff2",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/webfonts/fa-brands-400.woff2",
-                "path": "resources/font-awesome-6.2.0/css/webfonts/fa-brands-400.woff2"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/webfonts/fa-brands-400.woff2",
+                "path": "resources/font-awesome-6.2.1/css/webfonts/fa-brands-400.woff2"
             },
             {
                 "name": "webfonts/fa-regular-400.ttf",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/webfonts/fa-regular-400.ttf",
-                "path": "resources/font-awesome-6.2.0/css/webfonts/fa-regular-400.ttf"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/webfonts/fa-regular-400.ttf",
+                "path": "resources/font-awesome-6.2.1/css/webfonts/fa-regular-400.ttf"
             },
             {
                 "name": "webfonts/fa-regular-400.woff2",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/webfonts/fa-regular-400.woff2",
-                "path": "resources/font-awesome-6.2.0/css/webfonts/fa-regular-400.woff2"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/webfonts/fa-regular-400.woff2",
+                "path": "resources/font-awesome-6.2.1/css/webfonts/fa-regular-400.woff2"
             },
             {
                 "name": "webfonts/fa-solid-900.ttf",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/webfonts/fa-solid-900.ttf",
-                "path": "resources/font-awesome-6.2.0/css/webfonts/fa-solid-900.ttf"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/webfonts/fa-solid-900.ttf",
+                "path": "resources/font-awesome-6.2.1/css/webfonts/fa-solid-900.ttf"
             },
             {
                 "name": "webfonts/fa-solid-900.woff2",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/webfonts/fa-solid-900.woff2",
-                "path": "resources/font-awesome-6.2.0/css/webfonts/fa-solid-900.woff2"
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/webfonts/fa-solid-900.woff2",
+                "path": "resources/font-awesome-6.2.1/css/webfonts/fa-solid-900.woff2"
             }
         ]
     },
@@ -119,27 +119,27 @@
     {
         "name": "Buttons",
         "cdn": "datatables",
-        "version": "2.3.2",
+        "version": "2.3.3",
         "files": [
             {
                 "name": "dataTables.buttons.js",
-                "url": "https://cdn.datatables.net/buttons/2.3.2/js/dataTables.buttons.js",
-                "path": "resources/buttons-2.3.2/dataTables.buttons.js"
+                "url": "https://cdn.datatables.net/buttons/2.3.3/js/dataTables.buttons.js",
+                "path": "resources/buttons-2.3.3/dataTables.buttons.js"
             },
             {
                 "name": "buttons.bootstrap5.js",
-                "url": "https://cdn.datatables.net/buttons/2.3.2/js/buttons.bootstrap5.js",
-                "path": "resources/buttons-2.3.2/dataTables.bootstrap5.min.js"
+                "url": "https://cdn.datatables.net/buttons/2.3.3/js/buttons.bootstrap5.js",
+                "path": "resources/buttons-2.3.3/dataTables.bootstrap5.min.js"
             },
             {
                 "name": "buttons.colVis.js",
-                "url": "https://cdn.datatables.net/buttons/2.3.2/js/buttons.colVis.js",
-                "path": "resources/buttons-2.3.2/buttons.colVis.js"
+                "url": "https://cdn.datatables.net/buttons/2.3.3/js/buttons.colVis.js",
+                "path": "resources/buttons-2.3.3/buttons.colVis.js"
             },
             {
                 "name": "buttons.bootstrap5.css",
-                "url": "https://cdn.datatables.net/buttons/2.3.2/css/buttons.bootstrap5.css",
-                "path": "resources/buttons-2.3.2/buttons.bootstrap5.css"
+                "url": "https://cdn.datatables.net/buttons/2.3.3/css/buttons.bootstrap5.css",
+                "path": "resources/buttons-2.3.3/buttons.bootstrap5.css"
             }
         ]
     },
